@@ -1,0 +1,76 @@
+GET http://localhost:3000/user
+
+###
+GET http://localhost:3000/user/5dd3cfc8b6eb421d546751e6
+###
+DELETE http://localhost:3000/user/5dc915119f007d27782d1bfa
+###
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+    "name": "33333",
+    "email": "16521714@gm.uit.edu.vn",
+    "password": "wwww"
+}
+
+### login
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email": "fkenlyn@gmail.com",
+    "password": "abc123"
+}
+###profile
+GET http://localhost:3000/user/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5NzQ4N30.sCtN5362wkRfj9sL75xh18f3bXGCIoviAJ3jRiyU0Ao
+
+###logout
+POST http://localhost:3000/user/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5NzQ4N30.sCtN5362wkRfj9sL75xh18f3bXGCIoviAJ3jRiyU0Ao
+
+###logoutall
+POST http://localhost:3000/user/logoutall
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5ODIwOX0.QOSff3jZXb0PPnUpMXFIYKv-4Qq424hYCVyW1l55KzY
+
+###
+
+PATCH  http://localhost:3000/user/5dc90f07eec44d19b019b91
+Content-Type: application/json
+
+{
+    "name": "abcde",
+    "email": "abcde@gmail.com"
+}
+###
+POST  http://localhost:3000/product/add
+Content-Type: application/json
+
+{
+    "name": "produc55",
+    "desc": "adav dasd adafasdf",
+    "price": "1200",
+    "rating": "8",
+    "imgurl": "./img/test.jpg"
+}
+###
+
+GET http://localhost:3000/product
+Content-Type: application/json
+###
+GET http://localhost:3000/product/5dd41961d7b26021689b821b
+Content-Type: application/json
+###
+PATCH  http://localhost:3000/product/5dd41961d7b26021689b821b
+Content-Type: application/json
+
+{
+    "desc": "123 adad adasda adaas"
+}
+###
+DELETE  http://localhost:3000/product/5dd420b39420db2280e327df
+Content-Type: application/json
