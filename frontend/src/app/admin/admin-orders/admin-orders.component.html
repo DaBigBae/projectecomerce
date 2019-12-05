@@ -1,0 +1,63 @@
+
+        <div class="row">
+            <div class="col col-3" >
+            <ul class="list-group">
+                <div class="headline">
+                    <span class="far fa-user-circle" style="margin-top: 10px;"></span><p>Admin </p> 
+                </div>
+                <li class="list-group-item cl" routerLink="/admin/users">Users</li>
+                <li class="list-group-item cl" routerLink="/admin/products">Products</li>
+                <li class="list-group-item" style="font-weight: 700">Orders</li>
+                <li class="list-group-item cl" routerLink="/admin/products/new">Product form</li>
+             </ul></div>
+            <div class="col col-9">
+                <!--
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Order Number</th>
+                            <th style="width: 50%;">Summary</th>
+                            <th style="width: 15%;">Date</th>
+                            <th style="width: 10%;">Price</th>
+                            <th style="width: 10%;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 
+                                <a href="">FO-DR-JP-TI2004</a>
+                                </td>
+                            <td>FO-DR-JP-TI2004</td>
+                            <td>FO, DR</td>
+                            <td>$3.99</td>
+                            <td style="font-size: 16px;">
+                                <span routerLink="/admin/products" class="fas fa-check" style="color: yellowgreen; padding-left: 5px;"> </span>
+                                <span data-toggle="modal" data-target="#myModal" class="fas fa-times" style="color: #e73939; padding-left: 15px;"> </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+-->
+                    <order-card></order-card>
+                    <order-card></order-card>
+            </div>
+        </div>    
+        
+        <div class="row" style="height: 200px;">
+            <div class="col-3"></div>
+            <div class="col-9"></div>
+        </div>
+    
+
+    <div id="myModal" class="modal">
+        <div class="popup">
+            <h6 style="text-align: center; margin-top: 20px; margin-bottom: 20px;letter-spacing: 1px; font-family: 'Noto Sans', sans-serif;">
+                This order will be canceled!</h6>
+            <div class="close"  data-dismiss="modal"><i class="fas fa-times"></i></div>
+            <div class="content">
+               <button onclick="cancel()" data-dismiss="modal" class="btnn">CONFIRM</button>
+            </div>
+        </div>
+    </div>
+
+    

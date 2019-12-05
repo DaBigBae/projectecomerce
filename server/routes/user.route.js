@@ -45,16 +45,18 @@ userRoute.post('/signup', async (req, res)=>{
                 if(err){
                     req.status(500).send({msg: err.message})
                 }
-                const transporter = nodeMailer.createTransport({service: 'gmail', auth: {user: process.env.VERIFY_EMAIL, pass: process.env.VERIFY_PASS}})
-                const mailOptions = { from: 'robot', to: user.email, subject: 'Account Verification', html: 'click: \nhttp:\/\/' + '137.135.125.91:3000' + '\/verify\/' + tokenv.token + '.\n'}
-                transporter.sendMail(mailOptions, (err)=>{
-                    if(err){
-                        return res.send({msg: err.message})
-                    }
-                    res.status(200).json({msg: `A Verification email has been send to ` + user.email + `.`})
-                })
+                // const transporter = nodeMailer.createTransport({service: 'gmail', auth: {user: process.env.VERIFY_EMAIL, pass: process.env.VERIFY_PASS}})
+                // const mailOptions = { from: 'robot', to: user.email, subject: 'Account Verification', html: 'click: \nhttp:\/\/' + '137.135.125.91:3000' + '\/verify\/' + tokenv.token + '\n'}
+                // transporter.sendMail(mailOptions, (err)=>{
+                //     if(err){
+                //         return res.send({msg: err.message})
+                //     }
+                //     res.status(200).json({msg: `A Verification email has been send to ` + user.email + `.`})
+                // })
+                console.log(tokenv.token)
             })
         })
+        res.send()
     } catch (err) {
         res.status(400).json({message: err.message})
     }
@@ -68,9 +70,9 @@ userRoute.post('/login', async (req, res)=>{
         if(!user){
             return res.status(401).json({err: 'Login failed! Check authentication credentials'})
         }
-        // if(!user.isVerified){
-        //     return res.status(401).send({type: 'not-verified', message: 'You account not have been verified!!!'})
-        // }
+        if(!user.isVerified){
+            return res.status(401).send({type: 'not-verified', message: 'You account not have been verified!!!'})
+        }
         const token = await user.generateAuthToken()
         res.json({user, token})
     } catch (err) {

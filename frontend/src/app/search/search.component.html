@@ -1,0 +1,81 @@
+<!--<div class="container">
+    <div class="sub-container"> 
+        <div class="flex-container">
+    
+            
+            <span class="fa fa-search"></span>
+            <input type="name" placeholder="Search">
+        
+    </div>
+</div>
+<div class="sub-container"> 
+        <div class="flex-container">
+    
+            
+          <span class="fa fa-heart"></span>
+        
+    </div>
+</div>
+   
+</div>-->
+<!-- 
+    search by name
+
+    primary type
+    secondary type
+
+    price slider
+
+    mega evolution
+    reset
+-->
+
+<div class="container" id="navbar">
+    <div class="box-1">
+        <div class="sub">
+                <div class="flex-container f1">
+                    <span class="fa fa-search"></span>
+                    <input type="search" placeholder="Search">
+                </div>
+        </div>
+    </div>
+    <div class="box-2">
+        <div class="sub">
+                <div class="flex-container f2">
+                        <span style="margin-left: 5px; margin-right: 3px;">Type</span>
+                        <type></type> <type></type>
+                      </div>
+        </div>
+    </div>
+    <div class="box-3">
+        <div class="sub">
+                <div class="flex-container f3" style="font-weight: 600; ">
+                    <div class="cuc">
+                    <p class="tooltiptext">Price Range</p>
+                   <span>$0 - $</span>
+                   <span style="color: #d63939;" id="value">9</span>
+                   <span style="margin-right: 12px">.00</span>
+                </div>
+                <input type="range" class="slider" min="0" max="8" value="8" step="1" id="slider">
+
+                <script type="text/javascript">
+                        var slider=document.getElementById("slider");
+                        var val=document.getElementById("value");
+                        val.innerHTML=slide.value;
+                        slider.oninput=function(){
+                            val.innerHTML=this.value;
+                        }
+                   </script>
+                   </div>
+        </div>
+    </div>
+    <div class="box-4">
+        <div class="sub">
+                <div class="flex-container f4">
+                        <span class="fa fa-star"></span>
+                        <span style="margin-left: -10px; opacity: 0.3;">|</span>
+                        <span class="fa fa-refresh"></span>
+                    </div>
+        </div>
+    </div>
+</div>

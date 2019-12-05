@@ -1,0 +1,113 @@
+
+    <div class="row">
+        <div class="col col-3">
+            <ul class="list-group">
+                <div class="headline">
+                    <span class="far fa-user-circle" style="margin-top: 10px;"></span>
+                    <p>Admin </p>
+                </div>
+            <li class="list-group-item cl" routerLink="/admin/users">Users</li>
+            <li class="list-group-item cl" routerLink="/admin/products">Products</li>
+            <li class="list-group-item cl" routerLink="/admin/orders">Orders</li>
+            <li class="list-group-item" style="font-weight: 700">Product form</li>
+         </ul>
+        </div>
+        <div class="col col-9">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-6">
+                        <form [formGroup]="form">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input id="title" type="text" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input id="price" type="text" class="form-control">
+                            </div>
+                            <div class="type">    
+                                <div class="form-group fl-fo">
+                                <label for="category">Type 1</label>
+                                <select id="category" class="form-control">
+                                        <option value="Type1">Type 1</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="Fire">Fire</option>
+                                    <option value="Water">Water</option>
+                                    <option value="Grass">Grass</option>
+                                    <option value="Electric">Electric</option>
+                                    <option value="Ice">Ice</option>
+                                    <option value="Fighting">Fighting</option>
+                                    <option value="Poison">Poison</option>
+                                    <option value="Ground">Ground</option>
+                                    <option value="Flying">Flying</option>
+                                    <option value="Psychic">Psychic</option>
+                                    <option value="Bug">Bug</option>
+                                    <option value="Rock">Rock</option>
+                                    <option value="Ghost">Ghost</option>
+                                    <option value="Dragon">Dragon</option>
+                                    <option value="Dark">Dark</option>
+                                    <option value="Steel">Steel</option>
+                                    <option value="Fairy">Fairy</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group fl-fo">
+                                    <label for="category">Type 2</label>
+                                    <select id="category" class="form-control">
+                                            <option value="Type2">Type 2</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Fire">Fire</option>
+                                            <option value="Water">Water</option>
+                                            <option value="Grass">Grass</option>
+                                            <option value="Electric">Electric</option>
+                                            <option value="Ice">Ice</option>
+                                            <option value="Fighting">Fighting</option>
+                                            <option value="Poison">Poison</option>
+                                            <option value="Ground">Ground</option>
+                                            <option value="Flying">Flying</option>
+                                            <option value="Psychic">Psychic</option>
+                                            <option value="Bug">Bug</option>
+                                            <option value="Rock">Rock</option>
+                                            <option value="Ghost">Ghost</option>
+                                            <option value="Dragon">Dragon</option>
+                                            <option value="Dark">Dark</option>
+                                            <option value="Steel">Steel</option>
+                                            <option value="Fairy">Fairy</option>
+                                    </select>
+                                </div>
+                        
+                        </div>
+                        
+
+                            <div class="form-group">
+                                <label for="imageURL">Image</label>
+                                <input id="imageURL" placeholder="Type image URL here or import from your computer" type="text" class="form-control">
+                            </div>
+
+                            <input type="reset" class="btn res" value="Reset">
+                        </form>
+
+                        <div class="besa">
+                            <button class="btn clear">Delete</button>
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col-5">
+                        
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 200px">
+        <div class="col-3"></div>
+        <div class="col-9"></div>
+    </div>

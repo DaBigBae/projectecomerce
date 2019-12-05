@@ -1,0 +1,118 @@
+
+.card {
+    position: relative;
+    width: 12rem;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    overflow: hidden;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.old-price {
+    font-weight: 500;
+    color : #b3b3b3;
+    font-size: 18px;
+    margin-top: -10px;
+    margin-left: 8px;
+    text-decoration-line: line-through;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-left: -10px;
+}
+
+.card-name {
+    color : #555555;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.card-price {
+    font-weight: 700;
+    color : #e73939;
+    font-size: 20px;
+    margin-top: -8px;
+
+}
+
+.card-body {
+padding-top: 0;
+}
+
+.card-img-top {
+    position: relative;
+}
+
+.img {
+    background: whitesmoke;
+}
+
+.content {
+    position: absolute;
+    color:#242424;
+    right:-30px;
+    bottom: 70px;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.fas:after {
+    content: "ADD TO CART";
+    display: inline-block;
+    background: #555555;
+    position: absolute;
+    margin-left: -26px;
+    margin-top: -40px;
+    border-radius: 5px;
+    opacity: 0;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px ;
+    text-align: center;
+    padding: 5px;
+    transition: 0.2s ease;
+}
+
+.card:hover .content {
+    right : 12px;
+}
+
+.fas:hover {
+    color: #e73939;
+}
+
+.fas:hover:after {
+    opacity: 0.6;
+    margin-top: -45px;
+}
+
+.fa-star:hover {
+    color: #faea0f;
+}
+
+.card:hover{
+    box-shadow: 0 10px 10px 0 rgb(240, 240, 240);
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

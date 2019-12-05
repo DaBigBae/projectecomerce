@@ -1,0 +1,157 @@
+.container {
+    background: white;
+    padding: 20px;
+}
+.col {
+    padding: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+}
+
+
+.headline {
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Share Tech Mono', monospace;
+    background: #242424;
+    color: white;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s ease;
+    border: none;
+}
+
+.btn:after {
+    font-size: 36px;
+        width: 40px;
+        height: 40px;
+        content: "+";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: yellowgreen;
+        color: #242424;
+        border-radius: 100px;
+        position: absolute;
+        margin-left: 54px;
+        transition: 0.2s ease;
+    }
+
+.btn:hover {
+    padding-right: 50px;
+}
+
+.btn:hover:after {
+    margin-left: 45px;
+    transform: rotate(180deg);
+}
+
+.clear:after {
+    content: "-";
+    background: #d93a3a;
+    color: #242424;
+    border-radius: 100px;
+    margin-left: 80px;
+}
+
+.clear:hover:after {
+    margin-left: 62px;
+}
+
+.res {
+    background: #e0e0e0;
+    color: #242424;
+    margin-bottom: 10px;
+}
+
+.res:hover 
+{
+    padding-right: 20px;
+    background: #242424;
+    color:white;
+}
+
+.list-group-item {
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding:15px;
+    font-size: 17px;
+    position: relative;
+    background: transparent;
+}
+
+.cl:hover {
+    cursor: pointer;
+    transform: translateX(5px);
+    font-weight: 700;
+}
+
+.cl {
+    transition: 0.1s;
+}
+
+input::placeholder {
+    font-size: small;
+}
+
+label {
+    font-size: small;
+}
+
+.type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.col-3 {
+    border-right: 1px solid #e0e0e0;
+    font-family: 'Share Tech Mono', monospace;        
+    background: #f7f7f7;
+}
+
+.fl-fo {
+    width: 45%;
+}
+
+.form-control {
+    border: 1px solid #e0e0e0;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: small;
+    height: 45px;
+}
+
+.form-control:focus {
+    border: 1px solid #242424;
+    box-shadow: none;
+}
+
+.besa {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sa {
+    margin-bottom: 0;
+}

@@ -1,0 +1,58 @@
+
+<div class="container">
+        <div class="row">
+            <div class="col col-3" >
+            <ul class="list-group">
+                <div class="headline">
+                    <span class="fas fa-user-circle fa-2x" style="margin-left: 10px;"></span>
+                    <p id=username >Username </p> 
+                </div>
+                <li class="list-group-item" routerLink="/my-order">orders  <span class="far fa-file fu"></span></li>
+               <li class="list-group-item" routerLink="/admin/orders">my info  <span class="fas fa-user-edit fu"></span></li>
+            </ul></div>
+            <div class="col col-9">
+                    <div class="besa">
+                    <input type="search" class="form-control" placeholder=" SEARCH BY ORDER NUMBER"></div>
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Order Number</th>
+                            <th style="width: 50%;">Summary</th>
+                            <th style="width: 15%;">Date</th>
+                            <th style="width: 10%;">Price</th>
+                            <th style="width: 10%;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FO-DR-JP-TI2004</td>
+                            <td>FO-DR-JP-TI2004</td>
+                            <td>FO, DR</td>
+                            <td>$3.99</td>
+                            <td>
+                                <span data-toggle="modal" data-target="#myModal"  class="fas fa-times" style="color: #e73939; padding-left: 15px; font-size: 16px;"> </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </div>    
+        
+        <div class="row" style="height: 200px;">
+            <div class="col-3"></div>
+            <div class="col-9"></div>
+        </div>
+    
+    </div>
+
+
+    <div id="myModal" class="modal">
+            <div class="popup">
+                <h5 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                    This order will be canceled!</h5>
+                <a class="close"  data-dismiss="modal"><i class="fas fa-times"></i></a>
+                <div class="content">
+                   <button routerLink="/cancel-order" data-dismiss="modal" class="btnn">CONFIRM</button>
+                </div>
+            </div>
+        </div>

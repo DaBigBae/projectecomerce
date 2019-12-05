@@ -32,7 +32,7 @@ function foo(image, fn){
         form: {
             image: image
         }
-    }, function (err, httpResponse, body) {
+    }, function (err, body) {
         if (err) {
             return res.send({
                 message: `upload failed: ` + err
@@ -42,16 +42,12 @@ function foo(image, fn){
     })
 }
 
-productSchema.pre('save', function (next) {
+productSchema.pre('save', async function (next) {
     const img = new Buffer.from(fs.readFileSync(this.imgurl)).toString('base64')
-    foo(img, function(url){
+    await foo(img, function(url){
         console.log(url)
-        this.imgurl = url
-    })
-    setTimeout(()=>{
-        next()
-    },5000)
-    
+        productSchema.imgurl = url
+    }) 
 })
 
 const Product = mongoose.model('Product', productSchema)

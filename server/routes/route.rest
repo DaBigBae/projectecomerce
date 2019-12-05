@@ -10,22 +10,26 @@ Content-Type: application/json
 
 {
     "name": "33333",
-    "email": "16521714@gm.uit.edu.vn",
+    "email": "usgffjhas@ahsf.cas",
     "password": "wwww"
 }
+
+### verify
+POST http://localhost:3000/verify/fd55928ef8041798b48d2811c024c5ce
+Content-Type: application/json
 
 ### login
 POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "fkenlyn@gmail.com",
-    "password": "abc123"
+    "email": "usgffjhas@ahsf.cas",
+    "password": "wwww"
 }
 ###profile
 GET http://localhost:3000/user/profile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5NzQ4N30.sCtN5362wkRfj9sL75xh18f3bXGCIoviAJ3jRiyU0Ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
 ###logout
 POST http://localhost:3000/user/logout
@@ -35,7 +39,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZ
 ###logoutall
 POST http://localhost:3000/user/logoutall
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5ODIwOX0.QOSff3jZXb0PPnUpMXFIYKv-4Qq424hYCVyW1l55KzY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
 ###
 
@@ -51,7 +55,7 @@ POST  http://localhost:3000/product/add
 Content-Type: application/json
 
 {
-    "name": "produc55",
+    "name": "producsas5",
     "desc": "adav dasd adafasdf",
     "price": "1200",
     "rating": "8",

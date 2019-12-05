@@ -1,0 +1,86 @@
+<div class="container">
+<p> <a routerLink="/shopping-cart" style="cursor: pointer; text-decoration: none; color: black;">Cart </a> <span>> Information </span> <span style="opacity: 0;">> Shipping</span></p>
+        
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-6">
+                  <h3 style="font-weight: bold;"> Ship to</h3>
+                <form [formGroup]="form">
+        
+                        <div class="form-group">
+                            <label >Full Name</label>
+                            <input formControlName="name" type="name" class="form-control">
+                        
+                        </div>        
+                        
+                        <div class="form-group">
+                                <label >Phone Number</label>
+                                <input formControlName="phone" type="tel" class="form-control">
+                    
+                        </div> 
+                    
+                        <div class="form-group">
+                            <label >Address</label>
+                            <input formControlName="address" 
+                            type="text" class="form-control">
+                    
+                        </div> 
+                    
+                        <label >Payment Methods</label>
+                        <div class="card" style="border: none;">
+                            <div class="cut">
+                                <div class="cuc cuc1" >
+                                    <span class="fa fa-credit-card fa-2x"></span>Credit/Debit Card
+                                </div>
+                                <div class="cuc cuc2" >
+                                        <span class="fa fa-money fa-2x"></span>Cash on Delivery
+                                    </div>
+                            </div>
+                        </div>
+
+                        
+                    </form></div>
+                    <div class="col">
+                    </div>
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Order Summary</h4>
+                        <p class="Card-text">You have 1 item in your cart.</p>
+
+                    </div>
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                1 x Bulbasaur
+                            <div class="float-right">
+                                $3.99
+                            </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                        Subtotal
+                                    <div class="float-right" style=" font-weight: bold">
+                                        $3.99
+                                    </div>
+                                    </li>
+                                    
+                            <li class="list-group-item" style="opacity: .8; font-size: 14px; border-top: none; margin-top: -18px;" >
+                                    Shipping fee
+                                    <div class="float-right" >
+                                        $1.00
+                                    </div>
+                        <li class="list-group-item" style=" font-weight: bold;font-size: 17px;">
+                            Total
+                            <div class="float-right" style="color: #d93a3a; font-size: 23px;">
+                                $4.99
+                            </div>
+                        </li>
+                        </ul>
+                </div>
+            </div>
+        </div>      
+        <div class="row no-gutters r">
+            <button routerLink="/shopping-cart" class="btn">Edit Cart</button>
+            <button routerLink="/order-success" class="btn btn-back">Place Order</button>
+        </div>
+</div>
+                  
