@@ -49,12 +49,11 @@
 .ball {
     display: flex;
     flex-direction: column;
-    width: 80px;
+    width: 100px;
     height:60px;
     padding-top: 14px;
     position: relative;
 }
-
 
 .ball:hover .top{
 transform: translateX(10px)

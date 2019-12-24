@@ -1,145 +1,281 @@
+<div class="row" style="overflow: hidden;">
 
-<div class="container-fluid">
-    <div class="row" >
-        <div class="col col-3" style="border-right: 1px solid #e0e0e0;">
-              <!--static category--> 
-              <div class="category sticky-top">   
-                   <ul class="list-group ">
-                         
-                                <!-- <div class="flex-container f1" id="searchbox"> 
-                                       <span class="fa fa-search" style="margin-left: 3px; margin-right: 0px;"></span>
-                                        <input type="search" placeholder="Search by name">
-                                    </div>-->
-                                
-                        <li class="list-group-item cat cat0">
-                                All Types
-                        </li>
-                        <li class="hey">  
-                        <ul class="list-group" style="border-right: 1px solid #e0e0e0;flex:1">
-                        <li class="list-group-item cat cat1">
-                               Normal
-                        </li>
-                        <li class="list-group-item cat cat2">
-                               Fire
-                        </li>
+  <div class="column" style="width: 100%; display: flex; flex-direction: column;align-items: center">
 
-                        <li class="list-group-item cat cat3">
-                                Water
-                        </li>
+    <!-- ảnh bìa -->
+    <div class=" co headimage">
+      <img src="https://i.imgur.com/rItMYD3.png" class="img" alt="" style="margin-bottom:50px">
+    </div>
 
-                        <li class="list-group-item cat cat4">
-                                Grass
-                        </li>
-                        <li class="list-group-item cat cat5">
-                                Electric
-                        </li>
-                        <li class="list-group-item cat cat6">
-                               Ice
-                        </li>
-                        <li class="list-group-item cat cat7">
-                                Fighting
-                        </li>
-                        <li class="list-group-item cat cat8">
-                                Poison
-                        </li>
-                        <li class="list-group-item cat cat9">
-                                Ground
-                        </li>
+    <!-- chỗ chứa banner quảng cáo giảm 50% và carousel cho mấy món christmas -->
+    <div class="row" style="width: 100%;">
+      <div class="column mainp"
+        style="background: #d93a3a; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- banner giảm 50% -->
+        <div class=" coco prom">
+          <img src="https://i.imgur.com/ZfbWxMC.png" class="img" alt="" style="width: 1250px;">
+        </div>
+        <!--christmas carousel-->
+        <div class=" co prod ">
 
-                        </ul>
-                        <ul class="list-group" style="flex:1">
-                        <li class="list-group-item cat cat10">
-                                Flying
-                        </li>
-                        <li class="list-group-item cat cat11">
-                                Psychic
-                        </li>
-                        <li class="list-group-item cat cat12">
-                                Bug
-                        </li>
-                        <li class="list-group-item cat cat13">
-                                Rock
-                        </li>
-                        <li class="list-group-item cat cat14">
-                               Ghost
-                        </li>
-                        <li class="list-group-item cat cat15">
-                                Dragon
-                        </li>
-                        <li class="list-group-item cat cat16">
-                                Dark
-                        </li>
-                        <li class="list-group-item cat cat17">
-                                Steel
-                        </li>
-                        <li class="list-group-item cat cat18" onclick="this.Element=active">
-                                Fairy
-                        </li>
-                        </ul>
-                </li>
-                      
-                
-                                </ul> 
-                </div> 
+          <h4 class="h-text"> CHRISTMAS DEALS </h4>
 
+          <div class="product-view">
+
+            <div class="container">
+              <div id="CEI" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators daucham">
+                  <li data-target="#CEI" data-slide-to="0" class="active"></li>
+                  <li data-target="#CEI" data-slide-to="1"></li>
+                  <li data-target="#CEI" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+
+                    <div class="product-row-view">
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+
+                    <div class="product-row-view">
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+
+                    <div class="product-row-view">
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                      <product-card></product-card>
+                    </div>
+                  </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#CEI" role="button" data-slide="prev"
+                  style="opacity: 1; margin-left: -110px; transition: 0.2s;">
+                  <span class="prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#CEI" role="button" data-slide="next"
+                  style="opacity: 1; margin-right: -110px; transition: 0.2s;">
+                  <span class="next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+            </div>
+            <!-- button xem them -->
+            <div class="con">
+              <button class="btn">SEE MORE</button>
+            </div>
+
+          </div>
         </div>
 
-        <div class="col col-9">
-            <div class="headline">
-                <p>All Types ></p>&nbsp;
-                <p>Grass ></p>&nbsp;
-               <!--<p>Poision</p>--> 
-            </div>
-            <div class="flex-box" id="products">
-            <div class="row">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
-
-            <div class="row">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
-
-            <div class="row">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
-
-            <div class="row">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
-
-            <div class="row">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
-
-            <div class="row">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
-        </div></div>
+      </div>
     </div>
-    <div class="row" >
-                <div class="col col-3" style="border-right: 1px solid #e0e0e0; height: 200px;">
-                </div>
-                <div class="col col-9">
-                </div>
 
 
-        
+    <!-- cac the loai product -->
+    <div class=" co c-type" style="margin-top:100px">
+
+      <h4 class="h-text"> SHOP BY CATEGORY </h4>
+
+      <div class="cucu">
+        <span class="shop-now" routerLink="/category"> SHOP NOW </span>
+      </div>
+
+      <div class="type-cat">
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-circle"></i>
+          <p>Normal</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-fire"></i>
+          <p>Fire</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-leaf"></i>
+          <p>Grass</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-tint"></i>
+          <p>Water</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-bolt"></i>
+          <p>Electric</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-dragon"></i>
+          <p>Dragon</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-ghost"></i>
+          <p>Ghost</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-moon"></i>
+          <p>Dark</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-bug"></i>
+          <p>Bug</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-feather-alt"></i>
+          <p>Flying</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-dice-d6"></i>
+          <p>Rock</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-snowflake"></i>
+          <p>Ice</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-spa"></i>
+          <p>Fairy</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-gear"></i>
+          <p>Steel</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-bullseye"></i>
+          <p>Psychic</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-skull"></i>
+          <p>Poison</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-fist-raised"></i>
+          <p>Fighting</p>
+        </button>
+        <button routerLink="/category" class="btnn">
+          <i class="fas fa-mountain"></i>
+          <p>Ground</p>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- san pham nhieu luot mua -->
+    <div class=" co prod ">
+
+      <h4 class="h-text"> BEST SELLERs </h4>
+
+      <div class="product-view">
+
+        <div class="container">
+          <div id="CEI1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators daucham">
+              <li data-target="#CEI" data-slide-to="0" class="active"></li>
+              <li data-target="#CEI" data-slide-to="1"></li>
+              <li data-target="#CEI" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+
+                <div class="product-row-view">
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                </div>
+              </div>
+              <div class="carousel-item">
+
+                <div class="product-row-view">
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+
+                <div class="product-row-view">
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                  <product-card></product-card>
+                </div>
+              </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#CEI1" role="button" data-slide="prev"
+              style="opacity: 1; margin-left: -110px; transition: 0.2s;">
+              <span class="prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#CEI1" role="button" data-slide="next"
+              style="opacity: 1; margin-right: -110px; transition: 0.2s;">
+              <span class="next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="con">
+          <button class="btn">SEE MORE</button>
+        </div>
+      </div>
+    </div>
+
+<div class="row allprod">
+  <h4 class="h-text"> ALL PRODUCTs </h4>
+
+  <div class="cucu" style="margin-bottom: 10px;">
+    <span class="shop-now" routerLink="/category"> VIEW ALL </span>
+  </div>
+
+    <div class="all-product-view">
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+<product-card></product-card>
+    </div>
+</div>
+
+    <div class="row signup-sign">
+      <div class="cont">
+        <h2 class="keugoi">SIGN-UP DI MOI NGUOI OI!</h2>
+        <button class="bt"> SIGN-UP</button>
+      </div>
+    </div>
+
+  </div>
 </div>

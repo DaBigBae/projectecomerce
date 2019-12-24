@@ -1,0 +1,207 @@
+
+.col-2 {
+border-right: 1px solid #e0e0e0;
+}
+
+.headline {
+  padding-left: 50px;
+    font-size: 15px;
+    box-shadow: -1px 0 0 0 #242424;
+    color: #242424;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.headline:after {
+  position: absolute;
+  height: 35px;
+  display: block;
+  width: 35px;
+  background: #7bc856;
+  content: " ";
+  left: 0;
+}
+
+.conbo {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+.carousel{
+  border: #242424;
+}
+
+.prod {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col {
+  padding-bottom: 200px;
+}
+
+.carousel-item {
+  transition: 0.5s;
+}
+
+.prev-icon {
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid #242424;
+  border-left: 3px solid #242424;
+  transform: rotate(-45deg);
+}
+
+.next-icon {
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid #242424;
+  border-left: 3px solid #242424;
+  transform: rotate(135deg);
+}
+
+.carousel-indicators li {
+  transition: 0.2s;
+  background: #242424;
+  border:  none;
+  opacity: 1;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.carousel-indicators .active {
+  width: 30px;
+  background: #d93a3a;
+}
+
+
+.r-in {
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+.image {
+  margin-bottom: 20px;
+}
+
+.headtype {
+  color: #242424;
+  text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+.container-fluid {
+  width: 1250px;
+
+}
+
+.row {
+    width: 100%;
+}
+
+.btn {
+    border-radius: 0;
+    outline: none;
+    font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: #d93a3a;
+    height: 50px;
+  width: 160px;
+  margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn:after{
+    content: "ADD TO CART";
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    left: 50%;
+    margin-left: -47px;
+    top: 50%;
+    margin-top: -12px;
+    transition: 0.2s;
+  }
+  
+  .btn::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f217";
+    font-size: x-large;
+    position: absolute;
+    color: white;
+    left: 50%;
+    margin-left: -12px;
+    top: 50%;
+    margin-top: 35px;
+    transition: 0.2s;
+  }
+  
+  .btn:hover:after {
+    margin-top: -50px;
+  }
+  
+  .btn:hover::before {
+    margin-top: -18px;
+  }
+
+  
+.col-2 {
+  border-right: 1px solid #e0e0e0;
+  padding-left: 30px;
+  }
+
+  .prod {
+    display: grid;
+grid-template-columns: auto auto auto auto auto;
+    padding-left: 20px;
+    margin-top: -10px;
+    padding-bottom: 200px;
+  }
+  
+  .col {
+    padding-bottom: 200px;
+  }
+
+  .r-in {
+    padding-left: 50px;
+    padding-bottom: 20px;
+  }
+  
+  .image {
+    margin-bottom: 50px;
+  }
+
+  .container-fluid {
+    width: 100%;
+    max-width: 1400px;
+  padding: 0;
+  }
+  
+  .row {
+      width: 100%;
+  }
+
+.cat-name {
+font-weight: bolder;
+padding-left: 30px;
+margin-top: -20px;
+}
+
+.remaining-products {
+font-size: 15px;
+font-weight: 500;
+color: #888888;
+text-transform: uppercase;
+}
+  
