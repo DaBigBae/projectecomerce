@@ -13,18 +13,26 @@
             </div>
         </div>
 
+
+
         <div class="col col-10">
             <h2 class="cat-name">GRASS <span class="remaining-products">(23 products)</span> </h2> 
-            <div class="prod">
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-                <product-card></product-card>
-            </div>
+         <div class="prod">
+		<ul>
+			<li *ngFor="let item of collection | paginate: { itemsPerPage: 20, currentPage: p }"><product-card></product-card></li>
+		</ul>
+
+        <pagination-controls class="d-flex justify-content-end my-pagination" 
+        (pageChange)="p = $event"
+        maxSize="9"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      previousLabel="PREVIOUS"
+                      nextLabel="NEXT"
+                     style="padding-right: 20px;"
+        ></pagination-controls>
+</div>
         </div>
     </div>
 </div>

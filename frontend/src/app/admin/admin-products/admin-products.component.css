@@ -14,6 +14,43 @@
     padding-top: 10px;
 }
 
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #242424; 
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+background-color: none;
+background: none;
+text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-next a{
+  text-decoration: none;
+  }
+
+  .my-pagination /deep/ .ngx-pagination .pagination-next a:hover{
+    background-color: #242424;
+    color: white;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-previous a{
+      text-decoration: none;
+      }
+    
+      .my-pagination /deep/ .ngx-pagination .pagination-previous a:hover{
+        background-color: #242424;
+        color: white;
+        }
+
+
+.my-pagination /deep/ .ngx-pagination a:hover {
+background-color: white;
+}
+  
+.my-pagination {
+  font-size: 13px;
+}
+
 .col-2 {
     padding-left: 0;
     padding-right: 0;
