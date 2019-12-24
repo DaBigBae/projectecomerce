@@ -44,6 +44,7 @@ button{
     flex-direction: row;
     align-items: flex-start;
     padding-left: 0;
+    width: 100%;
 }
 
 .quanbtn:focus {

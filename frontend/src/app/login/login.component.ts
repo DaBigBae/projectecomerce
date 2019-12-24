@@ -8,9 +8,21 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   form = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    email: new FormControl('' ,[
+      Validators.required
+    ]),
+    password: new FormControl('' ,[
+       Validators.required
+    ])
   });
+
+  get email(){
+    return this.form.get('email');
+  }
+  
+  get password(){
+    return this.form.get('password');
+  }
 
   onSubmit(){
     console.warn(this.form.value);

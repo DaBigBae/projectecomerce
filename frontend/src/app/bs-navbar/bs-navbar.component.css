@@ -1,13 +1,51 @@
-.dropdown-toggle{
+.fa-user {
+    font-size: 20px;
+}
+
+.drod-togg:after { 
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    position: absolute;
+    color: #d93a3a;
+    font-weight: 900;
+    font-size: 13px;
+    right: -10px;
+}
+
+.drod-togg {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.firstname {
+    font-size: 14px;
+    margin-right: 5px;
 }
 
 .navbar {
-    border: 0;
-    border-bottom: 1px solid #e0e0e0;
+        border: 0;
     border-radius: 0;
     display: flex;
-    flex-direction: row-reverse;    
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-link {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.row {
+    width: 1250px;
+    position: relative;
+}
+
+.dropdown-toggle{
+    cursor: pointer;
 }
 
 .navbar-collapse {
@@ -15,10 +53,78 @@
     flex-direction: row-reverse;
 }
 
+
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 0;
+    height: 100%;
+    justify-content:space-between;
+    padding-left: 0px;
+    max-width: max-content;
+    right: 0;
+    position: absolute;
+}
+
+
+input {
+    border-radius: 0 ;
+    border: none;
+    margin-left: 20px;
+    background: transparent;
+    width: 0;
+    transition: 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+input:focus {
+    width: 200px;
+    box-shadow: none;
+    outline: none;
+    border-bottom: 1px solid #242424;
+}
+
+.cuc:hover input{
+    width: 200px;
+    border-bottom: 1px solid #242424;
+}
+
+.cuc {
+    position: relative;
+    border-radius: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: 0.2s;
+    right: 0;
+}
+
+.cuc:after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    content: "\f002";
+    font-size: 18px;
+    font-weight: 900;
+    z-index: -1;
+    left: 14px;
+    transition: 0.2s;
+}
+
 .dropdown-item:focus {
     background: #ffe033;
     color: #242424;
 }
+
 
 .dropdown-item:hover {
 font-weight: 600;
@@ -38,31 +144,21 @@ a {
     color : rgb(27, 27, 27);
 }
 
-input {
-    border-radius: 0 ;
-    width:400px;
-    border: none;
-}
-
-a .nav-link {
-    color: black;
-    font-family: 'Share Tech Mono', monospace;
-}
-
 .cart:hover + .badge {
     transform: translateX(-6px)  translateY(2px);
-    box-shadow: 0 0 0 2px white;
+
 }
 
 .badge:hover {
     transform: translateX(-6px)  translateY(2px);
-    box-shadow: 0 0 0 2px white;
+
 }
 
 .badge {
     transition: 0.2s;
     transform: translateY(2px);
 }
+
 
 .logout:hover {
     background: white;
@@ -78,12 +174,30 @@ a .nav-link {
     transition: 0.2s;
 }
 
+.cucu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logout:hover:after {
     margin-left: 10px;
     opacity: 1;
 }
 
-logo:focus{
-box-shadow: none;
-outline: none;
+logo:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.dropdown-menu{
+    border: 1px solid #242424;
+    margin-top: 10px;
+}
+
+.bars {
+    width: 15px;
+    height: 3px;
+    background: #242424;
 }

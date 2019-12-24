@@ -1,0 +1,49 @@
+
+.col-2 {
+    border-right: 1px solid #e0e0e0;
+    padding-left: 30px;
+    }
+
+    .prod {
+      display: grid;
+grid-template-columns: auto auto auto auto auto;
+      padding-left: 20px;
+      margin-top: -10px;
+      padding-bottom: 200px;
+    }
+    
+    .col {
+      padding-bottom: 200px;
+    }
+
+    .r-in {
+      padding-left: 50px;
+      padding-bottom: 20px;
+    }
+    
+    .image {
+      margin-bottom: 50px;
+    }
+
+    .container-fluid {
+      width: 100%;
+      max-width: 1400px;
+    padding: 0;
+    }
+    
+    .row {
+        width: 100%;
+    }
+
+.cat-name {
+  font-weight: bolder;
+  padding-left: 30px;
+}
+
+.remaining-products {
+  font-size: 15px;
+  font-weight: 500;
+  color: #888888;
+  text-transform: uppercase;
+}
+    

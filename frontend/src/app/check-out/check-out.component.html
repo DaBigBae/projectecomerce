@@ -1,6 +1,10 @@
 <div class="container">
-<p> <a routerLink="/shopping-cart" style="cursor: pointer; text-decoration: none; color: black;">Cart </a> <span>> Information </span> <span style="opacity: 0;">> Shipping</span></p>
-        
+    <ul class="breadcrumb">
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Information</a></li>
+        <li>Payment</li>
+      </ul>
+           
         <div class="row" style="padding-top: 10px;">
             <div class="col-6">
                   <h3 style="font-weight: bold;"> Ship to</h3>
@@ -24,19 +28,23 @@
                             type="text" class="form-control">
                     
                         </div> 
-                    
+                    <div class="form-group">
                         <label >Payment Methods</label>
-                        <div class="card" style="border: none;">
+                       
                             <div class="cut">
-                                <div class="cuc cuc1" >
-                                    <span class="fa fa-credit-card fa-2x"></span>Credit/Debit Card
-                                </div>
-                                <div class="cuc cuc2" >
-                                        <span class="fa fa-money fa-2x"></span>Cash on Delivery
-                                    </div>
+                       
+                                    <label class="paym cuc1">
+                                        <p class="heo heo1"> <i class="fa fa-credit-card"></i>Credit/Debit Card</p> 
+                                            <input type="radio" formControlName="cardpay" name="radio">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="paym cuc2"><p class="heo heo2"> <i class="fa fa-money"></i>Cash On Delivery</p> 
+                                            <input type="radio" formControlName="cash" name="radio">
+                                            <span class="checkmark"></span>
+                                          </label>
+
                             </div>
                         </div>
-
                         
                     </form></div>
                     <div class="col">
@@ -44,7 +52,7 @@
             <div class="col-5">
                 <div class="card">
                     <div class="card-body">
-                        <h4>Order Summary</h4>
+                        <h3 style="font-weight:600">Order Summary</h3>
                         <p class="Card-text">You have 1 item in your cart.</p>
 
                     </div>

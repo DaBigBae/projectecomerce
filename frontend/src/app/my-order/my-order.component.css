@@ -1,26 +1,57 @@
 .col {
     padding: 20px;
-    font-family: 'Noto Sans', sans-serif;
+    padding-bottom: 500px;
+    font-family: 'Roboto Mono', monospace;
     font-size: 14px;
 }
 
+.container-fluid {
+    width: 100%;
+    max-width: 1400px;
+  padding: 0;
+  }
+  
+  .row {
+      width: 100%;
+  }
 
-.headline {
-    font-weight: 600;
-    display: flex;
-    flex-direction: row;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 30px;
-    margin-bottom: 30px;
+.s {
+    font-size: 13px;
 }
 
-#username {
-    margin-left: 15px;
+.headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Share Tech Mono', monospace;
+    width: 100%;
+    padding-left: 15px;
+}
+
+#name {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -20px;
+}
+
+.fas {
+    width: 30px;
+}
+
+.ten {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sa {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 600;
 }
 
 .list-group-item {
     font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
     border: none;
     outline: none;
     padding:15px;
@@ -34,25 +65,13 @@
     background: #fafafa;
 }
 
-.list-group-item:hover .fu {
-    opacity: 1;
-    margin-left: 5px;
-    transition: 0.1s;
-}
-
-.fu {
-    margin-left: -5px;
-    font-size: 20px;
-    opacity: 0;
-    transition: 0.1s;
-}
-
 table thead th {
     border: none;
 }
 
 table {
     border: none;
+    width: 100%;
 }
 
 .fas {
@@ -62,7 +81,7 @@ table {
 input::placeholder {
     font-size: small;
 }
-
+/*
 button {
     font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
@@ -79,30 +98,64 @@ button:hover{
     background: #faea0f;
     color: #242424;
     transition: .1s;
-}
+}*/
 
-.col-3 {
+.col-2 {
     border-right: 1px solid #e0e0e0;
 }
 
+.table {
+    border: 1px solid #e0e0e0;
+    border-radius: 0 10px 10px 10px;
+}
+
+
+/*
 input {
-    border: 1px solid #b1b1b1;
     outline: none;
-    border-radius: 3px;
-    width: 250px;
     font-size: small;
-    height: 100%;
+    border: none;
+    background: transparent;
+}
+
+.besa {
+    margin-bottom: 0px;
+    border: 1px solid #e0e0e0;
+    height: 50px;
+    width: 200px;
+    background: white;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.besa:after {
+    position: absolute;
+    content: " f";
+    color: transparent;
+    width: 216px;
+    background: white;
+    top: 33px;
+}
+
+.besa:before {
+    position: absolute ;
+    content: " ewrsdfsdf";
+    color: transparent;
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0 0 0 10px;
+    top: 30px;
+    left: 198px;
+    background: transparent;
+    z-index: 1;
 }
 
 input:focus  {
     box-shadow: none;
-    border: 1px solid #242424;
-}
-
-th {
-    border: none;
-    font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
+    background: transparent;
 }
 
 
@@ -116,17 +169,15 @@ input[type=search]::-webkit-search-cancel-button {
     width: 16px;
     height: 14px;
 }
+*/
 
-.besa {
-    margin-bottom: 20px;
-    display: flex;
-flex-direction: row;
-justify-content: space-between;
-
+th {
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
 }
 
-
-
+/*
 .popup {
     margin: 100px auto;
     padding: 20px;
@@ -171,7 +222,8 @@ justify-content: space-between;
       color: black;
       font-weight: 600;
   }
-
+  */
+/*
   .btnn {
     height: 50px;
     width: 100px;
@@ -186,4 +238,34 @@ justify-content: space-between;
    background: #d63a3a;
   }
   
-  
+  .sa {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 600;
+}*/
+.c {
+    display :flex;
+    flex-direction : row;
+    justify-content : center;
+}
+
+.fa-times {
+    margin-top: 100px;
+    font-size: 21px;
+      height: 40px;
+      width: 40px;
+      background: transparent;
+      color: #242424;
+      border: none;
+      margin-left:-40px;
+      z-index: 1;
+    }
+
+    .fa-times:hover {
+        background: #242424;
+        color: white;
+    }
+
+    a {
+        font-weight : 700;
+        cursor: pointer;
+    }

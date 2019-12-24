@@ -2,49 +2,38 @@
     padding: 20px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 14px;
+    padding-bottom: 200px;
 }
 
-.container {
+.container-fluid {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-    box-shadow: 3px 5px 10px 0 #f8f8f8;    
+    box-shadow: 
+    3px 5px 14px 0 #f5f5f5; 
     margin-bottom: 20px;
     padding-top: 10px;
 }
 
-.headline {
-    font-size: 40px;
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Share Tech Mono', monospace;
+.col-2 {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
 }
 
-.list-group-item {
-    font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
-    border: none;
-    outline: none;
-    padding:15px;
-    font-size: 17px;
-    background: transparent;
+.col-2:after {
+  content: " ";
+  display: block;
+  width: 4px;
+  height: 40px;
+  top: 263px;
+  left: 0;
+  background: #d93a3a;
+  position: absolute;
 }
 
-.col-3 {
-    border-right: 1px solid #e0e0e0;
-    background: #f7f7f7;
-}
-
-.cl:hover {
-    cursor: pointer;
-    transform: translateX(5px);
-    font-weight: 700;
-}
-
-.cl {
-    transition: 0.1s;
+.col-10 {
+    box-shadow: inset 2px -5px 14px 0 #f5f5f5 ;
+    border-left: 1px solid #eeeeee;
 }
 
 .fu{
@@ -58,7 +47,6 @@
     bottom: 3px;
     cursor: pointer;
 }
-
 
 input::placeholder {
     font-size: small;
@@ -75,53 +63,33 @@ table {
 .btn {
     display: flex;
     flex-direction: row;
-    border-radius: 50px;
+    border-radius: 5px;
     align-items: center;
-    justify-content: space-between;
     font-family: 'Share Tech Mono', monospace;
     background: #242424;
-    color: white;
+    color: #fff;
     padding-right: 20px;
     padding-left: 20px;
     height: 40px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.2s ease;
-    border: none;
+    transition: 0.2s;
+    border: 1px solid #e0e0e0;
+    box-shadow: 
+    3px 5px 14px 0 #f5f5f5; 
 }
-
-.btn:after {
-    font-size: 36px;
-        width: 40px;
-        height: 40px;
-        content: "+";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: yellowgreen;
-        color: #242424;
-        border-radius: 100px;
-        position: absolute;
-        margin-left: 120px;
-        transition: 0.2s ease;
-    }
 
 .btn:hover {
-    padding-right: 50px;
+    box-shadow:
+  0 1px 1.1px rgba(0, 0, 0, 0.024),
+  0 2.8px 3.1px rgba(0, 0, 0, 0.035),
+  0 6.6px 7.5px rgba(0, 0, 0, 0.046),
+  0 22px 36px rgba(0, 0, 0, 0.07);
 }
 
-.btn:hover:after {
-    margin-left: 107px;
-    transform: rotate(90deg);
-}
 
-input {
-    border: 1px solid #e0e0e0;
-     box-shadow: 3px 5px 10px 0 #f8f8f8; 
-    border-radius: 100px;
-    width: 50%;
-    font-size: small;
-    height: 40px;
+
+h4 {
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 600;
 }
 
 th {
@@ -130,19 +98,25 @@ th {
     text-transform: uppercase;
 }
 
-input:focus  {
-    box-shadow: none;
-    border-color: #242424;
+
+input {
+  border: 1px solid #e0e0e0;
+  box-shadow: 
+  3px 5px 14px 0 #f5f5f5; 
+  border-radius: 5px;
+  width: 50%;
+  font-size: small;
+  height: 40px;
 }
 
-input[type=search]::-webkit-search-cancel-button {
-    cursor: pointer;
-    -webkit-appearance: none;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
-    background-repeat: no-repeat;
-    background-size: 14px;
-    width: 16px;
-    height: 14px;
+
+input:focus  {
+  box-shadow: none;
+  border: 1px solid #242424;
+ }
+
+input:placeholder-shown {
+  padding-left: 15px;
 }
 
 .besa {
@@ -158,14 +132,16 @@ justify-content: space-between;
     margin: 100px auto;
     padding: 20px;
     background: #fff;
-    border-radius: 13px;
+    border-radius: 3px 15px 3px 3px ;
     width: 300px;
-    height: 150px;
+    height: 260px;
     position: relative;
     transition: all 5s ease-in-out;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+
   }
   
   .popup .close {
@@ -181,19 +157,40 @@ justify-content: space-between;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 0 0 1px #d93a3a;
     top: 5px;
     right: 5px;
     transition: 0.1s;
   }
+
+  .fa-question-circle{
+    color: yellowgreen;
+    opacity: 0.7;
+    margin-top: 30px;
+  }
+
+  .are {
+font-weight: 700;
+margin-top: 10px;
+margin-bottom: 0px;
+color: #242424;
+  }
+
+  .quote {
+      font-family: 'Noto Sans', sans-serif;
+font-size: 13px;
+margin-bottom: 30px;
+opacity: 0.6;
+letter-spacing: 1px;
+  }
   
   .popup .close:hover {
     color: white;
-    background: #d93a3a;
+    background: linear-gradient(to right, #d31027, #ea384d);
     top: 0px;
     right: 0px;
     height: 30px;
     width: 30px;
+    box-shadow: 0 3px 7px 0 rgba(255, 72, 72, 0.3);
   }
   
   .popup .content {
@@ -203,16 +200,56 @@ justify-content: space-between;
   .btnn {
     height: 40px;
     width: 100px;
-    border-radius: 50px;
-    background: rgb(227, 252, 178);
-    color: yellowgreen;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(to left, yellowgreen, rgb(173, 223, 73));
     position: relative;
-    overflow: hidden;
-    border: 1px solid yellowgreen;
-    font-weight: 12px;
+    border: none;
+    transition: 0.2s;
   }
   
   .btnn:hover {
-   background: yellowgreen;
-   color: white;
+    box-shadow: 
+    0 1px 0 0 #eeeeee,
+    3px 5px 14px 0 #f5f5f5; 
+    background: linear-gradient(to left, yellowgreen, rgb(188, 233, 97));
   }
+  
+  
+  .action {
+    background: transparent;
+  border: none;
+    position: relative;
+}
+
+.action:after {
+    position: absolute;
+    width: 50px;
+    height: 24px;
+    content: " ";
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    background: #55555588;
+    left: 50%;
+    margin-left: -25px;
+    font-size: 12px;
+    color: white;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.action:hover:after {
+    opacity: 1;
+    transform: translateY(4px);
+}
+
+.edit:after {
+  content: "Edit";
+}
+
+.delete:after {
+  content: "Delete";
+}
