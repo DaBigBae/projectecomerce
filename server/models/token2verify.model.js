@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const tokenSchema = new mongoose.Schema({
-    email:{
-        type: String,
-        required: true
+const tokenSchema = Schema({
+    userID:{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     token:{
         type: String,

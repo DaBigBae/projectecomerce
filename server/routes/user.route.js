@@ -27,7 +27,9 @@ userRoute.post('/signup', async (req, res)=>{
         const user = new User({
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            phone: req.body.phone,
+            role: req.body.role
         })
         // if(user){
         //     return res.status(400).send({msg: 'Email da duoc su dung boi tai khoan khac'})
@@ -40,10 +42,10 @@ userRoute.post('/signup', async (req, res)=>{
             if(err){
                 res.status(400).json({msg: err.message})
             }
-            const tokenv = new token2verify({email: user.email, token: crypto.randomBytes(16).toString('hex')})
-            tokenv.save(err=>{
+            const tokenv = new token2verify({userID: user._id, token: crypto.randomBytes(16).toString('hex')})
+            tokenv.save((err)=>{
                 if(err){
-                    req.status(500).send({msg: err.message})
+                    res.status(500).json({msg: err.message})
                 }
                 // const transporter = nodeMailer.createTransport({service: 'gmail', auth: {user: process.env.VERIFY_EMAIL, pass: process.env.VERIFY_PASS}})
                 // const mailOptions = { from: 'robot', to: user.email, subject: 'Account Verification', html: 'click: \nhttp:\/\/' + '137.135.125.91:3000' + '\/verify\/' + tokenv.token + '\n'}
@@ -72,6 +74,9 @@ userRoute.post('/login', async (req, res)=>{
         }
         if(!user.isVerified){
             return res.status(401).send({type: 'not-verified', message: 'You account not have been verified!!!'})
+        }
+        if(user.role == 'admin'){
+            res.redirect(process.env.SERVER_URL + '/admin')
         }
         const token = await user.generateAuthToken()
         res.json({user, token})
