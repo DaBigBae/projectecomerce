@@ -12,10 +12,9 @@
             type="text" 
             class="form-control"
             >    
-            
-            <div *ngIf="email.errors.required">
-        Please enter valid course name !
-        </div>
+            <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+                    <div *ngIf="email.errors.required"> Email required</div>
+            </div>
     </div>
   
 
@@ -27,11 +26,14 @@
             type="password" 
             class="form-control"
             >  
+            <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+                    <div *ngIf="password.errors.required"> Password required</div>
+            </div>
     </div>
     <div id="wrapper">    <button class="btn">Log In</button>
     <div class="col">
                 <p> <a routerLink="/forgetpassword"> Forgot Password</a></p>
-                <p>New Customer?  <a routerLink="/sign-up"> Register</a>.</p>
+                <p>New Customer?  <a routerLink="/sign-up" class="register"> Register</a></p>
 
     </div>
     </div>

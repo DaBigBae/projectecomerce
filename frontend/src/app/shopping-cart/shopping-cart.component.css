@@ -1,9 +1,9 @@
 .col-4{
         padding-top: 200px;
-}
+        border-right: 1px solid #e0e0e0;
+    }
 
 .container {
-    height: 600px;
     font-size: 17px;
 }
 
@@ -12,13 +12,22 @@ table tr td {
    
 }
 
-table thead th {
-    border: none;
+table thead {
+    border-bottom: none;
 }
 
 table {
     border: none;
 }
+
+.boro {
+margin-top: 70px; 
+padding-top: 30px;
+box-shadow: 
+            -50px -6px 0 0 white,
+            0 -3px 0 0 #242424;
+}
+
 
 .fas {
     transition: 0.2s ease;
@@ -32,16 +41,10 @@ table {
 
 table thead th{
     color:#242424;
-    border-top: none;
+  border: none;
 font-size: 14px; 
 font-weight: 600; 
 text-transform: uppercase;
-}
-
-.check {
-    display: block;
-    color: thistle;
-    cursor: pointer;
 }
 
 .btn {
@@ -65,22 +68,6 @@ display: block;
     transition: 0.1s;
 }
 
-.btn-sm{
-    margin-top: 40px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
-    background:transparent;
-    margin-bottom: 20px;
-    border: 3px solid #242424;
-
-}
-
-.btn-sm:hover {
-    background: #242424;
-    color: white;
-}
 
 .col {
     padding-left: 60px;

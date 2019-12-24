@@ -1,7 +1,10 @@
+import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
+import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartsModule} from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +33,19 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
 import { LogoComponent } from './logo/logo.component';
 import { UsersComponent } from './admin/users/users.component';
 import { OrderCardComponent } from './order-card/order-card.component';
+import { UserOrderCardComponent } from './user-order-card/user-order-card.component';
+import { MyInfoComponent } from './my-info/my-info.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { NotiComponent } from './admin/noti/noti.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { OrdersListComponent } from './admin/orders-list/orders-list.component';
+import { ProCatComponent } from './pro-cat/pro-cat.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryCardComponent } from './category-card/category-card.component';
+import { AuthGuardService as AuthGuard } from './auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +63,15 @@ const appRoutes: Routes = [
   { path: 'forgetpassword', component: ForgetpasswordComponent},
   { path: 'cancel-order', component: CancelOrderComponent},
   { path: 'admin/users', component: UsersComponent},
-  { path: 'order-card', component: OrderCardComponent},
+
+  { path: 'my/info', component: MyInfoComponent},
+
+  { path: 'product-detail', component: ProductDetailComponent},
+  { path: 'admin/dashboard', component: DashboardComponent},
+  { path: 'admin/noti', component: NotiComponent},
+  { path: 'admin/orders/list', component: OrdersListComponent},
+  { path: 'category', component: CategoryComponent},
+
 ];
 
 @NgModule({
@@ -76,6 +100,18 @@ const appRoutes: Routes = [
     LogoComponent,
     UsersComponent,
     OrderCardComponent,
+    UserOrderCardComponent,
+    MyInfoComponent,
+    ChangePasswordComponent,
+    PaymentComponent,
+    ProductDetailComponent,
+    AdminNavComponent,
+    NotiComponent,
+    DashboardComponent,
+    OrdersListComponent,
+    ProCatComponent,
+    CategoryComponent,
+    CategoryCardComponent,
     
   ],
   imports: [
@@ -83,13 +119,18 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     AppRoutingModule,
     NgbModule,
+    ChartsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
     ),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard,
+    AdminAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

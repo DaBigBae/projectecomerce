@@ -29,7 +29,7 @@ input:focus{
 }
 
 label {
-  color: #525252;
+  color: #525252bb;
 }
 
 .btn {
@@ -70,35 +70,95 @@ label {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 15px;
 }
- 
-.cuc {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  box-shadow: 0 0 0 1px #cecece;
-  border-radius: 5px;
-  padding: 10px;
-}
+
 
 .cuc1 {
   margin-right: 10px;
-  opacity: 0.5;
+}
+.cuc2 {
+  margin-left: 10px;
 }
 
-.cuc2 {
- margin-left: 10px; 
+.paym {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 12px;
+  width: 50%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.heo {
+  margin-top: 12px;
+  font-size: 15px;
+  font-family: 'Roboto Mono', monospace;
+  color: #242424;
+}
+
+/* Hide the browser's default radio button */
+.paym input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #cecece;
+  background-color:transparent;
+}
+
+/* On mouse-over, add a grey background color */
+.paym:hover input ~ .checkmark {
+  box-shadow: 0 0 0 2px #242424;
+}
+
+/* When the radio button is checked, add a blue background */
+.paym input:checked ~ .checkmark {
+  box-shadow: 0 0 0 2px #242424;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.paym input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.paym .checkmark:after {
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background: transparent;
 }
 
 .fa {
 margin-right: 10px;
-transition: 0.2s ease;
+font-size: 25px;
 }
 
-.cuc2:hover{
-  box-shadow: 0 0 0 2px black;
-  cursor: pointer;
+p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .r {

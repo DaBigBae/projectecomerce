@@ -1,51 +1,60 @@
 
-<div class="container">
+<div class="container-fluid">
         <div class="row">
-            <div class="col col-3" >
+            <div class="col col-2" >
             <ul class="list-group">
-                <div class="headline">
-                    <span class="fas fa-user-circle fa-2x" style="margin-left: 10px;"></span>
-                    <p id=username >Username </p> 
-                </div>
-                <li class="list-group-item" routerLink="/my-order">orders  <span class="far fa-file fu"></span></li>
-               <li class="list-group-item" routerLink="/admin/orders">my info  <span class="fas fa-user-edit fu"></span></li>
+                    <li class="headline">
+                    <div class="ava" >
+                        <i class=" far fa-user-circle fa-4x"></i>
+                 </div>  
+                 <div class="ten">
+                       <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
+                       <p id=name >Be Sa </p>
+                    </div>  
+                </li>
+             
+                <li class="list-group-item" routerLink="/my/orders">  <span class="fas fa-box"></span>My Orders</li>
+               <li class="list-group-item" routerLink="/my/info"> <span class="fas fa-user-edit"></span>My Info </li>
             </ul></div>
-            <div class="col col-9">
-                    <div class="besa">
-                    <input type="search" class="form-control" placeholder=" SEARCH BY ORDER NUMBER"></div>
-                    <table class="table">
+            <div class="col col-10">
+                 <!-- <div class="besa">
+                    <input type="search" class="form-control" placeholder="Search order number"></div>
+                 -->    
+                 <h3 class="sa">MY ORDERs</h3> 
+                 <div class="table">
+                     
+                    <table >
+
                     <thead>
                         <tr>
                             <th style="width: 15%;">Order Number</th>
-                            <th style="width: 50%;">Summary</th>
+                            <th style="width: 40%;">Summary</th>
                             <th style="width: 15%;">Date</th>
-                            <th style="width: 10%;">Price</th>
-                            <th style="width: 10%;">Actions</th>
+                            <th style="width: 10%;">Total</th>
+                            <th style="width: 20%;">Status</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr>
-                            <td>FO-DR-JP-TI2004</td>
+                            <td> <a data-toggle="modal" data-target="#myModal">TI2004</a> </td>
                             <td>FO-DR-JP-TI2004</td>
                             <td>FO, DR</td>
                             <td>$3.99</td>
-                            <td>
-                                <span data-toggle="modal" data-target="#myModal"  class="fas fa-times" style="color: #e73939; padding-left: 15px; font-size: 16px;"> </span>
-                            </td>
+                            <td>Canceled</td>
                         </tr>
                     </tbody>
+
                     </table>
+                </div>
             </div>
         </div>    
         
-        <div class="row" style="height: 200px;">
-            <div class="col-3"></div>
-            <div class="col-9"></div>
-        </div>
+
     
     </div>
 
-
+<!--
     <div id="myModal" class="modal">
             <div class="popup">
                 <h5 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
@@ -56,3 +65,10 @@
                 </div>
             </div>
         </div>
+-->
+<div id="myModal" class="modal">
+    <div class="c">
+    <user-order-card></user-order-card>
+    <button class="fas fa-times" data-dismiss="modal"></button>
+</div>
+</div>
