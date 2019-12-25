@@ -46,6 +46,8 @@ import { ProCatComponent } from './pro-cat/pro-cat.component';
 import { CategoryComponent } from './category/category.component';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CategoryService } from './category.service';
+import { UserService } from './user.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -111,9 +113,7 @@ const appRoutes: Routes = [
     OrdersListComponent,
     ProCatComponent,
     CategoryComponent,
-   
-
-    
+  
   ],
   imports: [
     BrowserModule,
@@ -131,7 +131,9 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     AuthGuard,
-    AdminAuthGuard
+    UserService,
+    AdminAuthGuard,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,90 @@
     font-size: 20px;
 }
 
+
+.shopping-cart{
+    width: 22px;
+    height: 23px;
+    content: " ";
+    display: block;
+    position: relative;
+overflow: hidden;
+background-color: #fff;
+border: 2px solid #212529;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart:after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    margin-left: -5px;
+    top: -7px;
+   content: " ";
+   display: block;
+   border-radius: 10px 10px 0 0;
+   border: 2px solid #d93a3a;
+   border-bottom: none;
+}
+
+button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+button:active {
+    box-shadow: none;
+    outline: none;
+}
+
+
+.cart-status {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    margin-left: -5px;
+    top: 0px;
+    transition: 0.2s;
+}
+
+.cart-status-2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    margin-left: -5px;
+    top: 15px;
+    transition: 0.2s;
+}
+
+.shopping-cart:hover .cart-status {
+top: -15px;
+}
+
+.shopping-cart:hover .cart-status-2 {
+top: 0px;
+}
+
+.hold {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 10px;
+    height: 10px;
+    background: white;
+    border: 1.6px solid #212529;
+    border-radius: 10px;
+    top: -5px;
+    left: 50%;
+    margin-left: -5px;
+    z-index: 0;
+}
+
 .drod-togg:after { 
     font-family: "Font Awesome 5 Free";
     content: "\f107";
@@ -83,19 +167,19 @@ input {
     background: transparent;
     width: 0;
     transition: 0.2s;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 input:focus {
     width: 200px;
     box-shadow: none;
     outline: none;
-    border-bottom: 1px solid #242424;
+    border-bottom: 2px solid #242424;
 }
 
 .cuc:hover input{
     width: 200px;
-    border-bottom: 1px solid #242424;
+    border-bottom: 2px solid #242424;
 }
 
 .cuc {

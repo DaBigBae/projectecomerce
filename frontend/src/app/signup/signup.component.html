@@ -49,6 +49,7 @@
                 <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
                         <div *ngIf="email.errors.required"> Email required</div>
                         <div *ngIf="email.errors.email"> Email must be a valid email address</div>
+                        <div *ngIf="email.errors.shouldBeUnique"> Email is already taken</div>
                 </div>
         </div>
     
