@@ -10,7 +10,8 @@ import { retry, catchError } from 'rxjs/operators';
 
 export class ApiService {
   //Define API
-  apiURL = 'http://137.135.125.91:3000'
+  // apiURL = 'http://137.135.125.91:3000'
+  apiURL = 'http://localhost:3000'
   constructor(
     private http: HttpClient
   ) { }
@@ -22,6 +23,7 @@ export class ApiService {
     })
   }
   
+  //Admin - get user
   getUser(): Observable<User> {
     return this.http.get<User>(this.apiURL + '/user').pipe(
       retry(1),
