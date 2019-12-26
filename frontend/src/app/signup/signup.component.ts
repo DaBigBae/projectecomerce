@@ -1,3 +1,4 @@
+import { EmailValidators } from './email.validators';
 
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -15,7 +16,7 @@ form = new FormGroup ({
   ]),
   email : new FormControl('', [
     Validators.required,
-    Validators.email
+    Validators.email,
   ]),
   password: new FormControl('',[
     Validators.required,

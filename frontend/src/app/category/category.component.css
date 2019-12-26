@@ -1,19 +1,65 @@
 
 .col-2 {
-    border-right: 1px solid #e0e0e0;
     padding-left: 30px;
     }
 
+    .category {
+      border: 1px solid #e0e0e0;
+    }
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #242424; 
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+background-color: none;
+background: none;
+text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-next a{
+  text-decoration: none;
+  }
+
+  .my-pagination /deep/ .ngx-pagination .pagination-next a:hover{
+    background-color: #242424;
+    color: white;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-previous a{
+      text-decoration: none;
+      }
+    
+      .my-pagination /deep/ .ngx-pagination .pagination-previous a:hover{
+        background-color: #242424;
+        color: white;
+        }
+
+
+.my-pagination /deep/ .ngx-pagination a:hover {
+background-color: white;
+}
+  
+.my-pagination {
+  font-size: 18px;
+}
+
     .prod {
-      display: grid;
-grid-template-columns: auto auto auto auto auto;
+
       padding-left: 20px;
       margin-top: -10px;
       padding-bottom: 200px;
     }
+
+    .prod ul {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      list-style-type: none;
+      padding-left: 10px;
+    }
     
     .col {
-      padding-bottom: 200px;
+      padding-bottom: 50px;
     }
 
     .r-in {

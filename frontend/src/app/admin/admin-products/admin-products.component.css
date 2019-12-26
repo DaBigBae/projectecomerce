@@ -5,6 +5,10 @@
     padding-bottom: 200px;
 }
 
+.sticky-top {
+  top: 0;
+}
+
 .container-fluid {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -12,6 +16,43 @@
     3px 5px 14px 0 #f5f5f5; 
     margin-bottom: 20px;
     padding-top: 10px;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #242424; 
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+background-color: none;
+background: none;
+text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-next a{
+  text-decoration: none;
+  }
+
+  .my-pagination /deep/ .ngx-pagination .pagination-next a:hover{
+    background-color: #242424;
+    color: white;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-previous a{
+      text-decoration: none;
+      }
+    
+      .my-pagination /deep/ .ngx-pagination .pagination-previous a:hover{
+        background-color: #242424;
+        color: white;
+        }
+
+
+.my-pagination /deep/ .ngx-pagination a:hover {
+background-color: white;
+}
+  
+.my-pagination {
+  font-size: 13px;
 }
 
 .col-2 {

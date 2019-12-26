@@ -4,13 +4,14 @@
       <h1 style="font-weight: bolder; font-size: 50px; width: 100px;">Shopping Cart</h1>
     </div>
     <div class="col" >
+      <div class="detail">
     <!-- <button class="btn btn-sm">Clear all items</button>--> 
-  <p style="font-size: 13px; margin-top: 50px;"> You have 1 item(s) in your cart</p>
-      <table class="table" style="margin-top: 20px;">
+  <p style="font-size: 13px; margin-top: 50px; margin-bottom: 20px;"> You have 1 item(s) in your cart</p>
+   <!--    <table class="table" style="margin-top: 20px;">
         <thead >
           <tr>
             
-            <th style="width: 10%;"></th> <!--for thumbnail-->
+            <th style="width: 10%;"></th> 
             <th style="width: 45%;">Product</th>
             <th style="width: 20%;">Price</th>
             <th style="width: 20%;">Quantity</th>
@@ -32,18 +33,99 @@
           </tr>
         </tbody>
       </table>     
-      
-      <div class="row no-gutters boro" >
-      <div class="col-7" style="font-size: 13px;"></div>
-      <div class="col-5" style="font-size: 25px; font-weight: bold; text-align: right;"> 
-        Total <span style="font-size: 35px; color: #d93a3a;">$5.00</span>
+     -->
+     
+<!--show list item trong gio hang-->
+<ul>
+  <li>
+    <div class="container item" >
+     <div class="row">
+<img class="img-container" src="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png" alt="">
+  
+      <div class="col" >
+        <div class="name-price">
+<p class="pro-name" routerLink="/product-detail"> Bulbasaur</p>
+<p class="pro-price">$5.00</p>
+        </div>
+        <div class="quantity" style="width: 100px;">
+          <product-quantity></product-quantity>
+        </div>
+
+      </div>
+
+      <div class="col del-sub">
+<button class="del-btn"></button>
+<p class="sub-total">$5.00</p>
+
+      </div>
+
+     </div>
+    </div>
+  </li>
+  <li>
+    <div class="container item" >
+     <div class="row">
+<img class="img-container" src="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png" alt="">
+  
+      <div class="col" >
+        <div class="name-price">
+<p class="pro-name" routerLink="/product-detail"> Bulbasaur</p>
+<p class="pro-price">$5.00</p>
+        </div>
+        <div class="quantity" style="width: 100px;">
+          <product-quantity></product-quantity>
+        </div>
+
+      </div>
+
+      <div class="col del-sub">
+<button class="del-btn"></button>
+<p class="sub-total">$5.00</p>
+
+      </div>
+
+     </div>
+    </div>
+  </li>
+  <li>
+    <div class="container item" >
+     <div class="row">
+<img class="img-container" src="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png" alt="">
+  
+      <div class="col" >
+        <div class="name-price">
+<p class="pro-name" routerLink="/product-detail"> Bulbasaur</p>
+<p class="pro-price">$5.00</p>
+        </div>
+        <div class="quantity" style="width: 100px;">
+          <product-quantity></product-quantity>
+        </div>
+
+      </div>
+
+      <div class="col del-sub">
+<button class="del-btn"></button>
+<p class="sub-total">$5.00</p>
+
+      </div>
+
+     </div>
+    </div>
+  </li>
+</ul>
+
+</div>
+     <div class="row boro">
+      <div class="col total" > 
+        Total <span class="total-price">$15.00</span>
         <p style="font-size: 13px; font-weight: 500;">INCLUDING 10% VAT</p>
        </div>
       </div>
 
       <button routerLink="/check-out" style="margin-top: 10px;" class="btn">Check Out</button>  
     </div>
-  </div>  
+  </div>
+    
     
   <div class="row" style="height: 200px;">
     <div class="col-4"></div>

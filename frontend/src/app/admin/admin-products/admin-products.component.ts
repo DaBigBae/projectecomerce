@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-products',
+  selector: 'admin-products',
   templateUrl: './admin-products.component.html',
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit {
 
-  constructor() { }
+  collection = [];
+  /* i là số sản phẩm được lọc theo category */
+    constructor() {
+      for (let i = 1; i <= 56; i++) {
+        this.collection.push(`item ${i}`);
+      }
+    }
 
   filter(query: string) {
     console.log(query);
