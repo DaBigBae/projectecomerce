@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User, Order, Product } from '../shared/datastucture';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -10,7 +9,8 @@ import { retry, catchError } from 'rxjs/operators';
 
 export class ApiService {
   //Define API
-  apiURL = 'http://137.135.125.91:3000'
+  // apiURL = 'http://137.135.125.91:3000'
+  apiURL = 'http://localhost:3000'
   constructor(
     private http: HttpClient
   ) { }
@@ -22,8 +22,17 @@ export class ApiService {
     })
   }
   
-  getUser(): Observable<User> {
-    return this.http.get<User>(this.apiURL + '/user').pipe(
+  //Admin - get user
+  getUser(): Observable<any> {
+    return this.http.get<any>(this.apiURL + '/user').pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+  
+  //Get user by ID
+  getUserByID(): Observable<any> {
+    return this.http.get<any>(this.apiURL + '/user/:id').pipe(
       retry(1),
       catchError(this.handleError)
     )
