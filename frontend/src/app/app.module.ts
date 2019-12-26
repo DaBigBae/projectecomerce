@@ -46,6 +46,7 @@ import { ProCatComponent } from './pro-cat/pro-cat.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryCardComponent } from './category-card/category-card.component';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -120,6 +121,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NgbModule,
     ChartsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
