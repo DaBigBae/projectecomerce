@@ -4,18 +4,20 @@ GET http://localhost:3000/user
 GET http://localhost:3000/user/5dd3cfc8b6eb421d546751e6
 ###
 DELETE http://localhost:3000/user/5dc915119f007d27782d1bfa
-###
+### SignUp
 POST http://localhost:3000/user/signup
 Content-Type: application/json
 
 {
     "name": "33333",
-    "email": "usgffjhas@ahsf.cas",
-    "password": "wwww"
+    "email": "uss3@ahsf.cas",
+    "password": "wwww",
+    "role": "user",
+    "phone": ""
 }
 
 ### verify
-POST http://localhost:3000/verify/fd55928ef8041798b48d2811c024c5ce
+POST http://localhost:3000/verify/84383593e9ac9a44f9aa5ca1c66d4d1e
 Content-Type: application/json
 
 ### login
@@ -23,7 +25,7 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "usgffjhas@ahsf.cas",
+    "email": "ussu@ahsf.cas",
     "password": "wwww"
 }
 ###profile

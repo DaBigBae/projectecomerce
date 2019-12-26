@@ -12,6 +12,11 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    currency: {
+        type: String,
+        required: true,
+        default: 'USD'
+    },
     description: {
         type: String,
         required: true
@@ -20,9 +25,21 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    qty:{
+        type: Number,
+        required: true
+    },
     imgurl: {
         type: String,
         required: true
+    },
+    comments: [{
+        body: String,
+        data: Date
+    }],
+    views: {
+        type: Number,
+        required: false
     }
 })
 
