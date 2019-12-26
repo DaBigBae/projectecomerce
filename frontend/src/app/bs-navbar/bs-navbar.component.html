@@ -30,10 +30,10 @@
 
 
           <!-- hiển thị first name sau khi đăng nhập , khi ở anonymous user thì chỉ hiển thị login, sign-up -->
-          <li class="dropdown">
+          <li class="dropdown ">
             <a class="drod-togg" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="firstname" *ngIf="anonymousUser"> Firstname </span> <i class="far fa-user"></i></a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
               <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
               <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
               <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
@@ -46,8 +46,8 @@
       <a class="nav-link cucu" routerLink="/shopping-cart">
       <div class="cart">
         <button class="shopping-cart"> 
-          <span class="cart-status">1</span> 
-          <span class="cart-status-2">1</span>
+          <span class="cart-status">0</span> 
+          <span class="cart-status-2">0</span>
         </button>
       </div>
       </a>
