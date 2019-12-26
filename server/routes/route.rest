@@ -4,15 +4,15 @@ GET http://localhost:3000/user
 GET http://localhost:3000/user/5dd3cfc8b6eb421d546751e6
 ###
 DELETE http://localhost:3000/user/5dc915119f007d27782d1bfa
-###
+### SignUp
 POST http://localhost:3000/user/signup
 Content-Type: application/json
 
 {
     "name": "33333",
-    "email": "ussu@ahsf.cas",
+    "email": "uss3@ahsf.cas",
     "password": "wwww",
-    "role": "admin",
+    "role": "user",
     "phone": ""
 }
 
