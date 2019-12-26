@@ -228,36 +228,6 @@ a {
     color : rgb(27, 27, 27);
 }
 
-.cart:hover + .badge {
-    transform: translateX(-6px)  translateY(2px);
-
-}
-
-.badge:hover {
-    transform: translateX(-6px)  translateY(2px);
-
-}
-
-.badge {
-    transition: 0.2s;
-    transform: translateY(2px);
-}
-
-
-.logout:hover {
-    background: white;
-    cursor: pointer;
-}
-
-.logout:after {
-    font-family: "Font Awesome 5 Free";
-    content: "\f2f5";
-    font-weight: 900;
-    margin-left: 6px;
-    opacity: 0;
-    transition: 0.2s;
-}
-
 .cucu {
     display: flex;
     flex-direction: row;
@@ -284,4 +254,8 @@ logo:focus {
     width: 15px;
     height: 3px;
     background: #242424;
+}
+
+.logout {
+    cursor: pointer;
 }

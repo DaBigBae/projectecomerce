@@ -20,13 +20,6 @@ z-index: 1;
 }
 
 
-.product-row-view {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
 .imggg {
     width: 50px;
     margin-top: 50px;
@@ -83,8 +76,17 @@ z-index: 1;
 }
 
 
+.product-row-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
     .carousel-item {
+        width: 100%;
         transition: 0.5s;
     }
 
@@ -218,8 +220,8 @@ transition: 0.2s;
     width: 1150px;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    column-gap: 42px;
-    row-gap: 22px;
+    column-gap: 30px;
+    row-gap: 13px;
     justify-content: center;
 }
 
@@ -232,101 +234,6 @@ transition: 0.2s;
     width: 100%;
     z-index: 1;
 }
-
-/*
-
-.fa-circle {
-    color: #a9a87a;
-}
-.fa-fire {
-    color: #ee7d39;
-}
-
-.fa-tint {
-    color: #6a91ed;
-}
-.fa-leaf {
-    color: #7bc856;
-}
-.fa-dragon {
-    color: #6f3cf5;
-}
-.fa-feather-alt {
-    color: #a891ee;
-}
-.fa-dice-d6 {
-    color: #b69f40;
-}
-
-.fa-bolt {
-    color: #f7cf41;
-}
-.fa-snowflake {
-    color: #9ad8d8;
-}
-.fa-bullseye {
-    color: #f65689;
-}
-
-.fa-spa {
-    color: #f6c9e3;
-}
-
-.fa-gear {
-    color: #b8b8cf;
-
-}
-.fa-bug {
-    color: #a8b831;
-}
-.fa-mountain {
-    color: #dfbf6e;
-}
-
-.fa-moon {
-    color: #6e5849;
-}
-
-.fa-ghost {
-    color: #705796;
-}
-
-.fa-fist-raised {
-    color: #be2c2d;
-}
-
-.fa-skull {
-    color: #9e409f;
-}
-
-    .btnn {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-top: 20px;
-        transition: 0.2s;
-        width: 93%;
-        background: #ffffff;
-        border: none;
-        outline: none;
-        border-radius: 10px;
-        border: 1px solid #f1f1f1;
-        box-shadow: 0 10px 20px -15px #e0e0e0;
-    }
-
-    .btnn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 20px -10px #e0e0e0;
-    }
-
-    .btnn p {
-        margin-top: 10px;
-        font-size: 15px;
-        color: #777777;
-    }
-
-
-    */
-
 
     .btnn {
         margin-top: 10px;
