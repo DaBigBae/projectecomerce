@@ -29,6 +29,14 @@ export class ApiService {
       catchError(this.handleError)
     )
   }
+  
+  //Get user by ID
+  getUserByID(): Observable<any> {
+    return this.http.get<any>(this.apiURL + '/user/:id').pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
 
   //Error handling
   handleError(err){
