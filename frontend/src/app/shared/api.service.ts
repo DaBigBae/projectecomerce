@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User, Order, Product } from '../shared/datastucture';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -24,8 +23,8 @@ export class ApiService {
   }
   
   //Admin - get user
-  getUser(): Observable<User> {
-    return this.http.get<User>(this.apiURL + '/user').pipe(
+  getUser(): Observable<any> {
+    return this.http.get<any>(this.apiURL + '/user').pipe(
       retry(1),
       catchError(this.handleError)
     )
