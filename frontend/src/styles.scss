@@ -70,11 +70,12 @@ ul.breadcrumb li+li:before {
 
 ul.breadcrumb li a {
     color: #242424;
-    text-decoration: none;
+
   }
 
   ul.breadcrumb li a:hover {
-    font-weight: 600;
+    background-color: #242424;
+    color: white;
   }
 
   ul.breadcrumb .back {

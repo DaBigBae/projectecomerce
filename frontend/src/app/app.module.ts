@@ -44,9 +44,14 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { OrdersListComponent } from './admin/orders-list/orders-list.component';
 import { ProCatComponent } from './pro-cat/pro-cat.component';
 import { CategoryComponent } from './category/category.component';
-import { CategoryCardComponent } from './category-card/category-card.component';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
+=======
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CategoryService } from './category.service';
+import { UserService } from './user.service';
+>>>>>>> adbb5b30000bc2fc4e702973f1784979a118142f
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -112,12 +117,12 @@ const appRoutes: Routes = [
     OrdersListComponent,
     ProCatComponent,
     CategoryComponent,
-    CategoryCardComponent,
-    
+  
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     AppRoutingModule,
     NgbModule,
     ChartsModule,
@@ -131,7 +136,9 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     AuthGuard,
-    AdminAuthGuard
+    UserService,
+    AdminAuthGuard,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

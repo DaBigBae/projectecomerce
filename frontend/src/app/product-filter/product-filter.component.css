@@ -66,9 +66,46 @@ right: 10px;
 .btn-img {
     width: 100%;
 cursor: pointer;  
-position: relative;
+
 }
 
+.img-container {
+    position: relative;
+}
+
+.img-container:after {
+    display: block;
+    content: " ";
+    position: absolute;
+   border-top: 1px solid white;
+   border-right: 1px solid white;
+   transform: rotate(45deg);
+    height: 8px;
+    width: 8px;
+    left: 22px;
+    bottom: 11px;
+    transition: 0.2s;
+}
+
+.img-container:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    background: white;
+    height: 1px;
+    width: 20px;
+    bottom: 15px;
+    left: 10px;
+    transition: 0.2s;
+}
+
+.img-container:hover:after {
+left: 27px;
+}
+
+.img-container:hover:before {
+    left: 15px;
+}
 
 ul {
     list-style-type: none;
