@@ -1,5 +1,5 @@
 section {
-    padding: 20px;
+    padding-top: 20px;
    margin-top: 20px;
 }
 
@@ -13,6 +13,7 @@ section {
    padding-right: 5px;
    font-weight: 600;
 }
+
 
 .alert-danger {
    color: #d93a3a;
@@ -31,6 +32,15 @@ section {
    padding: 20px;
    padding-top: 0;
    margin: 0 auto;
+}
+
+
+
+@media (max-width:500px) {
+   .login-form {
+       width:470px;
+
+   }
 }
 
 .name {
