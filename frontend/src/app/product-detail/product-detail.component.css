@@ -1,8 +1,4 @@
 
-.col-2 {
-border-right: 1px solid #e0e0e0;
-}
-
 .headline {
   padding-left: 50px;
     font-size: 15px;
@@ -156,11 +152,6 @@ border-right: 1px solid #e0e0e0;
   }
 
   
-.col-2 {
-  border-right: 1px solid #e0e0e0;
-  padding-left: 30px;
-  }
-
   .prod {
     display: grid;
 grid-template-columns: auto auto auto auto auto;
@@ -188,10 +179,6 @@ grid-template-columns: auto auto auto auto auto;
   padding: 0;
   }
   
-  .row {
-      width: 100%;
-  }
-
 .cat-name {
 font-weight: bolder;
 padding-left: 30px;

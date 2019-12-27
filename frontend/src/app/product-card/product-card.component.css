@@ -1,7 +1,7 @@
 
 .card {
     position: relative;
-    width: 200px;
+    width: 14.5rem;
     border: none;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -71,7 +71,7 @@ outline: none;
     content: "";
     display: block;
     position: relative;
-  border: 2px solid #242424;
+  border: 2px solid #fff;
   margin-left: 9px;
   transition: 0.2s;
   }
@@ -86,7 +86,7 @@ outline: none;
    content: " ";
    display: block;
    border-radius: 10px 10px 0 0;
-   border: 2px solid #d93a3a;
+   border: 2px solid #fff;
    border-bottom: none;
    transition: 0.2s;
   }
@@ -96,7 +96,7 @@ outline: none;
     right: -51px;
     bottom: 11px;
     transition: 0.2s;
-    background-color: transparent;
+    background-color: var(--den);
   }
   
   .nut-add:after {
@@ -108,9 +108,9 @@ outline: none;
     left: 50%;
     margin-left: -5px;
     bottom: 11px;
-    background-color: #d93a3a;
+    background-color: #fff;
     transition: 0.2s;
-    z-index: -1;
+    z-index: 1;
   }
   
   .nut-add:before {
@@ -122,9 +122,9 @@ outline: none;
     left: 50%;
     margin-left: -5px;
     bottom: 11px;
-    background-color: #d93a3a;
+    background-color: #fff;
     transition: 0.2s;
-    z-index: -1;
+    z-index: 1;
   }
   
   .nut-add:hover:after {
@@ -139,7 +139,11 @@ outline: none;
   }
   
   .card:hover .nut-add{
-  right: 5px;
+  right: 10px;
+  }
+
+  .nut-add:hover{
+    background: var(--do);
   }
 
 
