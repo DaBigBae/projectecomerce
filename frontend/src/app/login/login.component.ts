@@ -1,31 +1,59 @@
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService, ApiService } from '../shared';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  form = new FormGroup({
-    email: new FormControl('' ,[
-      Validators.required
-    ]),
-    password: new FormControl('' ,[
-       Validators.required
-    ])
-  });
+export class LoginComponent implements OnInit{
+  loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  returnUrl: string;
 
-  get email(){
-    return this.form.get('email');
-  }
-  
-  get password(){
-    return this.form.get('password');
+  constructor(
+      private formBuilder: FormBuilder,
+      private route: ActivatedRoute,
+      private router: Router,
+      private authenticationService: ApiService,
+      private alertService: AlertService) {}
+
+  ngOnInit() {
+      this.loginForm = this.formBuilder.group({
+          email: ['', Validators.required],
+          password: ['', Validators.required]
+      });
+
+      // reset login status
+      this.authenticationService.logout();
+
+      // get return url from route parameters or default to '/'
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  onSubmit(){
-    console.warn(this.form.value);
+  // convenience getter for easy access to form fields
+  get f() { return this.loginForm.controls; }
+
+  onSubmit() {
+      this.submitted = true;
+
+      // stop here if form is invalid
+      if (this.loginForm.invalid) {
+          return;
+      }
+
+      this.loading = true;
+      this.authenticationService.login(this.f.email.value, this.f.password.value)
+          .subscribe(
+              res => {
+                this.alertService.success('Login successful', true);
+                  this.router.navigate(['/']);
+              },
+              error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+              });
   }
-  
 }
