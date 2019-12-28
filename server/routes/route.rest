@@ -11,7 +11,7 @@ Content-Type: application/json
 
 {
     "name": "33333",
-    "email": "uss3@ahsf.cas",
+    "email": "test@api.nhe",
     "password": "wwww",
     "role": "user",
     "phone": ""
@@ -26,13 +26,13 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "ussu@ahsf.cas",
+    "email": "test@api.nhe",
     "password": "wwww"
 }
 ###profile
 GET http://localhost:3000/user/profile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzE3ZDY4ZTkxMzZhNDBlMDk5ZCIsImlhdCI6MTU3NzQ4NjQzOH0.NZzOu2sJb4plQ-hCuGZtaoOrccOCgDBaU3o-_KYfwbM
 
 ###logout
 POST http://localhost:3000/user/logout

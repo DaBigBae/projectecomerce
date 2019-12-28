@@ -2,7 +2,7 @@
     <div class="login-form">
     <h1 style="margin-bottom: 35px; font-weight: bolder;" class="text-center">Login</h1>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
    
     <div class="form-group">
         <label>Email </label>
@@ -11,9 +11,10 @@
             id="email"
             type="text" 
             class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
             >    
-            <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
-                    <div *ngIf="email.errors.required"> Email required</div>
+            <div *ngIf="submitted && f.email.errors" class="alert alert-danger">
+                    <div *ngIf="f.email.errors.required"> Email required</div>
             </div>
     </div>
   
@@ -25,9 +26,10 @@
             id="password"
             type="password" 
             class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
             >  
-            <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
-                    <div *ngIf="password.errors.required"> Password required</div>
+            <div *ngIf="submitted && f.password.errors" class="alert alert-danger">
+                    <div *ngIf="f.password.errors.required"> Password required</div>
             </div>
     </div>
     <div id="wrapper">    <button class="btn">Log In</button>
