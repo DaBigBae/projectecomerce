@@ -13,13 +13,14 @@ export class HomeComponent implements OnInit {
   ) {}
   
   ngOnInit() {
-    // this.getUser()
+     this.getUser()
   }
 
   getUser(){
     return this.api.getUser().subscribe((data)=>{
       this.User = data;
       console.log(this.User);
+      console.log(this.User[0]._id);
     })
   }
 }

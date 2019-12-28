@@ -19,6 +19,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 const userRoute = require('./routes/user.route')
 const verifyRoute = require('./routes/verify.route')
 const productRoute = require('./routes/product.route')
+const orderRoute = require('./routes/order.route')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,6 +29,7 @@ app.use(cors());
 app.use('/user',userRoute)
 app.use('/verify',verifyRoute)
 app.use('/product',productRoute)
+app.use('/order',orderRoute)
 
 // app.use('/api',userRoute)
 
