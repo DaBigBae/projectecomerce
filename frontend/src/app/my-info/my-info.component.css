@@ -1,6 +1,5 @@
 .col {
-    padding: 20px;
-    padding-bottom: 500px;
+    padding-bottom: 100px;
     font-family: 'Roboto Mono', monospace;
     font-size: 14px;
 }
@@ -9,6 +8,7 @@
     width: 100%;
     max-width: 1400px;
   padding: 0;
+  padding-right: 0;
   }
   
   .row {
@@ -19,13 +19,27 @@
     font-size: 13px;
 }
 
+.user-nav{
+    width: 250px;
+}
+
+.img {
+    width: 70px;
+}
+
+.col-4 {
+    margin-left: 60px;
+}
+
 .headline {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     font-family: 'Share Tech Mono', monospace;
     width: 100%;
     padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 #name {
@@ -34,31 +48,45 @@
     margin-top: -20px;
 }
 
-.fas {
-    width: 30px;
-}
-
 .ten {
+    margin-left: 10px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.sa {
+    padding-top: 23px;
+    padding-bottom: 5px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
 .list-group-item {
     font-family: 'Share Tech Mono', monospace;
     border: none;
     outline: none;
-    padding:15px;
+    padding: 15px;
     font-size: 17px;
     position: relative;
+    background: transparent;
 }
 
 .list-group-item:hover {
-    font-weight: 700;
+    color: var(--do);
     cursor: pointer;
-    background: #fafafa;
 }
+    .far {
+        width: 30px;
+        height: 30px;
+        margin-top: -10px;
+        padding-top: 6px;
+        margin-right: 5px;
+        text-align: center;
+    align-items: centers;
+        color: var(--den);
+        position: relative;
+    }
 
 input::placeholder {
     font-size: small;

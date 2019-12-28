@@ -18,7 +18,7 @@
 
 .old-price {
     color : #b3b3b3;
-    font-size: 15px;
+    font-size: 17px;
    margin-top: -20px;
    margin-bottom: -5px;
     text-decoration-line: line-through;
@@ -26,7 +26,7 @@
 
 .card-name {
     color : #555555;
-    font-size: 14px;
+    font-size: 17px;
     margin-bottom: 0px;
     margin-top: -20px;
     font-family: 'Roboto Mono', monospace;
@@ -37,7 +37,7 @@
 .card-price {
     font-weight: 700;
     color : #e73939;
-    font-size: 20px;
+    font-size: 24px;
     transition: 0.1s;
     margin-top: 5px;
 }

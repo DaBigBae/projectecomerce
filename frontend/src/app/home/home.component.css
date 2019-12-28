@@ -181,8 +181,8 @@ z-index: 1;
     }
 
     .c-type {
-        margin-bottom: 40px;
-
+        margin-bottom: 20px;
+        margin-top: 50px;
     }
 
 .off{
@@ -614,7 +614,8 @@ margin-right: 30px;
 
 .c-type {
     width: 100%;
-    box-shadow: 0 -60px 0 0 white;
+    box-shadow: 0 -80px 0 0 white;
+    margin-top: 30px;
 }
 
 #big-screen {

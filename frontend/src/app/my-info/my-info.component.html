@@ -1,24 +1,26 @@
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col col-2" >
-            <div class="headline">
-                <div class="ava" >
-                <i class=" far fa-user-circle fa-4x"></i>
-             </div>  
-             <div class="ten">
-                   <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
-                   <p id=name>Be Sa </p>
-                </div>  
-            </div>
-        <ul class="list-group">
-      
-          
-            <li class="list-group-item" routerLink="/my/orders">  <span class="fas fa-box"></span>My Orders</li>
-           <li class="list-group-item" routerLink="/my/info"> <span class="fas fa-user-edit"></span>My Info </li>
-        </ul></div>
+    <div class="row no-gutters">
+        <div class="user-nav" id="user-nav">
+
+            <ul class="list-group">
+                <li class="headline">
+                    <div class="ava">
+                        <img src="https://i.imgur.com/YgDOOTW.png" alt="" class="img">
+                    </div>
+                    <div class="ten">
+                        <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
+                        <p id=name>Be Sa </p>
+                    </div>
+                </li>
+
+                <li class="list-group-item" routerLink="/my/orders"> <span class="far fa-clone"></span>My Orders</li>
+                <li class="list-group-item" routerLink="/my/info"> <span class="far fa-user"></span>My Info </li>
+            </ul>
+            
+        </div>
             <div class="col col-5 s">
-                    <h3 class="sa">MY INFO</h3> 
+                    <h4 class="sa">MY INFO</h4> 
             <form [formGroup]="form1">
         
                 <div class="form-group">
@@ -52,7 +54,8 @@
             </div>
             
         </div>
-        <div class="col col-5 s collapse" id="collapseExample">
+
+        <div class="col col-4 s collapse" id="collapseExample">
             <h4 class="sa">Change Password</h4>
             <p class="sa" style="font-size: 20px; margin-bottom: 0px; margin-top: -25px;">___</p>
             <form [formGroup]="form">

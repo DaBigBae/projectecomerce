@@ -48,6 +48,7 @@ import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryService } from './category.service';
 import { UserService } from './user.service';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -113,7 +114,7 @@ const appRoutes: Routes = [
     OrdersListComponent,
     ProCatComponent,
     CategoryComponent,
-  
+    SideNavComponent,  
   ],
   imports: [
     BrowserModule,
