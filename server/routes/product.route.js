@@ -22,7 +22,9 @@ productRoute.post('/add', async (req, res)=>{
             price: req.body.price,
             description: req.body.desc,
             rating: req.body.rating,
-            imgurl: req.body.imgurl
+            qty: req.body.qty,
+            imgurl: req.body.imgurl,
+            category: req.body.category
         })
         const result = await product.save()
         res.send(result);

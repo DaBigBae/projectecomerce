@@ -36,7 +36,7 @@ verifyRoute.post('/:token', (req, res, next) => {
         res.send()
     } catch (err) {
         res.status(400).json({
-            msg: err.message
+            message: err.message
         })
     }
 })

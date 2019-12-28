@@ -1,3 +1,4 @@
+### 
 GET http://localhost:3000/user
 
 ###
@@ -57,11 +58,19 @@ POST  http://localhost:3000/product/add
 Content-Type: application/json
 
 {
-    "name": "producsas5",
-    "desc": "adav dasd adafasdf",
+    "name": "a",
+    "desc": "aadav dasd adafasdf",
     "price": "1200",
     "rating": "8",
-    "imgurl": "./img/test.jpg"
+    "qty": "2",
+    "imgurl": "./img/test.jpg",
+    "category": [{
+        "typeOne": "fire"
+    },{
+        "typeTwo": "water"
+    },{
+        "typeThree": "pug"
+    }]
 }
 ###
 
@@ -79,4 +88,8 @@ Content-Type: application/json
 }
 ###
 DELETE  http://localhost:3000/product/5dd420b39420db2280e327df
+Content-Type: application/json
+
+###
+POST http://localhost:3000/order/ntf
 Content-Type: application/json
