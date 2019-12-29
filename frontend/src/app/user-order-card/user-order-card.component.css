@@ -2,7 +2,6 @@
     border-radius: 0px;
     background: white;
     font-family: 'Roboto Mono', monospace;
-    border-radius: 20px 0 0 0 ;
 }
 
 .container {
@@ -17,6 +16,12 @@
     background: transparent;
     text-align: right;
 }
+
+.order-info {
+    display: flex;
+    flex-direction: row;
+}
+
 
     p {
         font-size: 14px;
@@ -81,6 +86,7 @@
     border-right: 1px solid #e0e0e0;
     padding-left: 0px;
     padding-right: 0px;
+    flex: 1;
 }
 
 label {
@@ -251,3 +257,25 @@ border-radius: 100px 0 100px 100px;
   }
   
   
+@media only screen and (max-width:800px)
+ {
+     .order-info {
+         flex-direction: column;
+     }
+     
+     .summary {
+         border-top: 1px solid #e0e0e0;
+     }
+
+     .ship-to {
+border-top: 1px solid #e0e0e0;
+     }
+
+     .container {
+         width: 400px;
+     }
+
+     .bn {
+         background: var(--do);
+     }
+ }
