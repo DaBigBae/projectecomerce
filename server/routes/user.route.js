@@ -113,44 +113,45 @@ userRoute.post('/logoutall', auth, async function(req, res){
         res.status(500).json({message: err.message})
     }
 })
-// //update one user
-// userRoute.patch('/:id', getUser, async (req,res)=>{
-//     if(req.body.name != null){
-//         res.user.name = req.body.name
-//     }
-//     if(req.body.email != null){
-//         res.user.email = req.body.email
-//     }
-//     try {
-//         const updatedUser = await res.user.save()
-//         res.json(updatedUser)
-//     } catch (err) {
-//         res.status(400).json({message: err.message})
-//     }
-// })
 
-// //delete one user
-// userRoute.delete('/:id',getUser, async (req,res)=>{
-//     try {
-//         await res.user.remove()
-//         res.json({message: `Delete this user!!!`})
-//     } catch(err){
-//         res.status(500).json({message: err.message})
-//     }
-// })
+//update one user
+userRoute.patch('/:id', getUser, async (req,res)=>{
+    if(req.body.name != null){
+        res.user.name = req.body.name
+    }
+    if(req.body.email != null){
+        res.user.email = req.body.email
+    }
+    try {
+        const updatedUser = await res.user.save()
+        res.json(updatedUser)
+    } catch (err) {
+        res.status(400).json({message: err.message})
+    }
+})
 
-// async function getUser(req, res, next){
-//     try {
-//         user = await User.findById(req.params._id)
-//         if (user == null){
-//             return res.status(404).json({message: `Can't find user!!!`})
-//         }
-//     } catch (err) {
-//         return res.status(500).json({message: err.message})   
-//     }
+//delete one user
+userRoute.delete('/:id',getUser, async (req,res)=>{
+    try {
+        await res.user.remove()
+        res.json({message: `Delete this user!!!`})
+    } catch(err){
+        res.status(500).json({message: err.message})
+    }
+})
 
-//     res.user = user
-//     next()
-// }
+async function getUser(req, res, next){
+    try {
+        user = await User.findById(req.params._id)
+        if (user == null){
+            return res.status(404).json({message: `Can't find user!!!`})
+        }
+    } catch (err) {
+        return res.status(500).json({message: err.message})   
+    }
+
+    res.user = user
+    next()
+}
 
 module.exports = userRoute

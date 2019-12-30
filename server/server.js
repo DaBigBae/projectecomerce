@@ -20,6 +20,9 @@ const userRoute = require('./routes/user.route')
 const verifyRoute = require('./routes/verify.route')
 const productRoute = require('./routes/product.route')
 const orderRoute = require('./routes/order.route')
+const uploadRoute = require('./routes/upload.route')
+const categoryRoute = require('./routes/category.route')
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -30,6 +33,8 @@ app.use('/user',userRoute)
 app.use('/verify',verifyRoute)
 app.use('/product',productRoute)
 app.use('/order',orderRoute)
+app.use('/upload', uploadRoute)
+app.use('/category',categoryRoute)
 
 // app.use('/api',userRoute)
 

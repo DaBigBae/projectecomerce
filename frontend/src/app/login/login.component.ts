@@ -2,6 +2,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService, ApiService } from '../shared';
+import { CookieService } from 'ngx-cookie-service'
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit{
       private route: ActivatedRoute,
       private router: Router,
       private authenticationService: ApiService,
-      private alertService: AlertService) {}
+      private alertService: AlertService,
+      private cookieService: CookieService) {}
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
@@ -48,7 +51,9 @@ export class LoginComponent implements OnInit{
       this.authenticationService.login(this.f.email.value, this.f.password.value)
           .subscribe(
               res => {
-                this.alertService.success('Login successful', true);
+                  this.cookieService.set('userID', res.user._id);
+                  this.cookieService.set('token', res.token);
+                  this.alertService.success('Login successful', true);
                   this.router.navigate(['/']);
               },
               error => {
