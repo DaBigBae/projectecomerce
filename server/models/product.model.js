@@ -31,10 +31,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    rating: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Rating'
-    },
+    // rating: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Rating'
+    // },
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
@@ -66,22 +66,25 @@ function foo(image, fn){
         form: {
             image: image
         }
-    }, function (err, body) {
+    }, (err, res, body)=>{
         if (err) {
             return res.send({
                 message: `upload failed: ` + err
             });
         }
-        fn(JSON.parse(body).data.url)
+        // fn(JSON.parse(body).data.url)
+        console.log(`statusCode: ${res.statusCode}`)
+        console.log(`body: ${body}`)
     })
 }
 
 productSchema.pre('save', async function (next) {
-    // const img = new Buffer.from(fs.readFileSync(this.imgurl)).toString('base64')
-    // await foo(img, function(url){
-    //     console.log(url)
-    //     productSchema.imgurl = url
-    // }) 
+    const img = new Buffer.from(fs.readFileSync(this.imgurl)).toString('base64')
+    // console.log(img)
+    await foo(img, function(url){
+        console.log(url)
+        productSchema.imgurl = url
+    }) 
 })
 
 const Product = mongoose.model('Product', productSchema)

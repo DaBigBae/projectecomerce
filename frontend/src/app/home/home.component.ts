@@ -20,19 +20,11 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit() {
-     this.getUser()
   }
   
 
   setSelectProduct(product:products) {
     this.selectedProduct = product;
-  }
-  getUser(){
-    return this.productsServices.getUser().subscribe((data)=>{
-      this.User = data;
-      console.log(this.User);
-      console.log(this.User[0]._id);
-    })
   }
     
 }

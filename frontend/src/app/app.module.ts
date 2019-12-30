@@ -51,6 +51,8 @@ import { CategoryService } from './category.service';
 import { UserService } from './user.service';
 import { AlertService} from './shared';
 import { AlertComponent } from './_directives';
+import { CookieService } from 'ngx-cookie-service';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
@@ -138,7 +140,8 @@ const appRoutes: Routes = [
     UserService,
     AdminAuthGuard,
     CategoryService,
-    AlertService
+    AlertService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
