@@ -20,7 +20,7 @@ export class ProductCardComponent implements OnInit {
   @Input() imgurl: string;
   product: products;
   ngOnInit() {
-    // console.log(this.name)
+    console.log(localStorage.getItem('id'));
     // this.product._id = this._id;
     // this.product.name = this.name;
     // this.product.price = this.price;
