@@ -44,9 +44,11 @@ export class ApiService {
     catchError(this.handleError));
   }
 
-logout() {
+logout(Authorization: string) {
     // remove user from local storage to log user out
-    
+    return this.http.post<any>(this.apiURL + `/user/logout`, { Authorization: Authorization},this.httpOpt)
+   .pipe(
+    catchError(this.handleError));
 }
 register(user) {
   return this.http.post(this.apiURL +`/user/signup`, user, this.httpOpt)

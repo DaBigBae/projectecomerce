@@ -36,7 +36,7 @@ export class UserService {
     }
 
     update(user: User) {
-        return this.http.put(endpoint + `/users/` + user.id, user,httpOptions);
+        return this.http.put(endpoint + `/users/` + user._id, user,httpOptions);
     }
 
     delete(id: number) {

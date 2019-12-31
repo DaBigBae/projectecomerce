@@ -48,7 +48,6 @@ import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryService } from './category.service';
-import { UserService } from './user.service';
 import { AlertService} from './shared';
 import { AlertComponent } from './_directives';
 const appRoutes: Routes = [
@@ -135,7 +134,6 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     AuthGuard,
-    UserService,
     AdminAuthGuard,
     CategoryService,
     AlertService
