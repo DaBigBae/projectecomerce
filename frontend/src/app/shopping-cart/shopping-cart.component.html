@@ -4,7 +4,7 @@
       <h1 style="font-weight: bolder; font-size: 50px; width: 100px;">Shopping Cart</h1>
     </div>
     <div class="col">
-      <div class="detail"  *ngFor="let product of products">
+      <div class="detail">
 
         <!-- <button class="btn btn-sm">Clear all items</button>-->
         <p style="font-size: 13px; margin-top: 50px; margin-bottom: 20px;"> You have 1 item(s) in your cart</p>
@@ -40,29 +40,28 @@
         <ul>
           <li>
             <div class="container item">
-              <div class="row">
-                <img class="img-container" src={{product.imgurl}}
-                  alt="">
+              <div class="row"  (ngOnInit)="ngOnInit()" *ngFor="let p of products">
+                
+                  <img class="img-container" src={{p.imgurl}} alt="">
 
-                <div class="col">
-                  <div class="name-price">
-                    <p class="pro-name" routerLink="/product-detail">{{product.name}}</p>
-                    <p class="pro-price">{{product.Price}}</p>
+                  <div class="col">
+                    <div class="name-price">
+                      <p class="pro-name" routerLink="/product-detail">{{p.name}}</p>
+                      <p class="pro-price">{{p.price}}</p>
+                    </div>
+                    <div class="quantity" style="width: 100px;">
+                      <product-quantity></product-quantity>
+                    </div>
+
                   </div>
-                  <div class="quantity" style="width: 100px;">
-                    <product-quantity></product-quantity>
+
+                  <div class="col del-sub">
+                    <button class="del-btn"></button>
+                    <p class="sub-total">$5.00</p>
+
                   </div>
-
-                </div>
-
-                <div class="col del-sub">
-                  <button class="del-btn"></button>
-                  <p class="sub-total">$5.00</p>
-
-                </div>
               </div>
             </div>
-
 
           </li>
         </ul>

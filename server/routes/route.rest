@@ -26,8 +26,8 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "uss3@ahsf.cas",
-    "password": "wwww"
+    "email": "levy151298@gmail.com",
+    "password": "01653659895"
 }
 ###profile
 GET http://localhost:3000/user/profile
@@ -37,7 +37,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzE3Z
 ###logout
 POST http://localhost:3000/user/logout
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5NzQ4N30.sCtN5362wkRfj9sL75xh18f3bXGCIoviAJ3jRiyU0Ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3NzgxODEwOH0.n1mkUB8po2GCQo2uljmc07oljmPKs89toHZM8HS7WoY
 
 ###logoutall
 POST http://localhost:3000/user/logoutall
@@ -45,23 +45,22 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
 ### change info user
-PATCH  http://localhost:3000/user/5df0a77bd64de81f3cb5fe9b
+PATCH  http://localhost:3000/user/changeprofile
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3NzgxODkyM30.2k2_8HKs1fZILmJBFKqw3Yqp9n2vDm8VrRalljEahlk
 {
-    "name": "abcde",
-    "email": "abcde@gmail.com",
-    "password": "wwww1234"
+    "name": "le vy",
+    "email": "levy151298@gmail.com"
 }
 
 ### change password
-PATCH http://localhost:3000/user/changepassword/5df0a77bd64de81f3cb5fe9b
+PATCH http://localhost:3000/user/changepassword
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3Nzc5NjMwNn0.ldLGVG-8ZMLr0gI7iZgPlH-JvqHjenGxw0QG_Crg73k
 
 {
-    "oldPassword": "abcd",
-    "password1": "abcd1",
-    "password2": "abcd1"
+    "password1": "123456",
+    "password2": "123456"
 }
 
 ###
@@ -75,13 +74,7 @@ Content-Type: application/json
     "rating": "8",
     "qty": "2",
     "imgurl": "./img/test.jpg",
-    "category": [{
-        "typeOne": "fire"
-    },{
-        "typeTwo": "water"
-    },{
-        "typeThree": "pug"
-    }]
+    "categories": ["fire", "water", "pug"]
 }
 ###
 

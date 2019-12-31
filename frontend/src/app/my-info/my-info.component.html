@@ -1,86 +1,91 @@
-
-<div class="container-fluid" (ngOnInit) = "ngOnInit()">
+<div class="container-fluid" (ngOninit)="ngOninit()">
     <div class="row">
-        <div class="col col-2" >
+        <div class="col col-2">
             <div class="headline">
-                <div class="ava" >
-                <i class=" far fa-user-circle fa-4x"></i>
-             </div>  
-             <div class="ten" >
-                   <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
-                   <p id="name">{{user.name}}</p>
-                </div>  
+                <div class="ava">
+                    <i class=" far fa-user-circle fa-4x"></i>
+                </div>
+                <div class="ten">
+                    <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
+                    <p id="name">{{user.name}}</p>
+                </div>
             </div>
-        <ul class="list-group">
-          
-            <li class="list-group-item" routerLink="/my/orders">  <span class="fas fa-box"></span>My Orders</li>
-           <li class="list-group-item" routerLink="/my/info"> <span class="fas fa-user-edit"></span>My Info </li>
-        </ul></div>
-            <div class="col col-5 s">
-                    <h3 class="sa">MY INFO</h3> 
-        
+            <ul class="list-group">
+
+                <li class="list-group-item" routerLink="/my/orders"> <span class="fas fa-box"></span>My Orders</li>
+                <li class="list-group-item" routerLink="/my/info/{{user._id}}}"> <span
+                        class="fas fa-user-edit"></span>My Info </li>
+            </ul>
+        </div>
+        <div class="col col-5 s" >
+            <h3 class="sa">MY INFO</h3>
+            <form [formGroup]="ChangeInfoForm">
                 <div class="form-group">
-                    <label >Full Name</label>
-                    <input  type="name" class="form-control" value={{user.name}}>
-                
-                </div>        
-                
-                <div class="form-group">
-                        <label >Email</label>
-                        <input  type="email" class="form-control" value={{user.email}} readonly>
-            
-                </div> 
+                    <label>Full Name</label>
+                    <input formControlName="name" type="name" class="form-control" value={{user.name}}>
+
+                </div>
 
                 <div class="form-group">
-                        <label >Phone Number</label>
-                        <input  type="tel" class="form-control" value={{user.phone}}>
-            
-                </div> 
-            
+                    <label>Email</label>
+                    <input formControlName="mail" type="email" class="form-control" value={{user.email}}>
+
+                </div>
+
                 <div class="form-group">
-                    <label >Address</label>
-                    <input  type="text" class="form-control" value="ở đâu á">
-            
-                </div> 
-       
+                    <label>Phone Number</label>
+                    <input type="tel" class="form-control" value={{user.phone}}>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" value="ở đâu á">
+
+                </div>
+            </form>
             <div class="cochu">
-                <button class="btn save">SAVE</button>
-                <span class="cacban"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">CHANGE PASSWORD ></span>
+                <button (click)="changeinfo()" class="btn save">SAVE</button>
+                <span class="cacban" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                    aria-controls="collapseExample">CHANGE PASSWORD ></span>
             </div>
-            
+
         </div>
         <div class="col col-5 s collapse" id="collapseExample">
             <h4 class="sa">Change Password</h4>
             <p class="sa" style="font-size: 20px; margin-bottom: 0px; margin-top: -25px;">___</p>
-            <form [formGroup]="form">
-        
-                    <div class="form-group">
-                        <label >Current Password</label>
-                        <input formControlName="curpass" type="password" class="form-control">
-                        <div *ngIf="curpass.touched && curpass.invalid" class="alert alert-danger">
-                                <div *ngIf="curpass.errors.required"> Cannot be empty</div>
-                        </div>
-                    </div>        
-                    
-                    <div class="form-group">
-                            <label >New Password</label>
-                            <input formControlName="newpass" type="password" class="form-control">
-                            <div *ngIf="newpass.touched && newpass.invalid" class="alert alert-danger">
-                                    <div *ngIf="newpass.errors.required"> Cannot be empty</div>
-                            </div>
-                    </div> 
-                
-                    <div class="form-group">
-                        <label >Confirm password</label>
-                        <input formControlName="conpass" type="password" class="form-control">
-                        <div *ngIf="conpass.touched && conpass.invalid" class="alert alert-danger">
-                                <div *ngIf="conpass.errors.required"> Cannot be empty</div>
-                        </div>
-                    </div> 
-            
-                </form>
-                    <button class="btn">CONFIRM</button>
+            <form [formGroup]="ChangePasswordForm">
+
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input formControlName="oldPassword" type="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.oldPassword.errors }">
+                    <div *ngIf="submitted && f.oldPassword.errors" class="alert alert-danger">
+                        <div *ngIf="f.oldPassword.errors.required"> Cannot be empty</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input formControlName="password1" type="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.password1.errors }">
+                    <div *ngIf="submitted && f.password1.errors" class="alert alert-danger">
+                        <div *ngIf="f.password1.errors.required"> Cannot be empty</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm password</label>
+                    <input formControlName="password2" type="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.password2.errors }">
+                    <div *ngIf="submitted && f.password2.errors" class="alert alert-danger">
+                        <div *ngIf="f.password2.errors.required"> Cannot be empty</div>
+                    </div>
+                </div>
+
+            </form>
+            <button (click)="changepass()" class="btn">CONFIRM</button>
         </div>
-    </div>    
+    </div>
 
 </div>

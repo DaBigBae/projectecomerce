@@ -3,6 +3,7 @@ const request = require('request')
 const fs = require('fs')
 const ratingSch = require('../models/rating.model')
 const viewSch = require('../models/view.model')
+const categorySch = require('../models/category.model')
  
 const productSchema = new mongoose.Schema({
     name: {
@@ -35,28 +36,18 @@ const productSchema = new mongoose.Schema({
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'Rating'
     // },
-    comments: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
-    }],
+    // comments: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Comment'
+    // }],
     view: {
         type: Number,
         required: true,
         default: "0"
     },
     category: [{
-        typeOne:{
-            type: String,
-            required: false
-        },
-        typeTwo:{
-            type: String,
-            required: false
-        },
-        typeThree:{
-            type: String,
-            required: false
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category'
     }]
 })
 
@@ -79,12 +70,12 @@ function foo(image, fn){
 }
 
 productSchema.pre('save', async function (next) {
-    const img = new Buffer.from(fs.readFileSync(this.imgurl)).toString('base64')
-    // console.log(img)
-    await foo(img, function(url){
-        console.log(url)
-        productSchema.imgurl = url
-    }) 
+    // const img = new Buffer.from(fs.readFileSync(this.imgurl)).toString('base64')
+    // // console.log(img)
+    // await foo(img, function(url){
+    //     console.log(url)
+    //     productSchema.imgurl = url
+    // }) 
 })
 
 const Product = mongoose.model('Product', productSchema)
