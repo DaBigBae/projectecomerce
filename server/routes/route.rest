@@ -44,15 +44,26 @@ POST http://localhost:3000/user/logoutall
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
-###
-
-PATCH  http://localhost:3000/user/5dc90f07eec44d19b019b91
+### change info user
+PATCH  http://localhost:3000/user/5df0a77bd64de81f3cb5fe9b
 Content-Type: application/json
 
 {
     "name": "abcde",
-    "email": "abcde@gmail.com"
+    "email": "abcde@gmail.com",
+    "password": "wwww1234"
 }
+
+### change password
+PATCH http://localhost:3000/user/changepassword/5df0a77bd64de81f3cb5fe9b
+Content-Type: application/json
+
+{
+    "oldPassword": "abcd",
+    "password1": "abcd1",
+    "password2": "abcd1"
+}
+
 ###
 POST  http://localhost:3000/product/add
 Content-Type: application/json

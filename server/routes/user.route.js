@@ -5,6 +5,7 @@ const nodeMailer = require('nodemailer')
 const auth = require('../middleware/auth')
 const User = require('../models/user.model')
 const token2verify = require('../models/token2verify.model')
+const bCrypt = require('bcrypt')
 
 //get all user
 userRoute.get('/', async (req,res)=>{
@@ -16,12 +17,12 @@ userRoute.get('/', async (req,res)=>{
     }
 })
 
-//get one user
-// userRoute.get('/:id', getUser, (req, res)=>{
-//     res.json(res.user)
-// })
+// get one user
+userRoute.get('/:id', getUser, (req, res)=>{
+    res.status(200).json(res.user)
+})
 
-//creat/signup user
+//create/signup user
 userRoute.post('/signup', async (req, res)=>{
     try {
         const user = new User({
@@ -35,7 +36,6 @@ userRoute.post('/signup', async (req, res)=>{
         //     return res.status(400).send({msg: 'Email da duoc su dung boi tai khoan khac'})
         // }
 
-        
         //const token = await user.generateAuthToken()
         //res.status(201).json({user, token})
         await user.save((err)=>{
@@ -58,7 +58,7 @@ userRoute.post('/signup', async (req, res)=>{
                 console.log(tokenv.token)
             })
         })
-        res.send()
+        res.status(200).send()
     } catch (err) {
         res.status(400).json({message: err.message})
     }
@@ -79,7 +79,7 @@ userRoute.post('/login', async (req, res)=>{
             res.redirect(process.env.SERVER_URL + '/admin')
         }
         const token = await user.generateAuthToken()
-        res.json({user, token})
+        res.status(200).json({user, token})
     } catch (err) {
         res.status(400).json({message: err.message})
     }
@@ -97,7 +97,7 @@ userRoute.post('/logout', auth, async function(req, res){
             return token.token != req.token
         })
         await req.user.save()
-        req.send()
+        req.status(200).send()
     } catch (err) {
         res.status(500).json({message: err.message})
     }
@@ -108,14 +108,14 @@ userRoute.post('/logoutall', auth, async function(req, res){
     try{
         req.user.tokens.splice(0, req.user.tokens.length)
         await req.user.save()
-        res.send()
+        res.status(200).send()
     } catch (err){
         res.status(500).json({message: err.message})
     }
 })
 
 //update one user
-userRoute.patch('/:id', getUser, async (req,res)=>{
+userRoute.patch('/changeprofile/:id', getUser, async (req,res)=>{
     if(req.body.name != null){
         res.user.name = req.body.name
     }
@@ -124,9 +124,25 @@ userRoute.patch('/:id', getUser, async (req,res)=>{
     }
     try {
         const updatedUser = await res.user.save()
-        res.json(updatedUser)
+        res.status(201).json(updatedUser)
     } catch (err) {
         res.status(400).json({message: err.message})
+    }
+})
+
+userRoute.patch('/changepassword/:id', getUser, async (req, res)=>{
+    let isMatchOldPassword
+    try {
+        if((req.body.oldPassword != null)){
+            isMatchOldPassword = bCrypt.compare(req.body.oldPassword, res.user.password)
+        }
+        if((req.body.password1 != null) && (req.body.password2 !=null) && isMatchOldPassword){
+            res.user.password = req.body.password1
+        }
+        const updatedUserPassword = await res.user.save()
+        res.status(201).json(updatedUserPassword)
+    } catch (error) {
+        res.status(400).json({message: error.message})
     }
 })
 
@@ -134,7 +150,7 @@ userRoute.patch('/:id', getUser, async (req,res)=>{
 userRoute.delete('/:id',getUser, async (req,res)=>{
     try {
         await res.user.remove()
-        res.json({message: `Delete this user!!!`})
+        res.status(200).json({message: `Delete this user!!!`})
     } catch(err){
         res.status(500).json({message: err.message})
     }
@@ -142,7 +158,7 @@ userRoute.delete('/:id',getUser, async (req,res)=>{
 
 async function getUser(req, res, next){
     try {
-        user = await User.findById(req.params._id)
+        user = await User.findById(req.params.id)
         if (user == null){
             return res.status(404).json({message: `Can't find user!!!`})
         }
