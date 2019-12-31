@@ -245,24 +245,15 @@
     <span class="shop-now" routerLink="/category"> VIEW ALL </span>
   </div>
 
-    <div class="all-product-view">
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
+    <div  class="all-product-view"
+       *ngFor="let product of product$" (click)="setSelectProduct(product)">
+          <product-card
+          [_id] = "product._id"
+          [name] = "product.name"
+          [price] = "product.price"
+          [imgurl] = "product.imgurl"
+         >
+        </product-card>
     </div>
 </div>
 

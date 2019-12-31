@@ -1,18 +1,19 @@
 const express = require('express')
 const productRoute = express.Router()
 const Product = require('../models/product.model')
+const Category = require('../models/category.model')
 
 productRoute.get('/', async (req,res)=>{
     try {
         const productList = await Product.find()
-        res.json(productList);
+        res.status(200).json(productList);
     } catch (err) {
         res.status(500).json({message: err.message});
     }
 })
 
 productRoute.get('/:id', getProduct, async(req, res)=>{
-     res.json(res.product);
+    res.json(res.product);
 })
 
 productRoute.post('/add', async (req, res)=>{
@@ -21,10 +22,23 @@ productRoute.post('/add', async (req, res)=>{
             name: req.body.name,
             price: req.body.price,
             description: req.body.desc,
-            rating: req.body.rating,
-            imgurl: req.body.imgurl
+            // rating: req.body.rating,
+            qty: req.body.qty,
+            imgurl: req.body.imgurl,
+            categories: req.body.categories
         })
-        const result = await product.save()
+        const result = await product.save((err)=>{
+            if(err){
+                res.status(400).json({message: err.message})
+            }
+            for (const categoty of categories) {
+                Category.find({name: categoty}, function(err, cate){
+                    const category = new Category({
+                        // products.productID: categoty._id
+                    })
+                })
+            }
+        })
         res.send(result);
     } catch (err) {
         res.status(400).json({message: err.message});

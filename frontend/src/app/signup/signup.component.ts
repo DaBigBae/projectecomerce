@@ -1,7 +1,8 @@
 import { EmailValidators } from './email.validators';
-
+import { Router } from '@angular/router';
+import { AlertService, ApiService } from '../shared';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'signup',
@@ -9,31 +10,74 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 
-export class SignupComponent {
-form = new FormGroup ({
-  name : new FormControl('', [
-    Validators.required,
-  ]),
-  email : new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]),
-  password: new FormControl('',[
-    Validators.required,
-    Validators.minLength(6)
-  ])
-});
+export class SignupComponent implements OnInit{
+  registerForm: FormGroup;
+  loading = false;
+  submitted = false;
 
-get name(){
-  return this.form.get('name');
-}
+  constructor(
+      private formBuilder: FormBuilder,
+      private router: Router,
+      private userService: ApiService,
+      private alertService: AlertService) { }
 
-get email(){
-  return this.form.get('email');
-}
+  ngOnInit() {
+      this.registerForm = this.formBuilder.group({
+        email: ['', Validators.required],
+          name: ['', Validators.required],
+          password: ['', [Validators.required, Validators.minLength(6)]],
+          rule: ['user'],
+          phone: ['', Validators.required]
+         
+      });
+  }
 
-get password(){
-  return this.form.get('password');
-}
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+      this.submitted = true;
+
+      // stop here if form is invalid
+      if (this.registerForm.invalid) {
+          return;
+      }
+      console.log(this.registerForm.value);
+      
+      this.loading = true;
+      this.userService.register(this.registerForm.value)
+          .subscribe((
+              result) => {
+                  console.log('done');
+                  this.alertService.success('Registration successful', true);
+                  this.router.navigate(['/login']);
+              },
+              error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+              });
+      
+  }
+  get username(){
+    return this.registerForm.get('username');
+  }
+
+  get password(){
+    return this.registerForm.get('password');
+  }
+
+  get phone(){
+    return this.registerForm.get('phone');
+  }
+
+  get mail(){
+    return this.registerForm.get('mail');
+  }
+  login(){
+    this.registerForm.setErrors({
+      invalidLogin: true
+    });
+  }
   
+
 }

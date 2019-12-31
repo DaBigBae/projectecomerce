@@ -1,21 +1,24 @@
+### 
 GET http://localhost:3000/user
 
 ###
 GET http://localhost:3000/user/5dd3cfc8b6eb421d546751e6
 ###
 DELETE http://localhost:3000/user/5dc915119f007d27782d1bfa
-###
+### SignUp
 POST http://localhost:3000/user/signup
 Content-Type: application/json
 
 {
     "name": "33333",
-    "email": "usgffjhas@ahsf.cas",
-    "password": "wwww"
+    "email": "test@api.nhe",
+    "password": "wwww",
+    "role": "user",
+    "phone": ""
 }
 
 ### verify
-POST http://localhost:3000/verify/fd55928ef8041798b48d2811c024c5ce
+POST http://localhost:3000/verify/84383593e9ac9a44f9aa5ca1c66d4d1e
 Content-Type: application/json
 
 ### login
@@ -23,13 +26,13 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "usgffjhas@ahsf.cas",
+    "email": "uss1@ahsf.cas",
     "password": "wwww"
 }
 ###profile
 GET http://localhost:3000/user/profile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzE3ZDY4ZTkxMzZhNDBlMDk5ZCIsImlhdCI6MTU3NzQ4NjQzOH0.NZzOu2sJb4plQ-hCuGZtaoOrccOCgDBaU3o-_KYfwbM
 
 ###logout
 POST http://localhost:3000/user/logout
@@ -41,25 +44,38 @@ POST http://localhost:3000/user/logoutall
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
-###
-
-PATCH  http://localhost:3000/user/5dc90f07eec44d19b019b91
+### change info user
+PATCH  http://localhost:3000/user/5df0a77bd64de81f3cb5fe9b
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzMjdkMmY3MWQzY2E0ZGY0MiIsImlhdCI6MTU3Nzc5MzU3MX0.P0MTBIyjbwepk235iNhTrtw9Rmh6m1ienpzfI0dsqaA
 
 {
-    "name": "abcde",
-    "email": "abcde@gmail.com"
+    "name": "LNg",
+    "email": "Lynk@gmail.com"
 }
+
+### change password
+PATCH http://localhost:3000/user/changepassword/5e08f1af28d64e1c94d16289
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDhmMWFmMjhkNjRlMWM5NGQxNjI4OSIsImlhdCI6MTU3Nzc5MjU2Mn0.XvcYiBl5FKPwfrE9830dBUmsFoaiAwxvziFilG5YDwQ
+
+{
+    "password1": "abcd2",
+    "password2": "abcd2"
+}
+
 ###
 POST  http://localhost:3000/product/add
 Content-Type: application/json
 
 {
-    "name": "producsas5",
-    "desc": "adav dasd adafasdf",
+    "name": "a",
+    "desc": "aadav dasd adafasdf",
     "price": "1200",
     "rating": "8",
-    "imgurl": "./img/test.jpg"
+    "qty": "2",
+    "imgurl": "./img/test.jpg",
+    "categories": ["fire", "water", "pug"]
 }
 ###
 
@@ -78,3 +94,24 @@ Content-Type: application/json
 ###
 DELETE  http://localhost:3000/product/5dd420b39420db2280e327df
 Content-Type: application/json
+
+###
+POST http://localhost:3000/order/ntf
+Content-Type: application/json
+
+###upload image - trong adminpage
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+    "name": "test",
+    "imgPath": "c:\\Users\\lynkn\\Desktop\\Mona_Lisa.jpg"
+}
+
+###add category
+POST http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "name": "Ground"
+}
