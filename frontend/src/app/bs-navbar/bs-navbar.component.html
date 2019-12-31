@@ -1,5 +1,6 @@
 <div class="navbar navbar-expand-lg">
   <div class="row">
+
     <div class="column">
       <a class="navbar-brand" routerLink="/">
         <logo routerLink="/"></logo>
@@ -8,15 +9,21 @@
 
     </div>
 
-  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="fas fa-bars"></span>
   </button>-->
 
     <div class="col">
 
-      <div class="container cuc">
+      <div class="container haha" id="small" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        . </div>
+
+      <div class="container cuc" id="big">
         <input type="search" class="search" placeholder="Search">
       </div>
+
+
+  
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav" style="display: flex; flex-direction: row">
@@ -27,28 +34,38 @@
 
           <!-- hiển thị first name sau khi đăng nhập , khi ở anonymous user thì chỉ hiển thị login, sign-up -->
           <li class="dropdown">
-            <a class="drod-togg" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="firstname" *ngIf="anonymousUser"> Firstname </span> <i class="far fa-user"></i></a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-              <a class="dropdown-item" routerLink="/sign-up">Sign-up</a>
-              <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
-              <a class="dropdown-item" routerLink="/my/info">My Info</a>
-              <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-              <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
-              <a class="dropdown-item logout" (click)="logout()">Log Out</a>
+            <a class="drod-togg">
+              <span class="firstname" *ngIf="anonymousUser"> Firstname </span>
+              <div class="user-icon"></div>
+              <!-- <i class="far fa-user"></i>
+              -->
+            </a>
+            <div class="dropdown-content">
+              <a class="arrow"> </a>
+              <a class="dropdo first" routerLink="/sign-up">Sign-up</a>
+              <a class="dropdo" routerLink="/my/orders">My Orders</a>
+              <a class="dropdo" routerLink="/my/info">My Info</a>
+              <a class="dropdo" routerLink="/admin/orders">Manage Orders</a>
+              <a class="dropdo" routerLink="/admin/products">Manage Products</a>
+              <a class="logout" (click)="logout()">Log Out</a>
             </div>
           </li>
         </ul>
       </div>
 
       <a class="nav-link cucu" routerLink="/shopping-cart">
-      <div class="cart">
-        <button class="shopping-cart"> 
-          <span class="cart-status">0</span> 
-          <span class="cart-status-2">0</span>
-        </button>
-      </div>
+        <div class="cart">
+          <button class="shopping-cart">
+            <span class="cart-status">0</span>
+            <span class="cart-status-2">0</span>
+          </button>
+        </div>
       </a>
     </div>
   </div>
+
+  <div class="collapse" id="collapseExample" >
+    <input type="search" class="search" placeholder="Search">
+  </div>
+
 </div>

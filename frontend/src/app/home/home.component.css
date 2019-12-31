@@ -804,5 +804,11 @@ grid-template-columns: 34% 34% 34%;
 .carousel-control-prev {
     display: none;
 }
+
+.bt {
+
+    height : 60px;
+        font-size: 17px;
+}
 }
 
