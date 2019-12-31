@@ -148,7 +148,7 @@ userRoute.delete('/:id',getUser, async (req,res)=>{
     try {
         await res.user.remove()
         res.status(200).json({message: `Delete this user!!!`})
-    } catch(err){
+    } catch (err){
         res.status(500).json({message: err.message})
     }
 })

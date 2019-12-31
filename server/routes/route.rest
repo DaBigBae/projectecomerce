@@ -26,8 +26,8 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "uss1@ahsf.cas",
-    "password": "wwww"
+    "email": "levy151298@gmail.com",
+    "password": "01653659895"
 }
 ###profile
 GET http://localhost:3000/user/profile
@@ -37,7 +37,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzE3Z
 ###logout
 POST http://localhost:3000/user/logout
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYzlhYThiZDA3NGVkMTE4ODFkNzliMiIsImlhdCI6MTU3MzQ5NzQ4N30.sCtN5362wkRfj9sL75xh18f3bXGCIoviAJ3jRiyU0Ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3NzgxODEwOH0.n1mkUB8po2GCQo2uljmc07oljmPKs89toHZM8HS7WoY
 
 ###logoutall
 POST http://localhost:3000/user/logoutall
@@ -45,23 +45,22 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
 ### change info user
-PATCH  http://localhost:3000/user/5df0a77bd64de81f3cb5fe9b
+PATCH  http://localhost:3000/user/changeprofile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzMjdkMmY3MWQzY2E0ZGY0MiIsImlhdCI6MTU3Nzc5MzU3MX0.P0MTBIyjbwepk235iNhTrtw9Rmh6m1ienpzfI0dsqaA
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3NzgxODkyM30.2k2_8HKs1fZILmJBFKqw3Yqp9n2vDm8VrRalljEahlk
 {
-    "name": "LNg",
-    "email": "Lynk@gmail.com"
+    "name": "le vy",
+    "email": "levy151298@gmail.com"
 }
 
 ### change password
-PATCH http://localhost:3000/user/changepassword/5e08f1af28d64e1c94d16289
+PATCH http://localhost:3000/user/changepassword
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDhmMWFmMjhkNjRlMWM5NGQxNjI4OSIsImlhdCI6MTU3Nzc5MjU2Mn0.XvcYiBl5FKPwfrE9830dBUmsFoaiAwxvziFilG5YDwQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3Nzc5NjMwNn0.ldLGVG-8ZMLr0gI7iZgPlH-JvqHjenGxw0QG_Crg73k
 
 {
-    "password1": "abcd2",
-    "password2": "abcd2"
+    "password1": "123456",
+    "password2": "123456"
 }
 
 ###

@@ -71,7 +71,7 @@ const appRoutes: Routes = [
   { path: 'cancel-order', component: CancelOrderComponent},
   { path: 'admin/users', component: UsersComponent},
 
-  { path: 'my/info', component: MyInfoComponent},
+  { path: 'my/info/:iduser', component: MyInfoComponent},
 
   { path: 'product-detail/:id', component: ProductDetailComponent},
   { path: 'admin/dashboard', component: DashboardComponent},
@@ -142,6 +142,7 @@ const appRoutes: Routes = [
     CategoryService,
     AlertService,
     CookieService
+
   ],
   bootstrap: [AppComponent]
 })

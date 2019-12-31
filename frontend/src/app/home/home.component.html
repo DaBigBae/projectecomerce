@@ -246,8 +246,9 @@
   </div>
 
     <div  class="all-product-view"
-       *ngFor="let product of product$" (click)="setSelectProduct(product)">
+       *ngFor="let product of product$" >
           <product-card
+          (click)="setSelectProduct(product)"
           [_id] = "product._id"
           [name] = "product.name"
           [price] = "product.price"
