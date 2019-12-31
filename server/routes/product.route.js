@@ -1,12 +1,12 @@
 const express = require('express')
 const productRoute = express.Router()
 const Product = require('../models/product.model')
-const Category = require('')
+const Category = require('../models/category.model')
 
 productRoute.get('/', async (req,res)=>{
     try {
         const productList = await Product.find()
-        res.json(productList);
+        res.status(200).json(productList);
     } catch (err) {
         res.status(500).json({message: err.message});
     }

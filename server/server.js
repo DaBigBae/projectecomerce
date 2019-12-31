@@ -33,7 +33,7 @@ app.use('/user',userRoute)
 app.use('/verify',verifyRoute)
 app.use('/product',productRoute)
 app.use('/order',orderRoute)
-app.use('/upload', uploadRoute)
+// app.use('/upload', uploadRoute)
 app.use('/category',categoryRoute)
 
 // app.use('/api',userRoute)
