@@ -1,6 +1,5 @@
 .container {
-    background: white;
-    padding: 10px;
+   max-width: 1250px;
 }
 
 .btn {
@@ -18,6 +17,19 @@
   display: inline-block;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.order-success {
+  display: flex;
+  flex-direction: row;
+}
+
+.shipping-info {
+  flex: 1;
+}
+
+.cart-summary {
+  flex: 1;
 }
 
 .card {
@@ -172,5 +184,23 @@ h3 {
   margin-top: -10px;
   color: #242424;
 }
+
+
+ @media (max-width:800px)
+ {
+
+  .order-success {
+    flex-direction: column-reverse;
+  }
+
+  .cart-summary {
+    margin-bottom: 50px;
+  }
+
+
+  .r{
+    border-bottom: unset; 
+}
+ }
 
 

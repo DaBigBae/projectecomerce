@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+declare function openNav():any;
+declare function closeNav():any;
+
 
 @Component({
   selector: 'app-my-order',
@@ -10,6 +13,8 @@ export class MyOrderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    openNav();
+    closeNav();
   }
 
 }
