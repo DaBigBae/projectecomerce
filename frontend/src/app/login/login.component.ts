@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit{
                 this.alertService.success('Login successful', true);
                 this.router.navigate(['/']);
                 this.data.changeMessage(true);
-                this.data.changeToken("Bearer "+res.token);
+                this.data.changeToken("Bearer "+  res.token);
                 this.data.changUser(res.user);
                   this.cookieService.set('userID', res.user._id);
                   this.cookieService.set('token', res.token);

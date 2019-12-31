@@ -13,10 +13,8 @@ productRoute.get('/', async (req,res)=>{
 })
 
 productRoute.get('/:id', getProduct, async(req, res)=>{
-     res.json(res.product);
+    res.json(res.product);
 })
-
-productRoute.get('/category/:id', )
 
 productRoute.post('/add', async (req, res)=>{
     try {
@@ -27,9 +25,20 @@ productRoute.post('/add', async (req, res)=>{
             // rating: req.body.rating,
             qty: req.body.qty,
             imgurl: req.body.imgurl,
-            category: req.body.category
+            categories: req.body.categories
         })
-        const result = await product.save()
+        const result = await product.save((err)=>{
+            if(err){
+                res.status(400).json({message: err.message})
+            }
+            for (const categoty of categories) {
+                Category.find({name: categoty}, function(err, cate){
+                    const category = new Category({
+                        // products.productID: categoty._id
+                    })
+                })
+            }
+        })
         res.send(result);
     } catch (err) {
         res.status(400).json({message: err.message});

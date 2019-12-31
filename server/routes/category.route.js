@@ -11,8 +11,13 @@ categoryRoute.get('/', async (req, res)=>{
     }
 })
 
-categoryRoute.get('/:id',  async(req, res)=>{
-    res.status(200).json(res.product)
+categoryRoute.get('/:name', async (req, res)=>{
+    Category.findOne({name: req.params.name}).populate('productID').exec(function(error, category){
+        if (error){
+            res.status(400).json({message: error.message})
+        }
+        console.log('product: ', category.productID.name)
+    })
 })
 
 categoryRoute.post('/', async (req,res)=>{
