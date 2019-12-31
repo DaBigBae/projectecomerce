@@ -1,12 +1,15 @@
-import { Component} from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {DataService} from '../shared';
+import {User} from '../_models'
 
 @Component({
   selector: 'my-info',
   templateUrl: './my-info.component.html',
   styleUrls: ['./my-info.component.css']
 })
-export class MyInfoComponent{
+export class MyInfoComponent implements OnInit {
+  user: User;
   form = new FormGroup({
     curpass: new FormControl('' ,[
       Validators.required
@@ -18,7 +21,11 @@ export class MyInfoComponent{
        Validators.required
     ])
   });
-
+ constructor(private data: DataService) {}
+  ngOnInit(){
+    this.data.currentuser.subscribe(user=> this.user = user);
+    console.log(this.user);
+  }
   get curpass(){
     return this.form.get('curpass');
   }

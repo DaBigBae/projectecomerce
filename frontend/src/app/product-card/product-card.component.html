@@ -1,11 +1,11 @@
-<div class="card" routerLink="/product-detail/{{_id}}">
-  <img class="card-img-top" src = {{imgurl}} >
+<div class="card"  routerLink="/product-detail/{{_id}}" method="POST">
+  <img class="card-img-top" name="imgurl" src = {{imgurl}}  >
 
-   <button href="#" class="btn-black nut-card nut-add"><i class="add-cart"></i></button>
+   <button  routerLink="/shopping-cart" class="btn-black nut-card nut-add"><i class="add-cart"></i></button>
     <div  class="card-body">
-          <p class="card-name">{{name}}</p>
+          <p (input)="name = $event.target.value" class="card-name" name="name">{{name}} </p>
           
-          <p class="card-price">{{price}}</p>
+          <p (input)="price = $event.target.value" class="card-price" name= "name">{{price}}</p>
           <p class="old-price">$9.00</p>
     </div>
 </div>
