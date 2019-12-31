@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ApiService } from '../shared';
 import { products } from '../_models';
-import { getInterpolationArgsLength } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-home',

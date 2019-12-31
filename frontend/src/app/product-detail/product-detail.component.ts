@@ -9,8 +9,6 @@ import { products } from '../_models';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  pageTitle = 'Product Detail';
-  errorMessage = '';
   public product: products;
   public id: string;
   constructor(private route: ActivatedRoute,
@@ -23,7 +21,6 @@ export class ProductDetailComponent implements OnInit {
      this.id = this.route.snapshot.url[1].path;
       this.getProduct(this.id);
     console.log(this.id);
-    console.log(this.product);
   }
 
   getProduct(id: string) {

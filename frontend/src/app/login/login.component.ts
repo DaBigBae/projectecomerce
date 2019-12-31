@@ -1,8 +1,10 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AlertService, ApiService } from '../shared';
+import { AlertService, ApiService, DataService } from '../shared';
+import { User } from '../_models';
 import { CookieService } from 'ngx-cookie-service'
+
 
 @Component({
   selector: 'login',
@@ -14,13 +16,15 @@ export class LoginComponent implements OnInit{
   loading = false;
   submitted = false;
   returnUrl: string;
-
+  user: User;
+ // @Output() islogin = new EventEmitter<boolean>();
   constructor(
       private formBuilder: FormBuilder,
       private route: ActivatedRoute,
       private router: Router,
       private authenticationService: ApiService,
       private alertService: AlertService,
+      private data: DataService.
       private cookieService: CookieService) {}
 
   ngOnInit() {
@@ -28,9 +32,6 @@ export class LoginComponent implements OnInit{
           email: ['', Validators.required],
           password: ['', Validators.required]
       });
-
-      // reset login status
-      this.authenticationService.logout();
 
       // get return url from route parameters or default to '/'
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -47,18 +48,30 @@ export class LoginComponent implements OnInit{
           return;
       }
 
-      this.loading = true;
+      //this.loading = true;
       this.authenticationService.login(this.f.email.value, this.f.password.value)
           .subscribe(
               res => {
+                console.log(res);
+                this.alertService.success('Login successful', true);
+                this.router.navigate(['/']);
+                this.data.changeMessage(true);
+                this.data.changeToken("Bearer "+res.token);
+                this.data.changUser(res.user);
                   this.cookieService.set('userID', res.user._id);
                   this.cookieService.set('token', res.token);
-                  this.alertService.success('Login successful', true);
-                  this.router.navigate(['/']);
               },
               error => {
                   this.alertService.error(error);
-                  this.loading = false;
+                  //this.loading = false;
+                  this.data.changeMessage(false);
               });
   }
+ 
+  // testlognin() {
+  //   this.islogin.emit(this.loading); 
+  //   if(this.loading=true){
+  //     console.log("da dang nhap");
+  //   }   //Phát sự kiện - có kèm dữ liệu loading
+  // }
 }
