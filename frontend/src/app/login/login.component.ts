@@ -3,6 +3,9 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService, ApiService, DataService } from '../shared';
 import { User } from '../_models';
+import { CookieService } from 'ngx-cookie-service'
+
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -21,7 +24,8 @@ export class LoginComponent implements OnInit{
       private router: Router,
       private authenticationService: ApiService,
       private alertService: AlertService,
-      private data: DataService) {}
+      private data: DataService.
+      private cookieService: CookieService) {}
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
@@ -54,6 +58,8 @@ export class LoginComponent implements OnInit{
                 this.data.changeMessage(true);
                 this.data.changeToken("Bearer "+res.token);
                 this.data.changUser(res.user);
+                  this.cookieService.set('userID', res.user._id);
+                  this.cookieService.set('token', res.token);
               },
               error => {
                   this.alertService.error(error);

@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 const request = require('request')
 const fs = require('fs')
-
+const ratingSch = require('../models/rating.model')
+const viewSch = require('../models/view.model')
+ 
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -21,10 +23,6 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    rating: {
-        type: Number,
-        required: true
-    },
     qty:{
         type: Number,
         required: true
@@ -33,14 +31,33 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    // rating: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Rating'
+    // },
     comments: [{
-        body: String,
-        data: Date
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
     }],
-    views: {
+    view: {
         type: Number,
-        required: false
-    }
+        required: true,
+        default: "0"
+    },
+    category: [{
+        typeOne:{
+            type: String,
+            required: false
+        },
+        typeTwo:{
+            type: String,
+            required: false
+        },
+        typeThree:{
+            type: String,
+            required: false
+        }
+    }]
 })
 
 function foo(image, fn){
@@ -49,18 +66,21 @@ function foo(image, fn){
         form: {
             image: image
         }
-    }, function (err, body) {
+    }, (err, res, body)=>{
         if (err) {
             return res.send({
                 message: `upload failed: ` + err
             });
         }
-        fn(JSON.parse(body).data.url)
+        // fn(JSON.parse(body).data.url)
+        console.log(`statusCode: ${res.statusCode}`)
+        console.log(`body: ${body}`)
     })
 }
 
 productSchema.pre('save', async function (next) {
     const img = new Buffer.from(fs.readFileSync(this.imgurl)).toString('base64')
+    // console.log(img)
     await foo(img, function(url){
         console.log(url)
         productSchema.imgurl = url
@@ -68,5 +88,4 @@ productSchema.pre('save', async function (next) {
 })
 
 const Product = mongoose.model('Product', productSchema)
-
 module.exports = Product

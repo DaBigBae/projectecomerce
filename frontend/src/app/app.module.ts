@@ -50,6 +50,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryService } from './category.service';
 import { AlertService} from './shared';
 import { AlertComponent } from './_directives';
+import { CookieService } from 'ngx-cookie-service';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
@@ -136,7 +138,8 @@ const appRoutes: Routes = [
     AuthGuard,
     AdminAuthGuard,
     CategoryService,
-    AlertService
+    AlertService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
