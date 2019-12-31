@@ -86,24 +86,6 @@ top: 0px;
     z-index: 0;
 }
 
-.drod-togg:after { 
-    font-family: "Font Awesome 5 Free";
-    content: "\f107";
-    position: absolute;
-    color: #d93a3a;
-    font-weight: 900;
-    font-size: 13px;
-    right: -10px;
-}
-
-.drod-togg {
-    position: relative;
-    margin-left: 15px;
-    margin-right: 15px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-}
 
 .firstname {
     font-size: 14px;
@@ -159,8 +141,27 @@ top: 0px;
     position: absolute;
 }
 
+.cuc:after {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    content: "\f068";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--do);
+    padding-left: 15px;
+    font-size: 12px;
+    display: block;
+    border-radius: 100px;
+    background: white;
+    box-shadow: inset 0 0 0 2px var(--den);
+    top: 9px;
+    transition: 0.2s;
+    transform: rotate(45deg);
+    z-index: -1;
+}
 
-input {
+.cuc input {
     border-radius: 0 ;
     border: none;
     margin-left: 20px;
@@ -170,7 +171,7 @@ input {
     border-bottom: 2px solid transparent;
 }
 
-input:focus {
+.cuc input:focus {
     width: 200px;
     box-shadow: none;
     outline: none;
@@ -193,6 +194,7 @@ input:focus {
     right: 0;
 }
 
+/*
 .cuc:after {
     position: absolute;
     font-family: "Font Awesome 5 Free";
@@ -203,17 +205,144 @@ input:focus {
     left: 14px;
     transition: 0.2s;
 }
+*/
 
-.dropdown-item:focus {
+.dropdo:focus {
     background: #ffe033;
     color: #242424;
 }
 
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-.dropdown-item:hover {
-font-weight: 600;
-background: none;
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 140px;
+    z-index: 2;
+  }
+  
+  .dropdown-content a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    text-decoration: none;
+    display: block;
+  }
+
+   .user-icon:after {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    content: " ";
+    display: block;
+    border-radius: 100px;
+    border: 2px solid var(--den);
+    top: -15px;
+    left: 50%;
+    margin-left: -6px;
+   }
+
+   .user-icon{
+    width: 22px;
+    height: 11px;
+    content: " ";
+    display: block;
+    border-radius: 100px 100px 0 0;
+    border: 2px solid var(--den);
+    border-bottom: none;
+    position: relative;
+    margin-top: 11px;
+   }
+   
+   
+   .drod-togg {
+       position: relative;
+       margin-left: 20px;
+       margin-right: 10px;
+       cursor: pointer;
+       display: flex;
+       flex-direction: row;
+   }
+
+   .drod-togg:after{
+position: absolute;
+width: 22px;
+height: 2px;
+display: block;
+content: " ";
+bottom: -1px;
+background: linear-gradient(to right, #d93a3a 50%, transparent 50%, transparent);
+transition: 0.2s;
+   }
+
+   .drod-togg:before {
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    display: block;
+    content: " ";
+    bottom: -1px;
+    background: linear-gradient(to left, #d93a3a 55%, transparent 50%, transparent);
+    transition: 0.2s;
+   }
+
+   
+   .dropdown:hover .drod-togg:after {
+ transform: rotate(45deg);
+ bottom: -20px;
+   }
+
+      
+   .dropdown:hover .drod-togg:before {
+    transform: rotate(-45deg);
+    bottom: -20px;
+      }
+   
+.dropdo:hover {
+    background:var(--den);
+    color: white;
 }
+
+.dropdo {
+    background: white;
+    padding: 0px 10px;
+    font-size: 14px;
+    box-shadow: inset 1px 0 0 0 var(--den),
+    inset -1px 0 0 0 var(--den);
+}
+
+
+   .first {
+       box-shadow: inset 0 1px 0 0 var(--den),
+       inset 1px 0 0 0 var(--den),
+       inset -1px 0 0 0 var(--den);
+   }
+
+   .logout {
+    background: white;
+    padding: 0px 10px;
+    font-size: 14px;
+    box-shadow: inset 1px 0 0 0 var(--den),
+    inset -1px 0 0 0 var(--den),
+    inset 0 -1px 0 0 var(--den);
+    color: white;
+}
+
+.logout:hover{
+    background:  var(--do);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+  .arrow {
+    background: none;
+
+}
+
+  .dropdown:hover .dropdown-content {display: block;}
 
 .nav-link:hover {
     font-weight: 600;
@@ -235,19 +364,9 @@ a {
     align-items: center;
 }
 
-.logout:hover:after {
-    margin-left: 10px;
-    opacity: 1;
-}
-
 logo:focus {
     box-shadow: none;
     outline: none;
-}
-
-.dropdown-menu{
-    border: 1px solid #242424;
-    margin-top: 10px;
 }
 
 .bars {
@@ -256,6 +375,106 @@ logo:focus {
     background: #242424;
 }
 
-.logout {
+#small {
+    visibility: hidden;
+}
+
+.haha {
+    position: relative;
+    margin-right: 20px;
+    color: transparent;
     cursor: pointer;
+}
+
+.haha:after {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    content: " ";
+    display: block;
+    border-radius: 100px;
+    background: white;
+    box-shadow: inset 0 0 0 2px var(--den);
+    top: 0;
+    transition: 0.2s;
+}
+
+.haha:before {
+    position: absolute;
+    width: 2px;
+    height:10px;
+    background: var(--do);
+    content: " ";
+    display: block;
+    border-radius: 100px;
+    top:12px;
+    right: 7px;
+    transform: rotate(-45deg);
+    transition: 0.2s;
+}
+/*
+.haha:hover:before {
+transform: rotate(45deg);
+right: 23px;
+}
+*/
+
+.haha:hover:after {
+width: 24px;
+height: 2px;
+transform:rotate(45deg);
+border: none;
+border-radius: 0;
+top: 10px;
+background: transparent;
+}
+
+.haha:hover:before {
+    transform: rotate(45deg);
+    right: 10px;
+    height: 24px;
+    top: -1px;
+
+    }
+
+.collapse {
+    width: 100%;
+    transition:0.2s ;
+}
+
+.collapse input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.collapse .search {
+    border-bottom: 2px solid var(--den);
+    width: 100%;
+}
+
+
+#collapseExample {
+    visibility: hidden;
+}
+
+input:focus {
+    box-shadow: none;
+}
+
+@media only screen and (max-width:800px) {
+    #big {
+        visibility: hidden;
+        display: none;
+    }
+
+    #small {
+        visibility: visible;
+    }
+
+    
+#collapseExample {
+    visibility: visible;
+}
+
 }

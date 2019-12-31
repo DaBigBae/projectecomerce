@@ -1,33 +1,32 @@
-
 <div class="container-fluid">
-        <div class="row">
-            <div class="col col-2" >
+    <div class="row no-gutters">
+
+        <div class="user-nav" id="user-nav">
             <ul class="list-group">
-                    <li class="headline">
-                    <div class="ava" >
-                        <i class=" far fa-user-circle fa-4x"></i>
-                 </div>  
-                 <div class="ten">
-                       <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
-                       <p id=name >Be Sa </p>
-                    </div>  
+                <li class="headline">
+                    <div class="ava">
+                        <img src="https://i.imgur.com/YgDOOTW.png" alt="" class="img">
+                    </div>
+                    <div class="ten">
+                        <p style="font-size: 13px; font-weight: 600;">ACCOUNT OF</p>
+                        <p id=name>Be Sa </p>
+                    </div>
                 </li>
-             
-                <li class="list-group-item" routerLink="/my/orders">  <span class="fas fa-box"></span>My Orders</li>
-               <li class="list-group-item" routerLink="/my/info"> <span class="fas fa-user-edit"></span>My Info </li>
-            </ul></div>
-            <div class="col col-10">
-                 <!-- <div class="besa">
-                    <input type="search" class="form-control" placeholder="Search order number"></div>
-                 -->    
-                 <h3 class="sa">MY ORDERs</h3> 
-                 <div class="table">
-                     
-                    <table >
+
+                <li class="list-group-item" routerLink="/my/orders"> <span class="far fa-clone"></span>My Orders</li>
+                <li class="list-group-item" routerLink="/my/info"> <span class="far fa-user"></span>My Info </li>
+            </ul>
+        </div>
+
+        <div class="col main-content">
+            <div class="table">
+
+                <h4 class="sa">MY ORDERs</h4>
+                <table>
 
                     <thead>
                         <tr>
-                            <th style="width: 15%;">Order Number</th>
+                            <th style="width: 15%;">Number</th>
                             <th style="width: 40%;">Summary</th>
                             <th style="width: 15%;">Date</th>
                             <th style="width: 10%;">Total</th>
@@ -38,37 +37,26 @@
                     <tbody>
                         <tr>
                             <td> <a data-toggle="modal" data-target="#myModal">TI2004</a> </td>
-                            <td>FO-DR-JP-TI2004</td>
+                            <td> <p data-toggle="modal" data-target="#myModal">Bulbasaur x 1, Ivysaur X 2, ...</p> </td>
                             <td>FO, DR</td>
                             <td>$3.99</td>
                             <td>Canceled</td>
                         </tr>
                     </tbody>
 
-                    </table>
-                </div>
-            </div>
-        </div>    
-        
-
-    
-    </div>
-
-<!--
-    <div id="myModal" class="modal">
-            <div class="popup">
-                <h5 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-                    This order will be canceled!</h5>
-                <a class="close"  data-dismiss="modal"><i class="fas fa-times"></i></a>
-                <div class="content">
-                   <button routerLink="/cancel-order" data-dismiss="modal" class="btnn">CONFIRM</button>
-                </div>
+                </table>
             </div>
         </div>
--->
+
+    </div>
+
+
+
+</div>
+
 <div id="myModal" class="modal">
     <div class="c">
-    <user-order-card></user-order-card>
-    <button class="fas fa-times" data-dismiss="modal"></button>
-</div>
+        <user-order-card></user-order-card>
+        <button class="fas fa-times" data-dismiss="modal"></button>
+    </div>
 </div>

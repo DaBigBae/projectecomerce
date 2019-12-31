@@ -48,6 +48,8 @@ import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryService } from './category.service';
+import { UserService } from './user.service';
+import { SideNavComponent } from './side-nav/side-nav.component';
 import { AlertService} from './shared';
 import { AlertComponent } from './_directives';
 import { CookieService } from 'ngx-cookie-service';
@@ -117,7 +119,7 @@ const appRoutes: Routes = [
     OrdersListComponent,
     ProCatComponent,
     CategoryComponent,
-  
+    SideNavComponent,  
   ],
   imports: [
     BrowserModule,

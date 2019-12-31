@@ -1,4 +1,55 @@
 <div class="navbar navbar-expand-lg">
+
+  <div class="row">
+
+      <!--LOGO nè-->
+    <div class="column">
+
+      <a class="navbar-brand" routerLink="/">
+        <logo routerLink="/"></logo>
+      </a>
+
+    </div>
+
+    <!-- SEARCH , USER , CART -->
+    <div class="col">
+
+      <div class="container haha" id="small" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">. </div>
+
+      <div class="container cuc" id="big">
+        <input type="search" class="search" placeholder="Search">
+      </div>
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav" style="display: flex; flex-direction: row">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+
+          <!-- hiển thị first name sau khi đăng nhập , khi ở anonymous user thì chỉ hiển thị login, sign-up -->
+          <li class="dropdown">
+            <a class="drod-togg">
+              <span class="firstname" *ngIf="anonymousUser"> Firstname </span>
+              <div class="user-icon"></div>
+              <!-- <i class="far fa-user"></i>
+              -->
+            </a>
+            <div class="dropdown-content">
+              <a class="arrow"> </a>
+              <a class="dropdo first" routerLink="/sign-up">Sign-up</a>
+              <a class="dropdo" routerLink="/my/orders">My Orders</a>
+              <a class="dropdo" routerLink="/my/info">My Info</a>
+              <a class="dropdo" routerLink="/admin/orders">Manage Orders</a>
+              <a class="dropdo" routerLink="/admin/products">Manage Products</a>
+              <a class="logout" (click)="logout()">Log Out</a>
+            </div>
+          </li>
+        </ul>
+
 <div class="row">
   <div class="column">
     <a class="navbar-brand" routerLink="/">
@@ -67,4 +118,7 @@
     </div>
   </div>
 
+  <div class="collapse" id="collapseExample">
+    <input type="search" class="search" placeholder="Search">
+  </div>
 </div>

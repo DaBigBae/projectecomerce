@@ -1,7 +1,8 @@
 .container {
-    background: white;
-    padding: 20px;
+    max-width: 1250px;
 }
+
+
 
 :placeholder-shown {
   padding-left: 0;
@@ -30,6 +31,23 @@ input:focus{
 
 label {
   color: #525252bb;
+}
+
+.check-out {
+  display: flex;
+  flex-direction: row;
+}
+
+.shipping-info {
+  flex: 6;
+}
+
+.space {
+  flex: 1;
+}
+
+.cart-summary {
+  flex: 5;
 }
 
 .btn {
@@ -165,3 +183,33 @@ p {
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width:1000px)
+ {
+  .cut p{
+    font-size: 13px;
+  }
+
+  .space {
+    flex: 0;
+    display: none;
+  }
+
+  .cart-summary {
+    flex: 6;
+  }
+ }
+
+ @media (max-width:800px)
+ {
+
+  .check-out {
+    flex-direction: column-reverse;
+  }
+
+  .cart-summary {
+    margin-bottom: 50px;
+  }
+
+
+ }

@@ -94,6 +94,11 @@ table {
     border: none;
 }
 
+.change-view:focus {
+    box-shadow: none;
+    outline: none;
+}
+
   .change-view {
     background: transparent;
     width: 34px;
