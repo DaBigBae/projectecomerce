@@ -115,32 +115,29 @@ userRoute.post('/logoutall', auth, async function(req, res){
 })
 
 //update one user
-userRoute.patch('/changeprofile/:id', getUser, async (req,res)=>{
-    if(req.body.name != null){
-        res.user.name = req.body.name
-    }
-    if(req.body.email != null){
-        res.user.email = req.body.email
-    }
+userRoute.patch('/changeprofile', auth, async (req,res)=>{
     try {
-        const updatedUser = await res.user.save()
-        res.status(201).json(updatedUser)
+        if(req.body.name != null){
+            req.user.name = req.body.name
+        }
+        if(req.body.email != null){
+            req.user.email = req.body.email
+        }
+        await req.user.save()
+        res.status(201).json({message: `Success!`})
     } catch (err) {
         res.status(400).json({message: err.message})
     }
 })
 
-userRoute.patch('/changepassword/:id', getUser, async (req, res)=>{
-    let isMatchOldPassword
+userRoute.patch('/changepassword', auth, async (req, res)=>{
     try {
-        if((req.body.oldPassword != null)){
-            isMatchOldPassword = bCrypt.compare(req.body.oldPassword, res.user.password)
+        if((req.body.password1 != null) && (req.body.password2 !=null)){
+            req.user.password = req.body.password1
         }
-        if((req.body.password1 != null) && (req.body.password2 !=null) && isMatchOldPassword){
-            res.user.password = req.body.password1
-        }
-        const updatedUserPassword = await res.user.save()
-        res.status(201).json(updatedUserPassword)
+        req.user.tokens.splice(0, req.user.tokens.length)
+        await req.user.save()
+        res.status(201).json({message: `Success! Please login again!`})
     } catch (error) {
         res.status(400).json({message: error.message})
     }
