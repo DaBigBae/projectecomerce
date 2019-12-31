@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy,Component, OnInit, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, Output } from '@angular/core';
 import { products } from '../_models';
-import {DataService} from '../shared';
+import { DataService } from '../shared';
 import { ActivatedRoute } from '@angular/router';
 import { __values } from 'tslib';
 
@@ -20,12 +20,12 @@ export class ProductCardComponent implements OnInit {
   @Input() imgurl: string;
   product: products;
   ngOnInit() {
-    console.log(this.name)
-    this.product._id = this._id;
-    this.product.name = this.name;
-    this.product.price = this. price;
-    this.product.imgurl = this.imgurl;
-    this.data.changProduct(this.product);
-    this.data.changProductlist(this.product);
+    // console.log(this.name)
+    // this.product._id = this._id;
+    // this.product.name = this.name;
+    // this.product.price = this.price;
+    // this.product.imgurl = this.imgurl;
+    // this.data.changProduct(this.product);
+    // this.data.changProductlist(this.product);
   }
 }

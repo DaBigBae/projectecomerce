@@ -1,6 +1,7 @@
 const express = require('express')
 const orderRoute = express.Router()
 const Order = require('../models/order.model')
+const Notifi = require('../models/notification.model')
 
 orderRoute.get('/', async (req,res)=>{
     try{
@@ -63,4 +64,20 @@ async function getOrders(req,res,next){
     }
 }
 
+orderRoute.post('/ntf', async (req, res)=>{
+    try {
+        const obj = new Notifi({
+            fromUserID: '5df0a77bd64de81f3cb5fe9b',
+            toUserID: '5df0a86b9456bd2534df2e95',
+            act: 'comment',
+            productID: '5dd41958d7b26021689b8219',
+            commentID: null,
+            status: 'SEEN'
+        })
+        const ntf = await Notifi.pushNtf(obj)
+        res.status(200).json({data: ntf})
+    } catch (error) {
+        console.log(error)
+    }
+})
 module.exports = orderRoute

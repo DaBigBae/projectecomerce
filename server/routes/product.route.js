@@ -1,6 +1,7 @@
 const express = require('express')
 const productRoute = express.Router()
 const Product = require('../models/product.model')
+const Category = require('')
 
 productRoute.get('/', async (req,res)=>{
     try {
@@ -15,14 +16,18 @@ productRoute.get('/:id', getProduct, async(req, res)=>{
      res.json(res.product);
 })
 
+productRoute.get('/category/:id', )
+
 productRoute.post('/add', async (req, res)=>{
     try {
         const product = new Product({
             name: req.body.name,
             price: req.body.price,
             description: req.body.desc,
-            rating: req.body.rating,
-            imgurl: req.body.imgurl
+            // rating: req.body.rating,
+            qty: req.body.qty,
+            imgurl: req.body.imgurl,
+            category: req.body.category
         })
         const result = await product.save()
         res.send(result);

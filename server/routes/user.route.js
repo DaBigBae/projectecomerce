@@ -40,12 +40,12 @@ userRoute.post('/signup', async (req, res)=>{
         //res.status(201).json({user, token})
         await user.save((err)=>{
             if(err){
-                res.status(400).json({msg: err.message})
+                res.status(400).json({message: err.message})
             }
             const tokenv = new token2verify({userID: user._id, token: crypto.randomBytes(16).toString('hex')})
             tokenv.save((err)=>{
                 if(err){
-                    res.status(500).json({msg: err.message})
+                    res.status(500).json({message: err.message})
                 }
                 // const transporter = nodeMailer.createTransport({service: 'gmail', auth: {user: process.env.VERIFY_EMAIL, pass: process.env.VERIFY_PASS}})
                 // const mailOptions = { from: 'robot', to: user.email, subject: 'Account Verification', html: 'click: \nhttp:\/\/' + '137.135.125.91:3000' + '\/verify\/' + tokenv.token + '\n'}
@@ -99,7 +99,7 @@ userRoute.post('/logout', auth, async function(req, res){
         await req.user.save()
         req.send()
     } catch (err) {
-        res.status(500).send(err)
+        res.status(500).json({message: err.message})
     }
 })
 
@@ -110,47 +110,48 @@ userRoute.post('/logoutall', auth, async function(req, res){
         await req.user.save()
         res.send()
     } catch (err){
-        res.status(500).send(err)
+        res.status(500).json({message: err.message})
     }
 })
-// //update one user
-// userRoute.patch('/:id', getUser, async (req,res)=>{
-//     if(req.body.name != null){
-//         res.user.name = req.body.name
-//     }
-//     if(req.body.email != null){
-//         res.user.email = req.body.email
-//     }
-//     try {
-//         const updatedUser = await res.user.save()
-//         res.json(updatedUser)
-//     } catch (err) {
-//         res.status(400).json({message: err.message})
-//     }
-// })
 
-// //delete one user
-// userRoute.delete('/:id',getUser, async (req,res)=>{
-//     try {
-//         await res.user.remove()
-//         res.json({message: `Delete this user!!!`})
-//     } catch(err){
-//         res.status(500).json({message: err.message})
-//     }
-// })
+//update one user
+userRoute.patch('/:id', getUser, async (req,res)=>{
+    if(req.body.name != null){
+        res.user.name = req.body.name
+    }
+    if(req.body.email != null){
+        res.user.email = req.body.email
+    }
+    try {
+        const updatedUser = await res.user.save()
+        res.json(updatedUser)
+    } catch (err) {
+        res.status(400).json({message: err.message})
+    }
+})
 
-// async function getUser(req, res, next){
-//     try {
-//         user = await User.findById(req.params._id)
-//         if (user == null){
-//             return res.status(404).json({message: `Can't find user!!!`})
-//         }
-//     } catch (err) {
-//         return res.status(500).json({message: err.message})   
-//     }
+//delete one user
+userRoute.delete('/:id',getUser, async (req,res)=>{
+    try {
+        await res.user.remove()
+        res.json({message: `Delete this user!!!`})
+    } catch(err){
+        res.status(500).json({message: err.message})
+    }
+})
 
-//     res.user = user
-//     next()
-// }
+async function getUser(req, res, next){
+    try {
+        user = await User.findById(req.params._id)
+        if (user == null){
+            return res.status(404).json({message: `Can't find user!!!`})
+        }
+    } catch (err) {
+        return res.status(500).json({message: err.message})   
+    }
+
+    res.user = user
+    next()
+}
 
 module.exports = userRoute
