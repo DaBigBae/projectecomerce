@@ -53,8 +53,8 @@
                 </form>
                 <div class="cochu">
                     <button class="btn save">SAVE</button>
-                    <span class="cacban" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                        aria-controls="collapseExample">CHANGE PASSWORD ></span>
+                    <span class="cacban" data-toggle="collapse" data-target="#collapse-password" aria-expanded="false"
+                        aria-controls="collapse-password">CHANGE PASSWORD ></span>
                 </div>
 
 <div class="container-fluid" (ngOnInit) = "ngOnInit()">
@@ -71,6 +71,12 @@
             </div>
             <ul class="list-group">
 
+<<<<<<< HEAD
+            <div class="col s collapse" id="collapse-password">
+                <h4 class="sa">Change Password</h4>
+                <p class="sa" style="font-size: 20px; margin-bottom: 0px; margin-top: -25px;">___</p>
+                <form [formGroup]="form">
+=======
                 <li class="list-group-item" routerLink="/my/orders"> <span class="fas fa-box"></span>My Orders</li>
                 <li class="list-group-item" routerLink="/my/info/{{user._id}}}"> <span
                         class="fas fa-user-edit"></span>My Info </li>
@@ -82,6 +88,7 @@
                 <div class="form-group">
                     <label>Full Name</label>
                     <input formControlName="name" type="name" class="form-control" value={{user.name}}>
+>>>>>>> 8cd9634af444d6e3907af30d4ab4ba532e82aeaf
 
                 </div>
 
