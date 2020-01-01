@@ -441,13 +441,20 @@ background: transparent;
     width: 100%;
 }
 
-
 #collapseExample {
     visibility: hidden;
 }
 
 input:focus {
     box-shadow: none;
+}
+
+.collapse input{
+    background: white;
+}
+
+.tiny-search {
+    display: none;
 }
 
 @media only screen and (max-width:800px) {
@@ -460,9 +467,93 @@ input:focus {
         visibility: visible;
     }
 
+    .tiny-search {
+        display: block;
+    }
+
+    #collapseExample {
+        visibility: visible;
+    }
     
-#collapseExample {
-    visibility: visible;
 }
 
+
+@media only screen and (min-width:800px) {
+    #collapseExample {
+        display: none;
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+/* KHU VỰC ĐANG THI CÔNG */
+/* đang làm toggle bằng radio cho thanh search khi thu nhỏ màn hình */
+
+.tiny-search {
+    position: relative;
+    cursor: pointer;
+  height: 30px;
+  width:30px;
+  margin-right:10px;
+  margin-top:4px
+  }
+  
+  .tiny-search input {
+    position: absolute;
+    cursor: pointer;
+    z-index:2;
+    opacity: 0;
+    height: 30px;
+    width: 30px;
+  }
+
+  .checkmark {
+   position: absolute;
+    width: 16px;
+    height: 16px;
+    content: " ";
+    display: block;
+    border-radius: 100px;
+    background: white;
+    box-shadow: inset 0 0 0 2px var(--den);
+    top: 0;
+    transition: 0.2s;
+  }
+
+  .tiny-search input:checked ~ .checkmark {
+width: 24px;
+height: 2px;
+transform:rotate(45deg);
+border: none;
+border-radius: 0;
+top: 10px;
+background: transparent;
+  }
+
+  .tiny-search input:checked ~ .checkmark:after {
+          transform: rotate(0deg);
+    height: 24px;
+top:-11px ;
+left :11px;
+  }
+
+  .tiny-search .checkmark:after {
+    position: absolute;
+    width: 2px;
+    height:10px;
+    background: var(--do);
+    content: " ";
+    display: block;
+    border-radius: 100px;
+    top:12px;
+    right: -2px;
+    transform: rotate(-45deg);
+    transition: 0.2s;
+  }
