@@ -4,7 +4,7 @@ body {
 }
 
 footer {
-    height: 200px;
+    height: 80px;
     display: flex;
     align-items: flex-end;
     color: white;
