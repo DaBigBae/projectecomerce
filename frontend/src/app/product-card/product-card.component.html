@@ -1,10 +1,11 @@
-<div class="card" routerLink="/product-detail">
-  <img class="card-img-top" src ="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png" >
+<div class="card"  routerLink="/product-detail/{{_id}}" method="POST">
+  <img class="card-img-top" name="imgurl" src = {{imgurl}}  >
 
-   <button href="#" class="btn-black nut-card nut-add"><i class="add-cart"></i></button>
+   <button (click) ="cart()"  class="btn-black nut-card nut-add"><i class="add-cart"></i></button>
     <div  class="card-body">
-          <p class="card-name">Bulbasaur</p>
-          <p class="card-price">$5.00</p>
+          <p class="card-name" name="name">{{name}} </p>
+          
+          <p  class="card-price" name= "name">{{price}}</p>
           <p class="old-price">$9.00</p>
     </div>
 </div>
