@@ -528,12 +528,6 @@ top: 10px;
 background: transparent;
   }
   
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
   .tiny-search input:checked ~ .checkmark:after {
           transform: rotate(0deg);
     height: 24px;
