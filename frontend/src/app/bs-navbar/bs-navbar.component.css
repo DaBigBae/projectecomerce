@@ -441,13 +441,16 @@ background: transparent;
     width: 100%;
 }
 
-
 #collapseExample {
     visibility: hidden;
 }
 
 input:focus {
     box-shadow: none;
+}
+
+.collapse input{
+    background: white;
 }
 
 .tiny-search {
@@ -467,14 +470,20 @@ input:focus {
     .tiny-search {
         display: block;
     }
+
+    #collapseExample {
+        visibility: visible;
+    }
     
-#collapseExample {
-    visibility: visible;
-}
-
 }
 
 
+@media only screen and (min-width:800px) {
+    #collapseExample {
+        display: none;
+    }
+    
+}
 
 
 
@@ -527,7 +536,7 @@ border-radius: 0;
 top: 10px;
 background: transparent;
   }
-  
+
   .tiny-search input:checked ~ .checkmark:after {
           transform: rotate(0deg);
     height: 24px;
@@ -548,4 +557,3 @@ left :11px;
     transform: rotate(-45deg);
     transition: 0.2s;
   }
-
