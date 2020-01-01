@@ -407,7 +407,7 @@ right: 23px;
 }
 */
 
-.haha:hover:after {
+.haha:active:after {
 width: 24px;
 height: 2px;
 transform:rotate(45deg);
@@ -417,7 +417,7 @@ top: 10px;
 background: transparent;
 }
 
-.haha:hover:before {
+.haha:active:before {
     transform: rotate(45deg);
     right: 10px;
     height: 24px;
