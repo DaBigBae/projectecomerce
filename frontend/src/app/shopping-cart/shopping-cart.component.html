@@ -1,7 +1,5 @@
 <div class="container">
-
   <div class="row shop-row">
-
     <div class="col shop-col">
       <div class="shopping-cart-title sticky-top">
         Shopping Cart
@@ -10,26 +8,31 @@
 
 
     <div class="col cart-col">
-
-      <!--hiện tất cả sản phẩm trong cart-->
       <div class="detail">
-        <p class="item-in-cart"> You have 1 item(s) in your cart</p>
+    <!-- <button class="btn btn-sm">Clear all items</button>--> 
+  <p class="item-in-cart"> You have 1 item(s) in your cart</p>
+ 
 
-        <!--list danh sách sản phẩm trong cart-->
-        <ul class="shopping-cart-list">
 
-          <li class="cart-item">
-
+        <!--show list item trong gio hang-->
+        <ul>
+          <li>
             <div class="container item">
+
               <div class="row">
+
+                <!--thumbnail sản phẩm-->
                 <img class="img-container" src="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png"
                   alt="">
 
                 <div class="col">
+                  
+                  <!-- tên và giá -->
                   <div class="name-price">
                     <p class="pro-name" routerLink="/product-detail"> Bulbasaur</p>
                     <p class="pro-price">$5.00</p>
                   </div>
+                  <!-- số lượng -->
                   <div class="quantity" style="width: 100px;">
                     <product-quantity></product-quantity>
                   </div>
@@ -59,9 +62,13 @@
       </div>
 
       <button routerLink="/check-out" style="margin-top: 10px;" class="btn">Check Out</button>
-
     </div>
 
   </div>
 
+    
+  <div class="row" style="height: 200px;">
+    <div class="col-4"></div>
+    <div class="col"></div>
+  </div>
 </div>

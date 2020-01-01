@@ -53,7 +53,7 @@ transition: 0.2s;
     height:60px;
     padding-top: 14px;
     position: relative;
-    margin-left:13px;
+
 }
 
 .ball:hover .top{
@@ -88,6 +88,7 @@ span {
 }
 
 .fa-circle{
+    margin-left: 13px;
     font-size: 10px;
     color: #d93a3a;
     position: absolute;
@@ -99,6 +100,7 @@ span {
     }
     
     .fa-pagelines{
+        margin-left: 13px;
         font-size: 24px;
     color: yellowgreen;
     transform: rotate(135deg);
@@ -123,6 +125,7 @@ left: 43px;
 }
 
 .long-text {
+    margin-left: 13px;
     position: absolute;
     font-size: 10px;
     font-weight: 600;
@@ -150,4 +153,8 @@ transform: rotate(55deg) translateX(-10px);
 
 .ball:hover ~ .excl {
     transform: rotate(35deg);
+}
+
+.logo {
+    margin-left: 13px;
 }
