@@ -26,8 +26,13 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
+    "email": "Lynk@gmail.com",
+    "password": "abcd2"
+=======
     "email": "levy151298@gmail.com",
     "password": "01653659895"
+>>>>>>> 8cd9634af444d6e3907af30d4ab4ba532e82aeaf
 }
 ###profile
 GET http://localhost:3000/user/profile
@@ -56,7 +61,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1Z
 ### change password
 PATCH http://localhost:3000/user/changepassword
 Content-Type: application/json
+<<<<<<< HEAD
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzMjdkMmY3MWQzY2E0ZGY0MiIsImlhdCI6MTU3Nzc5MzU3MX0.P0MTBIyjbwepk235iNhTrtw9Rmh6m1ienpzfI0dsqaA
+=======
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyYzg1ZDY4ZTkxMzZhNDBlMDlhMCIsImlhdCI6MTU3Nzc5NjMwNn0.ldLGVG-8ZMLr0gI7iZgPlH-JvqHjenGxw0QG_Crg73k
+>>>>>>> 8cd9634af444d6e3907af30d4ab4ba532e82aeaf
 
 {
     "password1": "123456",
@@ -74,7 +83,15 @@ Content-Type: application/json
     "rating": "8",
     "qty": "2",
     "imgurl": "./img/test.jpg",
-    "categories": ["fire", "water", "pug"]
+    "category": [
+        {
+            "_id": "5e0903ece3d81d0e486af32b",
+            "name":"Normal"
+        },{
+            "_id": "5e0903fbe3d81d0e486af32c",
+            "name": "Fire"
+        }
+    ]
 }
 ###
 
@@ -113,4 +130,12 @@ Content-Type: application/json
 
 {
     "name": "Ground"
+}
+
+### reset password
+POST http://localhost:3000/user/resetpassword
+Content-Type: application/json
+
+{
+    "email": ""
 }

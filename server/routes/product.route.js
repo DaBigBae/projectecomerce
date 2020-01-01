@@ -25,21 +25,28 @@ productRoute.post('/add', async (req, res)=>{
             // rating: req.body.rating,
             qty: req.body.qty,
             imgurl: req.body.imgurl,
-            categories: req.body.categories
+            category: req.body.category
         })
-        const result = await product.save((err)=>{
+        const result = await product.save(
+            (err)=>{
             if(err){
                 res.status(400).json({message: err.message})
             }
-            for (const categoty of categories) {
-                Category.find({name: categoty}, function(err, cate){
-                    const category = new Category({
-                        // products.productID: categoty._id
-                    })
-                })
-            }
-        })
-        res.send(result);
+            for (const key in req.body.category) {
+                if (req.body.category.hasOwnProperty(key)) {
+                    const item = req.body.category[key];
+                    product.category.push(item.id)
+                        // const cat = Category.find({name: req.body.category[key]})
+                        //     console.log(cat._id)
+            // for (const catego of req.body.category) {
+            //     console.log(this.catego)
+            //     Category.findOne({name: this.catego}).distinct('name', (err, result)=>{
+            //         console.log(result)
+            //     })
+            // }
+        }}}
+        )
+        res.send();
     } catch (err) {
         res.status(400).json({message: err.message});
     }
