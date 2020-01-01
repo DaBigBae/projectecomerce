@@ -23,6 +23,12 @@ body::-webkit-scrollbar {
     width:16px
 }
 
+
+input {
+    border: none;
+    outline: none;
+}
+
 body::-webkit-scrollbar-track {
     background-color:#fff
 }
