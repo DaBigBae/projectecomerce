@@ -450,6 +450,10 @@ input:focus {
     box-shadow: none;
 }
 
+.tiny-search {
+    display: none;
+}
+
 @media only screen and (max-width:800px) {
     #big {
         visibility: hidden;
@@ -460,6 +464,9 @@ input:focus {
         visibility: visible;
     }
 
+    .tiny-search {
+        display: block;
+    }
     
 #collapseExample {
     visibility: visible;
