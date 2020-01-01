@@ -1,11 +1,47 @@
 <div class="container-fluid">
 
     <ul class="breadcrumb">
-        <button class="back">BACK</button>
+        <button class="back" onclick="history.go(-1)">BACK</button>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Grass</a></li>
+        <li><a routerLink="/category" href="#">Grass</a></li>
         <li>Bulbasaur</li>
     </ul>
+<<<<<<< HEAD
+
+
+    <div class="row no-gutters">
+        <div class="col">
+
+
+                <h2 class="cat-name">GRASS <span class="remaining-products">(23 products)</span> </h2>
+
+                <div class="view product-view">
+
+                    <div class="image">
+                        <img src="https://cdn140.picsart.com/265075338006212.png?r1024x1024" alt="Product-image" style="width: 100%;">
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-number">#001</p>
+                        <h2 class="product-name">Bulbasaur</h2>
+                        <h6 class="type1">Grass 
+                            <span class="type2">Poison</span> 
+                        </h6>
+                        <div class="price-area">
+                        <h2 class="product-price">$5.00</h2>
+                        <p class="old-price" > $9.00</p>
+                    </div>
+                        <div class="product-quantity">
+                            <product-quantity></product-quantity>
+                        </div>
+                        <button class="btn add-to-cart-btn"></button>
+                    </div>
+                </div>
+
+                <div class="box-view description">
+                    <h4 class="headline"> DESCRIPTION</h4>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum enim tenetur, qui ut nesciunt culpa iure dignissimos facere dolorum possimus dolores voluptates optio, exercitationem magnam at eius corrupti vel pariatur. Cumque quidem ex suscipit assumenda libero ipsa iure et maiores tempore ullam fugiat autem nemo dolorum, rem officiis similique quibusdam, consequuntur fugit! Voluptate, voluptates. Illum molestiae fuga nesciunt nam soluta eligendi magni tenetur natus veritatis delectus, assumenda nemo quisquam deleniti blanditiis, quam est ad aliquid itaque voluptatem provident perferendis eveniet id quaerat maxime. Sint, incidunt architecto ipsa tenetur soluta fugit iusto doloremque vitae sapiente, a, quod sit eaque deserunt velit!</p>
+=======
     <h2 class="cat-name">GRASS <span class="remaining-products">(23 products)</span> </h2>
 
     <div class="row no-gutters" style="margin-top: 20px;">
@@ -48,22 +84,19 @@
                         <p>Japanese name : </p>
                         <p>Weak to : </p>
                     </div>
+>>>>>>> 8cd9634af444d6e3907af30d4ab4ba532e82aeaf
                 </div>
 
-                <h4 class=" headtype">Related Products</h4>
-                <div class="row no-gutters r-in">
-                    <div class="conbo">
-
-                        <div class="prod">
-                            <product-card></product-card>
-                            <product-card></product-card>
-                            <product-card></product-card>
-                            <product-card></product-card>
-                        </div>
+                <div class="box-view related-products">
+                    <h4 class="headline"> RELATED PRODUCTs</h4>
+                    <div class="prod">
+                        <product-card></product-card>
+                        <product-card></product-card>
+                        <product-card></product-card>
+                        <product-card></product-card>
                     </div>
                 </div>
-            </div>
-        </div>
 
+        </div>
     </div>
 </div>

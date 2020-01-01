@@ -46,10 +46,10 @@
     transform: translateY(0px);
     /* box-shadow: 0 15px 30px -10px #d93a3ad5;*/
     box-shadow:
-     -12px 0 0 -10px #fff,
-    12px 0 0 -10px #fff,
-    0 -12px 0 -10px #fff,
-    0 12px 0 -10px #fff,
+     -13px 0 0 -10px #fff,
+    13px 0 0 -10px #fff,
+    0 -13px 0 -10px #fff,
+    0 13px 0 -10px #fff,
     0 0 0 2px #242424;
   }
 
