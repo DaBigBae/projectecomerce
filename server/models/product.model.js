@@ -75,7 +75,11 @@ productSchema.pre('save', async function (next) {
     // await foo(img, function(url){
     //     console.log(url)
     //     productSchema.imgurl = url
-    // }) 
+    // })
+    console.log(this.category)
+    // for (const category of this.category) {
+    //     console.log(category)
+    // }
 })
 
 const Product = mongoose.model('Product', productSchema)

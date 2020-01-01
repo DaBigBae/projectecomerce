@@ -42,7 +42,7 @@ userRoute.post('/signup', async (req, res)=>{
             if(err){
                 res.status(400).json({message: err.message})
             }
-            const tokenv = new token2verify({userID: user._id, token: crypto.randomBytes(16).toString('hex')})
+            const tokenv = new token2verify({userID: user._id, token: crypto.randomBytes(16).toString('hex'), type: "verify"})
             tokenv.save((err)=>{
                 if(err){
                     res.status(500).json({message: err.message})
@@ -55,12 +55,31 @@ userRoute.post('/signup', async (req, res)=>{
                 //     }
                 //     res.status(200).json({msg: `A Verification email has been send to ` + user.email + `.`})
                 // })
-                console.log(tokenv.token)
+                console.log(`verify token: `, tokenv.token)
             })
         })
         res.status(200).send()
     } catch (err) {
         res.status(400).json({message: err.message})
+    }
+})
+
+userRoute.post('/resetpassword', async (req, res)=>{
+    try {
+        const user = User.findOne({email: req.body.email})
+        if (!user){
+            res.status(404).json({message: `Unable to find user!`})
+        } else {
+            const tokenreset = new token2verify({userID: user._id, token: crypto.randomBytes(16).toString('hex'), type: "resetpass"})
+            tokenreset.save((err)=>{
+                if(err){
+                    res.status(500).json({message: err.message})
+                }
+            })
+        }
+
+    } catch (error) {
+        res.json({message: error.message})
     }
 })
 
@@ -70,7 +89,7 @@ userRoute.post('/login', async (req, res)=>{
         const {email, password} = req.body
         const user = await User.findByCredentials(email,password)
         if(!user){
-            return res.status(401).json({err: 'Login failed! Check authentication credentials'})
+            return res.status(401).json({message: `Login failed! Check authentication credentials`})
         }
         if(!user.isVerified){
             return res.status(401).send({type: 'not-verified', message: 'You account not have been verified!!!'})
@@ -144,7 +163,7 @@ userRoute.patch('/changepassword', auth, async (req, res)=>{
 })
 
 //delete one user
-userRoute.delete('/:id',getUser, async (req,res)=>{
+userRoute.delete('/:id', getUser, async (req,res)=>{
     try {
         await res.user.remove()
         res.status(200).json({message: `Delete this user!!!`})

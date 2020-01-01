@@ -26,8 +26,8 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "uss1@ahsf.cas",
-    "password": "wwww"
+    "email": "Lynk@gmail.com",
+    "password": "abcd2"
 }
 ###profile
 GET http://localhost:3000/user/profile
@@ -45,7 +45,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZGY3MzEyMTRkN2Q5MjJkYzRmYWEwMiIsImlhdCI6MTU3NDkyNTcwM30.EaY0w_mOuAqIBtaMfiJMneo3ZITGYJDILPbKRmvUuaQ
 
 ### change info user
-PATCH  http://localhost:3000/user/5df0a77bd64de81f3cb5fe9b
+PATCH  http://localhost:3000/user/changeprofile
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzMjdkMmY3MWQzY2E0ZGY0MiIsImlhdCI6MTU3Nzc5MzU3MX0.P0MTBIyjbwepk235iNhTrtw9Rmh6m1ienpzfI0dsqaA
 
@@ -55,9 +55,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzM
 }
 
 ### change password
-PATCH http://localhost:3000/user/changepassword/5e08f1af28d64e1c94d16289
+PATCH http://localhost:3000/user/changepassword
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDhmMWFmMjhkNjRlMWM5NGQxNjI4OSIsImlhdCI6MTU3Nzc5MjU2Mn0.XvcYiBl5FKPwfrE9830dBUmsFoaiAwxvziFilG5YDwQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzMjdkMmY3MWQzY2E0ZGY0MiIsImlhdCI6MTU3Nzc5MzU3MX0.P0MTBIyjbwepk235iNhTrtw9Rmh6m1ienpzfI0dsqaA
 
 {
     "password1": "abcd2",
@@ -75,7 +75,15 @@ Content-Type: application/json
     "rating": "8",
     "qty": "2",
     "imgurl": "./img/test.jpg",
-    "categories": ["fire", "water", "pug"]
+    "category": [
+        {
+            "_id": "5e0903ece3d81d0e486af32b",
+            "name":"Normal"
+        },{
+            "_id": "5e0903fbe3d81d0e486af32c",
+            "name": "Fire"
+        }
+    ]
 }
 ###
 
@@ -114,4 +122,12 @@ Content-Type: application/json
 
 {
     "name": "Ground"
+}
+
+### reset password
+POST http://localhost:3000/user/resetpassword
+Content-Type: application/json
+
+{
+    "email": ""
 }

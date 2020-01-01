@@ -9,6 +9,11 @@ const tokenSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    func:{
+        type: String,
+        required: true,
+        enum: ["verify", "resetpass"]
+    },
     createdAt: {
         type: Date,
         required: true,
