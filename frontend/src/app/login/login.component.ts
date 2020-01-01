@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit{
   submitted = false;
   returnUrl: string;
   user: User;
+  token: string;
  // @Output() islogin = new EventEmitter<boolean>();
   constructor(
       private formBuilder: FormBuilder,
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit{
 
       // get return url from route parameters or default to '/'
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+      this.data.currenttoken.subscribe(token => this.token = token);
   }
 
   // convenience getter for easy access to form fields
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit{
       if (this.loginForm.invalid) {
           return;
       }
-
+      console.log(this.token);
       //this.loading = true;
       this.authenticationService.login(this.f.email.value, this.f.password.value)
           .subscribe(
@@ -56,10 +58,11 @@ export class LoginComponent implements OnInit{
                 this.alertService.success('Login successful', true);
                 this.router.navigate(['/']);
                 this.data.changeMessage(true);
-                this.data.changeToken("Bearer "+  res.token);
+                this.data.changeToken('Bearer '+ res.token);
                 this.data.changUser(res.user);
-                  this.cookieService.set('userID', res.user._id);
-                  this.cookieService.set('token', res.token);
+                //   this.cookieService.set('userID', res.user._id);
+                //   this.cookieService.set('token', res.token);
+                //   sessionStorage.setItem("admin", JSON.stringify(res.token));
               },
               error => {
                   this.alertService.error(error);

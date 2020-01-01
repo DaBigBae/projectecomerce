@@ -116,7 +116,7 @@ userRoute.post('/logout', auth, async function(req, res){
             return token.token != req.token
         })
         await req.user.save()
-        req.status(200).send()
+        res.status(200).send()
     } catch (err) {
         res.status(500).json({message: err.message})
     }
@@ -167,7 +167,7 @@ userRoute.delete('/:id', getUser, async (req,res)=>{
     try {
         await res.user.remove()
         res.status(200).json({message: `Delete this user!!!`})
-    } catch(err){
+    } catch (err){
         res.status(500).json({message: err.message})
     }
 })

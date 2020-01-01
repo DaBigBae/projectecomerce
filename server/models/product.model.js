@@ -32,14 +32,14 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // rating: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Rating'
-    // },
-    // comments: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Comment'
-    // }],
+    rating: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Rating'
+    },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }],
     view: {
         type: Number,
         required: true,

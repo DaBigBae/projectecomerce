@@ -9,14 +9,15 @@ export class DataService {
   token = new BehaviorSubject<string>("");
   loading = new BehaviorSubject<boolean>(false);
   user = new BehaviorSubject<User>(null);
-  product = new BehaviorSubject<products>(null);
-  productlist: products[];
-  productlist1= new BehaviorSubject<products[]>(null);
+  productid = new BehaviorSubject<string>(null);
+  // pid: string;
+  // productlist: string[];
+  productlist= new BehaviorSubject<string[]>([]);
   currentloading = this.loading.asObservable();
   currenttoken = this.token.asObservable();
   currentuser = this.user.asObservable();
-  currentproduct = this.product.asObservable();
-  currentproductlist = this.productlist1.asObservable();
+  currentproduct = this.productid.asObservable();
+  currentproductlist = this.productlist.asObservable();
   // có thể subcribe theo dõi thay đổi value của biến này thay cho messageSource
 
   constructor() { }
@@ -32,12 +33,13 @@ export class DataService {
     this.user.next(user);
   }
   changProduct(product){
-    this.product.next(product);
+    this.productid.next(product);
   }
   changProductlist(product){
-    this.changProduct(product);
-    this.productlist.push(product);
-    this.productlist1.next(this.productlist);
+    // this.changProduct(product);
+    // this.currentproduct.subscribe(pid => this.pid = pid);
+    // this.productlist.push(this.pid);
+    this.productlist.next(product);
   }
   
 }
