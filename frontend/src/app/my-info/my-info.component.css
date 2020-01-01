@@ -4,6 +4,8 @@
     font-size: 14px;
 }
 
+
+
 .container-fluid {
     width: 100%;
     max-width: 1400px;
@@ -13,6 +15,8 @@
 
   .row {
       width: 100%;
+      display: flex;
+      flex-direction: row;
   }
 
 .s {
