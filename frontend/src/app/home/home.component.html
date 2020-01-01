@@ -96,75 +96,75 @@
       </div>
 
       <div class="type-cat">
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-circle"></i>
           <p>Normal</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-fire"></i>
           <p>Fire</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-leaf"></i>
           <p>Grass</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-tint"></i>
           <p>Water</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-bolt"></i>
           <p>Electric</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-dragon"></i>
           <p>Dragon</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-ghost"></i>
           <p>Ghost</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-moon"></i>
           <p>Dark</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-bug"></i>
           <p>Bug</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-feather-alt"></i>
           <p>Flying</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-dice-d6"></i>
           <p>Rock</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-snowflake"></i>
           <p>Ice</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-spa"></i>
           <p>Fairy</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-gear"></i>
           <p>Steel</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-bullseye"></i>
           <p>Psychic</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-skull"></i>
           <p>Poison</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-fist-raised"></i>
           <p>Fighting</p>
         </button>
-        <button routerLink="/category" class="btnn">
+        <button routerLink="/category" href="#top" class="btnn">
           <i class="fas fa-mountain"></i>
           <p>Ground</p>
         </button>
@@ -245,24 +245,16 @@
     <span class="shop-now" routerLink="/category"> VIEW ALL </span>
   </div>
 
-    <div class="all-product-view">
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
-<product-card></product-card>
+    <div  class="all-product-view"
+       *ngFor="let product of product$" >
+          <product-card
+          (click)="setSelectProduct(product)"
+          [_id] = "product._id"
+          [name] = "product.name"
+          [price] = "product.price"
+          [imgurl] = "product.imgurl"
+         >
+        </product-card>
     </div>
 </div>
 
@@ -685,8 +677,6 @@
     </div>
 
 <!-- KHU VỰC NÀY RẤT GHÊ -->
-
-
 
 
 

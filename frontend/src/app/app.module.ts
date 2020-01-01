@@ -45,10 +45,14 @@ import { OrdersListComponent } from './admin/orders-list/orders-list.component';
 import { ProCatComponent } from './pro-cat/pro-cat.component';
 import { CategoryComponent } from './category/category.component';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryService } from './category.service';
 import { UserService } from './user.service';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { AlertService} from './shared';
+import { AlertComponent } from './_directives';
+import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -67,9 +71,9 @@ const appRoutes: Routes = [
   { path: 'cancel-order', component: CancelOrderComponent},
   { path: 'admin/users', component: UsersComponent},
 
-  { path: 'my/info', component: MyInfoComponent},
+  { path: 'my/info/:iduser', component: MyInfoComponent},
 
-  { path: 'product-detail', component: ProductDetailComponent},
+  { path: 'product-detail/:id', component: ProductDetailComponent},
   { path: 'admin/dashboard', component: DashboardComponent},
   { path: 'admin/noti', component: NotiComponent},
   { path: 'admin/orders/list', component: OrdersListComponent},
@@ -79,6 +83,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+    AlertComponent,
     AppComponent,
     BsNavbarComponent,
     ProductsComponent,
@@ -123,6 +128,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NgbModule,
     ChartsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
@@ -132,9 +138,11 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     AuthGuard,
-    UserService,
     AdminAuthGuard,
-    CategoryService
+    CategoryService,
+    AlertService,
+    CookieService
+
   ],
   bootstrap: [AppComponent]
 })
