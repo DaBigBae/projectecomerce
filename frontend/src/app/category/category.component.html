@@ -1,38 +1,66 @@
 <div class="container-fluid">
+
+    <!-- dòng định hướng cho trang -->
     <ul class="breadcrumb">
         <button class="back">BACK</button>
         <li><a href="#">Home</a></li>
         <li>Grass</li>
     </ul>
 
+    <!-- hiển thị category và sản phẩm -->
     <div class="row no-gutters">
 
-        <div class="col col-2">
+        <!-- category nè -->
+        <div class="col col-2" id="cat">
             <div class="category">
                 <product-filter></product-filter>
             </div>
         </div>
 
 
+        <!-- sản phẩm nè , phân trang ở client side -->
+        <div class="col">
+            <!-- tên category và số lượng còn trong kho-->
+            <div class="row category-row">
 
-        <div class="col col-10">
-            <h2 class="cat-name">GRASS <span class="remaining-products">(23 products)</span> </h2> 
-         <div class="prod">
-		<ul>
-			<li *ngFor="let item of collection | paginate: { itemsPerPage: 20, currentPage: p }"><product-card></product-card></li>
-		</ul>
+                <h2 class="cat-name">GRASS <span class="remaining-products">(23 products)</span> </h2>
 
-        <pagination-controls class="d-flex justify-content-end my-pagination" 
-        (pageChange)="p = $event"
-        maxSize="9"
-                      directionLinks="true"
-                      autoHide="true"
-                      responsive="true"
-                      previousLabel="PREVIOUS"
-                      nextLabel="NEXT"
-                     style="padding-right: 20px;"
-        ></pagination-controls>
-</div>
+                <!-- chiếc select để đựng category khi thu nhỏ màn hình lại -->
+                <select id="category">
+                    <option value="Type1">Type</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Grass">Grass</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Ice">Ice</option>
+                    <option value="Fighting">Fight</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Ground">Ground</option>
+                    <option value="Flying">Flying</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Bug">Bug</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Ghost">Ghost</option>
+                    <option value="Dragon">Dragon</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Steel">Steel</option>
+                    <option value="Fairy">Fairy</option>
+                </select>
+
+            </div>
+            <!--hiện sản phẩm-->
+            <div class="prod">
+                <ul>
+                    <li *ngFor="let item of collection | paginate: { itemsPerPage: 20, currentPage: p }">
+                        <product-card></product-card>
+                    </li>
+                </ul>
+                <!-- phần phân trang -->
+                <pagination-controls class="d-flex justify-content-end my-pagination" (pageChange)="p = $event"
+                    maxSize="9" directionLinks="true" autoHide="true" responsive="true" previousLabel="PREVIOUS"
+                    nextLabel="NEXT" style="padding-right: 20px;"></pagination-controls>
+            </div>
         </div>
     </div>
 </div>
