@@ -27,7 +27,7 @@ productRoute.post('/add', async (req, res)=>{
             imgurl: req.body.imgurl,
             category: req.body.category
         })
-        const result = await product.save(
+        await product.save(
             (err)=>{
             if(err){
                 res.status(400).json({message: err.message})
@@ -46,7 +46,7 @@ productRoute.post('/add', async (req, res)=>{
             // }
         }}}
         )
-        res.send();
+        res.status(200).json({message: `Product added!`});
     } catch (err) {
         res.status(400).json({message: err.message});
     }

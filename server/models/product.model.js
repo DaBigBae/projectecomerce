@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true,
-        required: true,
+        required: true
     },
     price: {
         type: Number,
@@ -80,6 +80,18 @@ productSchema.pre('save', async function (next) {
     // for (const category of this.category) {
     //     console.log(category)
     // }
+    const idproduct = this._id
+    for (const key in this.category) {
+        if (this.category.hasOwnProperty(key)) {
+            const cate = categorySch.findByIdAndUpdate(this.category[key], {$addToSet: {products: idproduct}}, {new: true}, (err, cate)=>{
+                cate.save()
+            })
+            
+        }
+    }
+    // this.category.forEach(element => {
+    //     categorySch.findByIdAndUpdate(element, {$addToSet: {products: next._id}}, {new: true})
+    // });
 })
 
 const Product = mongoose.model('Product', productSchema)
