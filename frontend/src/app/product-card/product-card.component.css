@@ -146,6 +146,11 @@ outline: none;
     background: var(--do);
   }
 
+@media only screen and (max-width: 411px) {
+  .card {
+    width: 11rem;
+  }
+}
 
 
 
