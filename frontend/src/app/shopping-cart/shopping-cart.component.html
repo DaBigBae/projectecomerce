@@ -5,23 +5,34 @@
         Shopping Cart
       </div>
     </div>
+
+
     <div class="col cart-col">
       <div class="detail">
-        <!-- <button class="btn btn-sm">Clear all items</button>-->
-        <p class="item-in-cart"> You have 1 item(s) in your cart</p>
-<!--show list item trong gio hang-->
+    <!-- <button class="btn btn-sm">Clear all items</button>--> 
+  <p class="item-in-cart"> You have 1 item(s) in your cart</p>
+ 
+
+
+        <!--show list item trong gio hang-->
         <ul>
           <li>
             <div class="container item">
-              <div class="row" (ngOnInit)="ngOnInit()" *ngFor="let p of products">
 
-                <img class="img-container" src={{p.imgurl}} alt="">
+              <div class="row">
+
+                <!--thumbnail sản phẩm-->
+                <img class="img-container" src="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png"
+                  alt="">
 
                 <div class="col">
+                  
+                  <!-- tên và giá -->
                   <div class="name-price">
-                    <p class="pro-name" routerLink="/product-detail">{{p.name}}</p>
-                    <p class="pro-price">{{p.price}}</p>
+                    <p class="pro-name" routerLink="/product-detail"> Bulbasaur</p>
+                    <p class="pro-price">$5.00</p>
                   </div>
+                  <!-- số lượng -->
                   <div class="quantity" style="width: 100px;">
                     <product-quantity></product-quantity>
                   </div>
@@ -33,6 +44,7 @@
                   <p class="sub-total">$5.00</p>
 
                 </div>
+
               </div>
             </div>
           </li>
@@ -53,5 +65,4 @@
     </div>
 
   </div>
-
 </div>
