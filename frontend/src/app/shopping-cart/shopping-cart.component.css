@@ -202,12 +202,17 @@ margin-bottom: 20px;
 
 @media (max-width:800px) {
 
+    .shopping-cart-title{
+        margin-top: -40px;
+        font-size: 30px; 
+     }
+
 .shop-row {
     flex-direction: column;
 }
     .sticky-top {
         top: unset;
-        margin-top: 100px;
+        margin-top: 40px;
     }
 
     .shop-col {
