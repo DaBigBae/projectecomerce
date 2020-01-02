@@ -9,5 +9,8 @@ const transporter = nodeMailer.createTransport({
 })
 
 const mailOptions = {
-    
+    from: robot,
+    to: email,
+    subject: 'Account Verification',
+    html: 'click: '
 }

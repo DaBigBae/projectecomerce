@@ -6,10 +6,8 @@ const categorySchema = mongoose.Schema({
         require: true
     },
     products: [{
-        productID: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
     }]
 })
 
