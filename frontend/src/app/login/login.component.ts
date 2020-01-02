@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit{
       // get return url from route parameters or default to '/'
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
       this.data.currenttoken.subscribe(token => this.token = token);
+      console.log(this.token);
   }
 
   // convenience getter for easy access to form fields
@@ -56,10 +57,16 @@ export class LoginComponent implements OnInit{
               res => {
                 console.log(res);
                 this.alertService.success('Login successful', true);
-                this.router.navigate(['/']);
                 this.data.changeMessage(true);
                 this.data.changeToken('Bearer '+ res.token);
                 this.data.changUser(res.user);
+                this.data.currentuser.subscribe(user => this.user = user);
+                if(this.user.role == "admin"){
+                this.router.navigate(['/admin/dashboard']);
+                }
+                else {
+                    this.router.navigate(['/']);
+                }
                 //   this.cookieService.set('userID', res.user._id);
                 //   this.cookieService.set('token', res.token);
                 //   sessionStorage.setItem("admin", JSON.stringify(res.token));

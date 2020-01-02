@@ -19,55 +19,30 @@
 
           <h4 class="h-text"> CHRISTMAS DEALS </h4>
 
-          <div class="product-view">
+          <div  class="product-view">
             <div class="container">
               <div id="CEI" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators daucham">
-                  <li data-target="#CEI" data-slide-to="0" class="active"></li>
+                <ol  class="carousel-indicators daucham">
+                  <li  data-target="#CEI" data-slide-to="0" class="active"></li>
                   <li data-target="#CEI" data-slide-to="1"></li>
                   <li data-target="#CEI" data-slide-to="2"></li>
+
                 </ol>
-                <div class="carousel-inner">
+
+                <div  class="carousel-inner">
                   <div class="carousel-item active">
-
                     <div class="product-row-view">
-                      <product-card></product-card>
-                      <product-card></product-card>
-                      <product-card></product-card>
-                      <product-card></product-card>
-
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-
-                    <div class="product-row-view">
-                      <product-card></product-card>
-                      <product-card></product-card>
-                      <product-card></product-card>
-                      <product-card></product-card>
-
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-
-                    <div class="product-row-view">
-                      <product-card></product-card>
-                      <product-card></product-card>
-                      <product-card></product-card>
-                      <product-card></product-card>
-
+                      <product-card *ngFor="let product of products" [product]="product">
+                      </product-card>
                     </div>
                   </div>
 
                 </div>
-                <a class="carousel-control-prev" href="#CEI" role="button" data-slide="prev"
-                  >
+                <a class="carousel-control-prev" href="#CEI" role="button" data-slide="prev">
                   <span class="prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#CEI" role="button" data-slide="next"
-            >
+                <a class="carousel-control-next" href="#CEI" role="button" data-slide="next">
                   <span class="next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
@@ -96,75 +71,75 @@
       </div>
 
       <div class="type-cat">
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-circle"></i>
           <p>Normal</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-fire"></i>
           <p>Fire</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-leaf"></i>
           <p>Grass</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-tint"></i>
           <p>Water</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-bolt"></i>
           <p>Electric</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-dragon"></i>
           <p>Dragon</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-ghost"></i>
           <p>Ghost</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-moon"></i>
           <p>Dark</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-bug"></i>
           <p>Bug</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-feather-alt"></i>
           <p>Flying</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-dice-d6"></i>
           <p>Rock</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-snowflake"></i>
           <p>Ice</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-spa"></i>
           <p>Fairy</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-gear"></i>
           <p>Steel</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-bullseye"></i>
           <p>Psychic</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-skull"></i>
           <p>Poison</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-fist-raised"></i>
           <p>Fighting</p>
         </button>
-        <button routerLink="/category" href="#top" class="btnn">
+        <button routerLink="/category" class="btnn">
           <i class="fas fa-mountain"></i>
           <p>Ground</p>
         </button>
@@ -192,11 +167,9 @@
               <div class="carousel-item active">
 
                 <div class="product-row-view">
-                  <product-card></product-card>
-                  <product-card></product-card>
-                  <product-card></product-card>
-                  <product-card></product-card>
-
+                  <product-card *ngFor="let product of products1" [product]="product">
+                    </product-card>
+            
                 </div>
               </div>
               <div class="carousel-item">
@@ -266,7 +239,7 @@
 
       <div class="feedback-view">
         <div class="container">
-          <div id="user-comment-carousel" class="carousel slide" data-interval="10000" data-ride="carousel">
+          <div id="user-comment-carousel" class="carousel slide" data-interval="3000" data-ride="carousel">
             <div class="carousel-inner ">
               <div class="carousel-item active">
                 <div class="row">
@@ -460,7 +433,7 @@
 
 
 
-<!-- KHU VỰC NÀY RẤT GHÊ -->
+    <!-- KHU VỰC NÀY RẤT GHÊ -->
 
     <div class="row customer-feedback" id="small-screen">
 
@@ -468,7 +441,7 @@
 
       <div class="feedback-view">
         <div class="container">
-          <div id="user-comment-carousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+          <div id="user-comment-carousel" class="carousel slide" data-interval="2000" data-ride="carousel">
             <div class="carousel-inner ">
               <div class="carousel-item active">
                 <div class="row">
@@ -535,7 +508,7 @@
               </div>
 
               <div class="carousel-item">
-            
+
                 <div class="row">
 
                   <div class="col">
@@ -567,7 +540,7 @@
                   </div>
 
                 </div>
-      
+
               </div>
 
               <div class="carousel-item">
@@ -608,34 +581,34 @@
 
               <div class="carousel-item">
                 <div class="row">
-                <div class="col">
-                  <div class="card feedback-card">
-                    <div class="card-body">
-                      <div class="column">
-                        <div class="row no-gutters">
-                          <div class="avatar-col">
-                            <img class="avatar" src="https://i.imgur.com/YgDOOTW.png" alt="">
+                  <div class="col">
+                    <div class="card feedback-card">
+                      <div class="card-body">
+                        <div class="column">
+                          <div class="row no-gutters">
+                            <div class="avatar-col">
+                              <img class="avatar" src="https://i.imgur.com/YgDOOTW.png" alt="">
+                            </div>
+
+                            <div class="name-col">
+                              <p class="customer-name"> Bé UIT</p>
+                              <p class="customer-class">
+                                NEW CUSTOMER <span class="fas fa-award"></span>
+                              </p>
+                            </div>
                           </div>
 
-                          <div class="name-col">
-                            <p class="customer-name"> Bé UIT</p>
-                            <p class="customer-class">
-                              NEW CUSTOMER <span class="fas fa-award"></span>
-                            </p>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col feedback-content">
-                            <p class="feedback-text">lam web kho qua :'(</p>
-                            <p class="feedback-time">12/23/2019</p>
+                          <div class="row">
+                            <div class="col feedback-content">
+                              <p class="feedback-text">lam web kho qua :'(</p>
+                              <p class="feedback-time">12/23/2019</p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
 
 
@@ -676,7 +649,9 @@
       </div>
     </div>
 
-<!-- KHU VỰC NÀY RẤT GHÊ -->
+    <!-- KHU VỰC NÀY RẤT GHÊ -->
+
+
 
 
 

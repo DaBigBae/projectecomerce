@@ -1,7 +1,7 @@
 import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule} from 'ng2-charts';
@@ -78,6 +78,7 @@ const appRoutes: Routes = [
   { path: 'admin/noti', component: NotiComponent},
   { path: 'admin/orders/list', component: OrdersListComponent},
   { path: 'category', component: CategoryComponent},
+  { path: 'search/:idserch' , component: SearchComponent},
 
 ];
 

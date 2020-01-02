@@ -14,15 +14,12 @@ export class ProductCardComponent implements OnInit {
 
   constructor(private data: DataService,
     private router: Router) { }
-  @Input() _id: string;
-  @Input() name: string;
-  @Input() price: number;
-  @Input() imgurl: string;
-   productid: string;
+  @Input() product: products;
   ngOnInit() {
   }
   cart(){
-    this.data.changProduct(this._id);
+    this.data.changProduct(this.product._id);
+    this.data.changP(this.product);
     this.router.navigate([`/shopping-cart`]);
   }
 }

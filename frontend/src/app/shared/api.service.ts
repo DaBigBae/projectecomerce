@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../_models';
+import { User, products } from '../_models';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, tap, retry, catchError } from 'rxjs/operators';
@@ -55,10 +55,10 @@ export class ApiService {
         'Authorization': Authorization
       })
     }
-    return this.http.post<any>(this.apiURL + `/user/logout`, this.httpOption)
+    return this.http.post<any>(this.apiURL + `/user/logout`,{Authorization: Authorization}, this.httpOption)
       .pipe(
         tap((data: any) => {
-
+          console.log(data);
         }),
         catchError(error => {
           return this.handleError(error)
@@ -106,30 +106,45 @@ export class ApiService {
     let body = res;
     return body || {};
   }
+ 
+  resetpass(mail: string){
+    return this.http.post(this.apiURL + '/user/resetpassword', {email: mail} , this.httpOpt)
+    .pipe(
+      catchError(error => {
+        return this.handleError(error)
+      }));
+  }
 
-  getProducts() {
-    return this.http.get(this.apiURL + '/product', this.httpOpt).pipe(
-      map(this.extractData), catchError(this.handleError));
+  getCategories(): Observable<[]> {
+    return this.http.get<[]>(this.apiURL + '/product/v1', this.httpOpt).pipe(
+     catchError(this.handleError));
+  }
+
+  getProducts(): Observable<products[]> {
+    return this.http.get<products[]>(this.apiURL + '/product/v1', this.httpOpt).pipe(
+     catchError(this.handleError));
   }
   getProduct(id): Observable<any> {
     return this.http.get(this.apiURL + '/product/' + id, this.httpOpt).pipe(
       map(this.extractData), catchError(this.handleError));
   }
-  addProduct(product): Observable<any> {
-    console.log(product);
-    return this.http.post<any>(this.apiURL + 'products', JSON.stringify(product), this.httpOpt).pipe(
-      tap((product) => console.log(`added product w/ id=${product.id}`)),
-      catchError(this.handleError));
+  addProduct(name, desc, price,rating, qty, imgurl, category): Observable<any> {
+    return this.http.post<any>(this.apiURL + '/product/add', {name: name, desc: desc, price: price, rating: rating, qty:qty, imgurl:imgurl, category:category}, this.httpOpt).pipe(
+      catchError(error => {
+        return this.handleError(error)
+      }));
   }
-  updateProduct(id, product): Observable<any> {
-    return this.http.put(this.apiURL + 'products/' + id, JSON.stringify(product), this.httpOpt).pipe(
-      tap(_ => console.log(`updated product id=${id}`)),
-      catchError(this.handleError));
+  updateProduct(id, desc ): Observable<any> {
+    return this.http.put(this.apiURL + '/product' + id, {desc: desc}, this.httpOpt).pipe(
+      catchError(error => {
+        return this.handleError(error)
+      }));
   }
   deleteProduct(id): Observable<any> {
-    return this.http.delete<any>(this.apiURL + 'products/' + id, this.httpOpt).pipe(
-      tap(_ => console.log(`deleted product id=${id}`)),
-      catchError(this.handleError));
+    return this.http.delete<any>(this.apiURL + '/product' + id, this.httpOpt).pipe(
+      catchError(error => {
+        return this.handleError(error)
+      }));
   }
 
   private handleError(error: HttpErrorResponse) {

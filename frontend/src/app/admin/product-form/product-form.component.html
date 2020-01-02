@@ -10,26 +10,26 @@
                     <div class="col-6">
                
                         <h4>Information</h4>
-                        <form [formGroup]="form">
+                        <form [formGroup]="addproductForm">
                             <div class="row">
                                 <div class="form-group col-4">
                                         <label for="number">Number</label>
-                                        <input id="number" type="text" class="form-control">
+                                        <input formControlName="id" id="number" type="text" class="form-control">
                                     </div>
 
                             <div class="form-group col-8">
                                 <label for="title" >Title</label>
-                                <input id="title" type="text" class="form-control">
+                                <input formControlName="name" id="title" type="text" class="form-control">
                             </div>
 </div>
                             <div class="form-group">
                                 <label for="price" class="pri">Price</label>
-                                <input id="price" type="text" class="form-control">
+                                <input formControlName="price" id="price" type="text" class="form-control">
                             </div>
                             <div class="row">    
                                 <div class="form-group col-6">
                                 <label for="category">Type 1</label>
-                                <select id="category" class="form-control">
+                                <select formControlName="category" id="category" class="form-control">
                                         <option value="Type1">Type 1</option>
                                     <option value="Normal">Normal</option>
                                     <option value="Fire">Fire</option>
@@ -54,7 +54,7 @@
 
                             <div class="form-group col-6">
                                     <label for="category">Type 2</label>
-                                    <select id="category" class="form-control">
+                                    <select formControlName="category1" id="category1" class="form-control">
                                             <option value="Type2">Type 2</option>
                                             <option value="Normal">Normal</option>
                                             <option value="Fire">Fire</option>
@@ -81,29 +81,33 @@
                         
                         <div class="form-group">
                                 <label for="detail">Description</label>
-                                <textarea class="form-control"></textarea>
+                                <textarea formControlName="desc" class="form-control"></textarea>
 
                             </div>
-                       
-                            <div class="form-group">
+
+                       <div class="form-group">
+                                <label for="title" >Image</label>
+                                <input formControlName="image" id="title" type="text" class="form-control">
+                            </div>
+                            <!--div class="form-group">
                                 <label for="imageURL">Image</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                      <input formControlName="image" type="file" class="custom-file-input" id="inputGroupFile04">
                                       <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
                                     </div>
                                     <div class="input-group-append">
                                       <button class="btnn" type="button">UPLOAD</button>
                                     </div>
                                   </div>
-                                    </div>
+                                    </--div-->
 
                             <input type="reset" class="res" value="RESET">
                         </form>
 
                         <div class="besa">
-                            <button class="btn  del">Delete</button>
-                            <button class="btn ">Save</button>
+                            <button routerLink="/admin/products" class="btn  del">Delete</button>
+                            <button (click) = "onadd()" class="btn ">Save</button>
                         </div>
                     </div>
 

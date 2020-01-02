@@ -52,21 +52,10 @@ input[type=search]::-webkit-search-cancel-button {
     margin-bottom: 3px;
 }
 
-button:focus {
-    box-shadow: none !important;
-}
-
-.btn:focus {
-    box-shadow: none !important;
-}
-
-input {
-    border: none;
-    outline: none;
-}
-  
+    
 ul.breadcrumb {
     background: white;
+    padding-left: 30px;
   }
 
 ul.breadcrumb li {

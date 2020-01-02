@@ -5,64 +5,94 @@
         Shopping Cart
       </div>
     </div>
-
-
     <div class="col cart-col">
       <div class="detail">
-    <!-- <button class="btn btn-sm">Clear all items</button>--> 
-  <p class="item-in-cart"> You have 1 item(s) in your cart</p>
- 
+        <!-- <button class="btn btn-sm">Clear all items</button>-->
+        <p class="item-in-cart"> You have {{totalproduct}} item(s) in your cart</p>
+        <!--    <table class="table" style="margin-top: 20px;">
+  <div class="row">
+    <div class="col-4" style="border-right: 1px solid #e0e0e0;">
+      <h1 style="font-weight: bolder; font-size: 50px; width: 100px;">Shopping Cart</h1>
+    </div>
+    <div class="col">
+      <div class="detail"-->
+        <!-- <button class="btn btn-sm">Clear all items</button>-->
 
+        <!--    <table class="table" style="margin-top: 20px;">
+        <thead >
+          <tr>
+            
+            <th style="width: 10%;"></th> 
+            <th style="width: 45%;">Product</th>
+            <th style="width: 20%;">Price</th>
+            <th style="width: 20%;">Quantity</th>
+            <th style="width: 5%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+                <img class="thumbnail" src ="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/venusaur.png" alt="hello">
+            </td>           
+            <td >Bulbasaur</td>
+             <td>$5.00</td>
+            <td>
+              <product-quantity></product-quantity>
+            </td>
+            <td>
+          <p style="font-size: 16px;" class="fas fa-times"></p></td>
+          </tr>
+        </tbody>
+      </table>     
+     -->
 
         <!--show list item trong gio hang-->
         <ul>
           <li>
-            <div class="container item">
-
-              <div class="row">
-
-                <!--thumbnail sản phẩm-->
-                <img class="img-container" src="https://img.pokemondb.net/sprites/black-white/normal/venusaur.png"
-                  alt="">
-
-                <div class="col">
-                  
-                  <!-- tên và giá -->
+            <div class="container item" (ngOnInit)="ngOnInit()" *ngFor="let product of productlistcard; index as i" >
+              <div class="row" >
+                <div class="col"  >
+                  <img class="img-container" src={{product.imgurl}} alt="">
                   <div class="name-price">
-                    <p class="pro-name" routerLink="/product-detail"> Bulbasaur</p>
-                    <p class="pro-price">$5.00</p>
+                    <p class="pro-name" routerLink="/product-detail">{{product.name}}</p>
+                    <p class="pro-price">{{product.price}}</p>
                   </div>
-                  <!-- số lượng -->
-                  <div class="quantity" style="width: 100px;">
-                    <product-quantity></product-quantity>
-                  </div>
+                </div>
 
+                <div class="quantity" style="width: 100px;">
+                  <product-quantity
+                  [Counter] = "quantity[i]"
+                  [id] = "i"
+                  [flag] = "flag"
+                  (valueChange)="notifyMessage($event)"
+                  (valueChange1)="notifyMessage1($event)"
+                  >
+                  </product-quantity>
                 </div>
 
                 <div class="col del-sub">
                   <button class="del-btn"></button>
-                  <p class="sub-total">$5.00</p>
-
+                  <p class="sub-total">{{product.price * quantity[i]}}</p>
                 </div>
-
               </div>
             </div>
-          </li>
 
+          </li>
         </ul>
 
       </div>
-
-      <!--tổng giá trị-->
-      <div class="row boro">
+   
+      <div class="row boro" >
         <div class="col total">
-          Total <span class="total-price">$15.00</span>
+          Total <span class="total-price">{{total}}</span>
           <p style="font-size: 13px; font-weight: 500;">INCLUDING 10% VAT</p>
         </div>
       </div>
 
       <button routerLink="/check-out" style="margin-top: 10px;" class="btn">Check Out</button>
     </div>
-
   </div>
+
+  <div class="row" style="height: 200px;">
+ </div>
 </div>

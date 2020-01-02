@@ -202,21 +202,6 @@ p {
 
  @media (max-width:800px)
  {
-   .paym {
-     width: 100%;
-   }
-
-  .cuc1 {
-    margin-right: unset;
-  }
-  .cuc2 {
-    margin-left: unset;
-  }
-
-  .cut {
-    flex-direction: column;
-  }
-  
 
   .check-out {
     flex-direction: column-reverse;
@@ -226,10 +211,5 @@ p {
     margin-bottom: 50px;
   }
 
-  
-.r {
-  display: flex;
-  justify-content: space-between;
-}
 
  }

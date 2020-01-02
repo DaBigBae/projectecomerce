@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
     <ul class="breadcrumb">
         <li><a href="#">Cart</a></li>
         <li><a href="#">Information</a></li>
@@ -8,23 +8,23 @@
     <div class="row check-out" style="padding-top: 10px;">
         <div class="col shipping-info">
             <h3 style="font-weight: bold;"> Ship to</h3>
-            <form [formGroup]="form">
+            <form [formGroup]="CheckOut">
 
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input formControlName="name" type="name" class="form-control">
+                    <input formControlName="name" name ="name" type="name" class="form-control" value={{user.name}}>
 
                 </div>
 
                 <div class="form-group">
                     <label>Phone Number</label>
-                    <input formControlName="phone" type="tel" class="form-control">
+                    <input formControlName="phone" name ="phone" type="tel" class="form-control" value={{user.phone}}>
 
                 </div>
 
                 <div class="form-group">
                     <label>Address</label>
-                    <input formControlName="address" type="text" class="form-control">
+                    <input formControlName="address" name ="address" type="text" class="form-control" >
 
                 </div>
                 <div class="form-group">
@@ -34,12 +34,12 @@
 
                         <label class="paym cuc1">
                             <p class="heo heo1"> <i class="fa fa-credit-card"></i>Credit/Debit Card</p>
-                            <input type="radio" formControlName="cardpay" name="radio">
+                            <input type="radio" >
                             <span class="checkmark"></span>
                         </label>
                         <label class="paym cuc2">
                             <p class="heo heo2"> <i class="fa fa-money"></i>Cash On Delivery</p>
-                            <input type="radio" formControlName="cash" name="radio">
+                            <input type="radio" >
                             <span class="checkmark"></span>
                         </label>
 
@@ -48,27 +48,28 @@
 
             </form>
         </div>
+    
         <div class="col space">
         </div>
         <div class="col cart-summary">
             <div class="card">
                 <div class="card-body">
                     <h3 style="font-weight:600">Order Summary</h3>
-                    <p class="Card-text">You have 1 item in your cart.</p>
+                    <p *ngIf = "totalproduct" class="Card-text">You have {{totalproduct}} items in your cart.</p>
 
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        1 x Bulbasaur
+                    <li *ngFor="let product of productlistcard; index as i" class="list-group-item">
+                        {{quantity[i]}} x {{product.name}}
                         <div class="float-right">
-                            $3.99
+                            {{quantity[i] * product.price}}
                         </div>
                     </li>
 
                     <li class="list-group-item">
                         Subtotal
-                        <div class="float-right" style=" font-weight: bold">
-                            $3.99
+                        <div *ngIf = "Total" class="float-right" style=" font-weight: bold">
+                            {{Total}}
                         </div>
                     </li>
 
@@ -76,12 +77,12 @@
                         style="opacity: .8; font-size: 14px; border-top: none; margin-top: -18px;">
                         Shipping fee
                         <div class="float-right">
-                            $1.00
+                            1000
                         </div>
                     <li class="list-group-item" style=" font-weight: bold;font-size: 17px;">
                         Total
-                        <div class="float-right" style="color: #d93a3a; font-size: 23px;">
-                            $4.99
+                        <div *ngIf = "Total" class="float-right" style="color: #d93a3a; font-size: 23px;">
+                            {{Total + 1000}}
                         </div>
                     </li>
                 </ul>

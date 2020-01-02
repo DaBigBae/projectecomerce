@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { products } from 'src/app/_models';
+import { ApiService } from 'src/app/shared';
 
 @Component({
   selector: 'admin-products',
@@ -6,20 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit {
+  products: products[];
 
-  collection = [];
-  /* i là số sản phẩm được lọc theo category */
-    constructor() {
-      for (let i = 1; i <= 56; i++) {
-        this.collection.push(`item ${i}`);
-      }
-    }
-
-  filter(query: string) {
-    console.log(query);
-  }
+    constructor(private productsServices: ApiService) {}
   
   ngOnInit() {
+    this.productsServices.getProducts().subscribe((data) => {
+      console.log(data);
+      this.products = data;
+      console.log(this.products);
+    });
   }
-
 }

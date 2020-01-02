@@ -8,8 +8,13 @@ import { BehaviorSubject } from 'rxjs';
 export class DataService {
   token = new BehaviorSubject<string>("");
   loading = new BehaviorSubject<boolean>(false);
+  setcard = new BehaviorSubject<boolean>(true);
   user = new BehaviorSubject<User>(null);
+  p = new BehaviorSubject<products>(null);
   productid = new BehaviorSubject<string>(null);
+  quantity = new BehaviorSubject<number[]>([]);
+  productlistcard = new BehaviorSubject<products[]>([]);
+  search = new BehaviorSubject<string>("");
   // pid: string;
   // productlist: string[];
   productlist= new BehaviorSubject<string[]>([]);
@@ -18,6 +23,11 @@ export class DataService {
   currentuser = this.user.asObservable();
   currentproduct = this.productid.asObservable();
   currentproductlist = this.productlist.asObservable();
+  currentquantity = this.quantity.asObservable();
+  currentp = this.p.asObservable();
+  currentproductlistcard = this.productlistcard.asObservable();
+  currentsetcard = this.setcard.asObservable();
+  currentsearch = this.search.asObservable();
   // có thể subcribe theo dõi thay đổi value của biến này thay cho messageSource
 
   constructor() { }
@@ -41,5 +51,19 @@ export class DataService {
     // this.productlist.push(this.pid);
     this.productlist.next(product);
   }
-  
+  changQuantity(quantity){
+    this.quantity.next(quantity);
+  }
+  changP(p){
+    this.p.next(p);
+  }
+  changProductlistcard(productlistcard){
+    this.productlistcard.next(productlistcard);
+  }
+  changsetcard(setcard){
+    this.setcard.next(setcard);
+  }
+  changSearch(search){
+    this.search.next(search);
+  }
 }
