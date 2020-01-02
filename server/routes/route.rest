@@ -63,7 +63,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDFhMmIzM
     "password2": "123456"
 }
 
-###
+### Add product
+### Neu product thuoc 1 cate thi phai xoa ngoac []
 POST  http://localhost:3000/product/add
 Content-Type: application/json
 
@@ -85,12 +86,14 @@ Content-Type: application/json
     ]
 }
 
-### Neu product thuoc 1 cate thi phai xoa ngoac []
-
-###
-
-GET http://localhost:3000/product
+### get product (không có category name)
+GET http://localhost:3000/product/v1
 Content-Type: application/json
+
+### get product (có category name)
+GET http://localhost:3000/product/v2
+Content-Type: application/json
+
 ###
 GET http://localhost:3000/product/5dd41961d7b26021689b821b
 Content-Type: application/json

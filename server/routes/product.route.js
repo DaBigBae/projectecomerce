@@ -3,9 +3,18 @@ const productRoute = express.Router()
 const Product = require('../models/product.model')
 const Category = require('../models/category.model')
 
-productRoute.get('/', async (req,res)=>{
+productRoute.get('/v1', async (req,res)=>{
     try {
         const productList = await Product.find()
+        res.status(200).json(productList);
+    } catch (err) {
+        res.status(500).json({message: err.message});
+    }
+})
+
+productRoute.get('/v2', async (req,res)=>{
+    try {
+        const productList = await Product.find().populate('category', 'name')
         res.status(200).json(productList);
     } catch (err) {
         res.status(500).json({message: err.message});
