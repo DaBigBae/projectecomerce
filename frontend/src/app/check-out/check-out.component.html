@@ -3,93 +3,93 @@
         <li><a href="#">Cart</a></li>
         <li><a href="#">Information</a></li>
         <li>Payment</li>
-      </ul>
-           
-        <div class="row check-out" style="padding-top: 10px;">
-            <div class="col shipping-info">
-                  <h3 style="font-weight: bold;"> Ship to</h3>
-                <form [formGroup]="form">
-        
-                        <div class="form-group">
-                            <label >Full Name</label>
-                            <input formControlName="name" type="name" class="form-control">
-                        
-                        </div>        
-                        
-                        <div class="form-group">
-                                <label >Phone Number</label>
-                                <input formControlName="phone" type="tel" class="form-control">
-                    
-                        </div> 
-                    
-                        <div class="form-group">
-                            <label >Address</label>
-                            <input formControlName="address" 
-                            type="text" class="form-control">
-                    
-                        </div> 
-                    <div class="form-group">
-                        <label >Payment Methods</label>
-                       
-                            <div class="cut">
-                       
-                                    <label class="paym cuc1">
-                                        <p class="heo heo1"> <i class="fa fa-credit-card"></i>Credit/Debit Card</p> 
-                                            <input type="radio" formControlName="cardpay" name="radio">
-                                            <span class="checkmark"></span>
-                                          </label>
-                                          <label class="paym cuc2"><p class="heo heo2"> <i class="fa fa-money"></i>Cash On Delivery</p> 
-                                            <input type="radio" formControlName="cash" name="radio">
-                                            <span class="checkmark"></span>
-                                          </label>
+    </ul>
 
-                            </div>
-                        </div>
-                        
-                    </form>
+    <div class="row check-out" style="padding-top: 10px;">
+        <div class="col shipping-info">
+            <h3 style="font-weight: bold;"> Ship to</h3>
+            <form [formGroup]="form">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input formControlName="name" type="name" class="form-control">
+
                 </div>
-                    <div class="col space">
-                    </div>
-            <div class="col cart-summary">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 style="font-weight:600">Order Summary</h3>
-                        <p class="Card-text">You have 1 item in your cart.</p>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input formControlName="phone" type="tel" class="form-control">
+
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input formControlName="address" type="text" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label>Payment Methods</label>
+
+                    <div class="cut">
+
+                        <label class="paym cuc1">
+                            <p class="heo heo1"> <i class="fa fa-credit-card"></i>Credit/Debit Card</p>
+                            <input type="radio" formControlName="cardpay" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="paym cuc2">
+                            <p class="heo heo2"> <i class="fa fa-money"></i>Cash On Delivery</p>
+                            <input type="radio" formControlName="cash" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
 
                     </div>
-                    <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                1 x Bulbasaur
-                            <div class="float-right">
-                                $3.99
-                            </div>
-                            </li>
-
-                            <li class="list-group-item">
-                                        Subtotal
-                                    <div class="float-right" style=" font-weight: bold">
-                                        $3.99
-                                    </div>
-                                    </li>
-                                    
-                            <li class="list-group-item" style="opacity: .8; font-size: 14px; border-top: none; margin-top: -18px;" >
-                                    Shipping fee
-                                    <div class="float-right" >
-                                        $1.00
-                                    </div>
-                        <li class="list-group-item" style=" font-weight: bold;font-size: 17px;">
-                            Total
-                            <div class="float-right" style="color: #d93a3a; font-size: 23px;">
-                                $4.99
-                            </div>
-                        </li>
-                        </ul>
                 </div>
-            </div>
-        </div>      
-        <div class="row no-gutters r">
-            <button routerLink="/shopping-cart" class="btn">Edit Cart</button>
-            <button routerLink="/order-success" class="btn btn-back">Place Order</button>
+
+            </form>
         </div>
+        <div class="col space">
+        </div>
+        <div class="col cart-summary">
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="font-weight:600">Order Summary</h3>
+                    <p class="Card-text">You have 1 item in your cart.</p>
+
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        1 x Bulbasaur
+                        <div class="float-right">
+                            $3.99
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        Subtotal
+                        <div class="float-right" style=" font-weight: bold">
+                            $3.99
+                        </div>
+                    </li>
+
+                    <li class="list-group-item"
+                        style="opacity: .8; font-size: 14px; border-top: none; margin-top: -18px;">
+                        Shipping fee
+                        <div class="float-right">
+                            $1.00
+                        </div>
+                    <li class="list-group-item" style=" font-weight: bold;font-size: 17px;">
+                        Total
+                        <div class="float-right" style="color: #d93a3a; font-size: 23px;">
+                            $4.99
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters r">
+        <button routerLink="/shopping-cart" class="btn">Edit Cart</button>
+        <button routerLink="/order-success" class="btn btn-back">Place Order</button>
+    </div>
 </div>
-                  
