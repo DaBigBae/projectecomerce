@@ -61,13 +61,42 @@ border: none;
 outline: none;
 color: white;
 font-weight: bold;
-display: inline-block;
-padding-left: 20px;
-padding-right: 20px;
+display:block;
+padding-left: 30px;
+padding-right: 30px;
 height : 55px;
-display: block;
+
 right: 0;
 margin-left: auto;
+}
+
+.btn-back {
+    background: transparent;
+    border: 3px solid #242424;
+    color: #242424;
+    width: fit-content;
+    justify-self: center;
+    display: unset !important;
+width: 300px;
+position: absolute;
+top: 0;
+left: 50%;
+margin-left: -150px;
+display: flex;
+align-items: center;
+padding-top: 12px;
+flex-direction: column;
+justify-content: center;
+}
+
+.omg {
+    position: relative;
+    width: 100%;
+}
+
+.btn-back:hover {
+    background: #242424 !important;
+    color: white;
 }
 
 .btn:hover {
@@ -109,46 +138,6 @@ opacity: 0.6;
 margin-top: -20px;
 }
 
-.del-btn {
-background: transparent;
-width: 30px;
-height: 30px;
-cursor: pointer;
-position: relative;
-border: none;
-outline: none;
-}
-
-.del-btn:after {
-position: absolute;
-content: " ";
-display: block;
-height: 2px;
-width: 20px;
-transform: rotate(45deg);
-background-color: #242424;
-transition: 0.2s;
-}
-
-.del-btn::before {
-position: absolute;
-content: " ";
-display: block;
-height: 2px;
-width: 20px;
-transform: rotate(-45deg);
-background-color: #242424;
-transition: 0.2s;
-}
-
-.del-btn:hover:after {
-transform: rotate(0deg);
-}
-
-.del-btn:hover:before {
-    transform: rotate(0deg);
-        }
-
 .total {
 font-size: 25px; 
 font-weight: bold; 
@@ -173,6 +162,7 @@ display: flex;
 flex-direction: row;
 }
 
+
 .shop-col {
 
 flex: 4;
@@ -181,7 +171,7 @@ border-right: 1px solid #e0e0e0;
 
 .cart-col {
 flex: 8;
-padding-bottom: 200px;
+padding-bottom: 500px;
 }
 
 .shopping-cart-title{
@@ -231,7 +221,6 @@ flex-direction: column;
 .cart-col {
     width: 100%;
     flex: 1;
-    padding-bottom: 200px;
 }
 
 .detail {
