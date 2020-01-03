@@ -113,6 +113,11 @@ top: 0px;
     cursor: pointer;
 }
 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar-collapse {
     display: flex;
     flex-direction: row-reverse;
@@ -152,6 +157,7 @@ margin-right: -10px;
 margin-top: -5px;
     transition: 0.2s;
     transform: rotate(45deg);
+    cursor: pointer;
 }
 
 .search-button .fa-minus {
@@ -190,7 +196,6 @@ margin-top: -5px;
     transition: 0.2s;
     right: 0;
 }
-
 .dropdo:focus {
     background: #ffe033;
     color: #242424;
@@ -258,7 +263,8 @@ width: 22px;
 height: 2px;
 display: block;
 content: " ";
-bottom: -1px;
+bottom: -2px;
+right: 5px;
 background: linear-gradient(to right, #d93a3a 50%, transparent 50%, transparent);
 transition: 0.2s;
    }
@@ -269,7 +275,8 @@ transition: 0.2s;
     height: 2px;
     display: block;
     content: " ";
-    bottom: -1px;
+    bottom: -2px;
+    right: 5px;
     background: linear-gradient(to left, #d93a3a 55%, transparent 50%, transparent);
     transition: 0.2s;
    }
@@ -301,9 +308,7 @@ transition: 0.2s;
 
 
    .first {
-       box-shadow: inset 0 1px 0 0 var(--den),
-       inset 1px 0 0 0 var(--den),
-       inset -1px 0 0 0 var(--den);
+       box-shadow: inset 0 -1px 0 0 var(--den);
    }
 
    .logout {
@@ -327,7 +332,14 @@ transition: 0.2s;
 
 }
 
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+.nav-link:hover {
+    font-weight: 600;
+}
+
 
 .nav-link:hover {
     font-weight: 600;
@@ -362,6 +374,7 @@ logo:focus {
 
 #small {
     visibility: hidden;
+    display: none;
 }
 
 .haha {
@@ -462,6 +475,7 @@ input:focus {
 
     #small {
         visibility: visible;
+        display: block;
     }
 
     .tiny-search {
