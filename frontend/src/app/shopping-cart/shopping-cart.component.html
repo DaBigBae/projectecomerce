@@ -7,26 +7,21 @@
     </div>
     <div class="col cart-col">
       <div class="detail">
-        <!-- <button class="btn btn-sm">Clear all items</button>-->
-        
-        <p class="item-in-cart"> You have {{totalproduct}} item(s) in your cart</p>
 
 
-        <!--show list item trong gio hang-->
+        <p class="item-in-cart" *ngIf="totalproduct > 0"> You have {{totalproduct}} item(s) in your cart</p>
+       
         <ul>
           <li>
             <div class="container item" (ngOnInit)="ngOnInit()" *ngFor="let product of productlistcard; index as i" >
               <div class="row" >
-             
-
+                <div class="col"  >
                   <img class="img-container" src={{product.imgurl}} alt="">
-   
-                <div class="col" >
                   <div class="name-price">
                     <p class="pro-name" routerLink="/product-detail">{{product.name}}</p>
                     <p class="pro-price">{{product.price}}</p>
                   </div>
-                
+                </div>
 
                 <div class="quantity" style="width: 100px;">
                   <product-quantity
@@ -38,7 +33,7 @@
                   >
                   </product-quantity>
                 </div>
-</div>
+
                 <div class="col del-sub">
                   <button class="del-btn"></button>
                   <p class="sub-total">{{product.price * quantity[i]}}</p>
@@ -51,15 +46,21 @@
 
       </div>
    
-      <div class="row boro" >
+      <div class="row boro" *ngIf="totalproduct > 0" >
         <div class="col total">
           Total <span class="total-price">{{total}}</span>
           <p style="font-size: 13px; font-weight: 500;">INCLUDING 10% VAT</p>
         </div>
       </div>
 
-      <button routerLink="/check-out" style="margin-top: 10px;" class="btn">Check Out</button>
+      <button routerLink="/check-out" *ngIf="totalproduct > 0" style="margin-top: 10px;"  class="btn">Check Out</button>
+
+              <img src="https://i.imgur.com/QRH4239.png" alt="" style="width: 100%;" *ngIf="totalproduct <= 0">
+      <div class="omg">
+
+      <a href="#" class="btn btn-back" *ngIf="totalproduct == 0">Continue Browsing</a>
+    </div>
+
     </div>
   </div>
-
 </div>
