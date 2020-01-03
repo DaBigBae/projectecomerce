@@ -27,13 +27,13 @@
 
       <div [ngSwitch]="loading">
 
-        <div *ngSwitchCase="true" class="d-flex flex-row ">
+        <div *ngSwitchCase="false" class="d-flex flex-row ">
           <a class="nav-link" routerLink="/login" style="margin-right: -10px; margin-left: -10px;">Login</a>
           <a class="nav-link" routerLink="/sign-up">Sign-Up</a>
         </div>
       
 
-        <div *ngSwitchCase="false">
+        <div *ngSwitchCase="true">
 
           <!-- hiển thị first name sau khi đăng nhập , khi ở anonymous user thì chỉ hiển thị login, sign-up -->
           <div class="dropdown">
