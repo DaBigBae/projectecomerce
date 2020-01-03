@@ -11,7 +11,7 @@
     </div>
 
     <div class="col">
-<!-- nút search hiện khi ở màn hình điện thoại -->
+
       <div class="tiny-search" id="small" data-toggle="collapse" data-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
         <input type="checkbox">
         <span class="checkmark"></span>
@@ -27,33 +27,34 @@
 
       <div [ngSwitch]="loading">
 
-        <div *ngSwitchCase="false" class="d-flex flex-row ">
+        <div *ngSwitchCase="true" class="d-flex flex-row ">
           <a class="nav-link" routerLink="/login" style="margin-right: -10px; margin-left: -10px;">Login</a>
           <a class="nav-link" routerLink="/sign-up">Sign-Up</a>
         </div>
       
 
-        <div *ngSwitchCase="true">
+        <div *ngSwitchCase="false">
 
           <!-- hiển thị first name sau khi đăng nhập , khi ở anonymous user thì chỉ hiển thị login, sign-up -->
+          <div class="dropdown">
+          <div class="drod-togg">
+            <span routerLink="/my/info/{{user._id}}" id="big" style="margin-right: 10px; margin-left: -10px; font-size: 14px;">MY INFO</span>
+            <i class="user-icon" style="margin-right: 5px;"></i>
+          </div>
 
-          <a class="drod-togg" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="firstname" *ngIf="anonymousUser"> Firstname </span> <i class="user-icon"></i></a>
-
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-            <a class="arrow"></a> <!-- hover để hiện dropdownnên phải có cái này giữa icon user và dropdown để ko bị mất hover 
-my info C phải bỏ vào đây để ko bị hư responsive 
--->
-            <a class="dropdo first" routerLink="/my/info/{{user._id}}">My Info</a>
+          <div class="dropdown-content">
+            <a class="arrow first"></a>
+            <a class="dropdo" routerLink="/my/info/{{user._id}}" id="small">My Info</a>
             <a class="dropdo" routerLink="/my/orders">My Orders</a>
             <a class="dropdo" routerLink="/admin/orders">Manage Orders</a>
             <a class="dropdo" routerLink="/admin/products">Manage Products</a>
             <a class="dropdo logout" (click)="logout()">Log Out</a>
           </div>
-
+</div>
         </div>
 
       </div> 
+      
     <a class="nav-link cucu" routerLink="/shopping-cart">
       <div class="cart">
         <button (click)="onsetcard()" class="shopping-cart">
