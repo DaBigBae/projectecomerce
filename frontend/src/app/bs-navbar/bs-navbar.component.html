@@ -12,7 +12,8 @@
 
     <div class="col">
 
-      <div class="tiny-search" id="small" data-toggle="collapse" data-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
+      <div class="tiny-search" id="small" data-toggle="collapse" data-target="#collapse-search" aria-expanded="false"
+        aria-controls="collapse-search">
         <input type="checkbox">
         <span class="checkmark"></span>
       </div>
@@ -25,44 +26,56 @@
 
       </form>
 
-      <div [ngSwitch]="loading">
+      <div [ngSwitch]="loading" class="log">
 
-        <div *ngSwitchCase="false" class="d-flex flex-row ">
-          <a class="nav-link" routerLink="/login" style="margin-right: -10px; margin-left: -10px;">Login</a>
-          <a class="nav-link" routerLink="/sign-up">Sign-Up</a>
+        <div *ngSwitchCase="false">
+
+          <div class="d-flex flex-row " id="big">
+            <a class="nav-link" routerLink="/login" style="margin-right: -10px; margin-left: -10px;">Login</a>
+            <a class="nav-link" routerLink="/sign-up">Sign-Up</a>
+          </div>
+
+          <div class="tiny-sign" id="small" data-toggle="collapse" data-target="#collapse-sign" aria-expanded="false"
+            aria-controls="collapse-sign">
+            <input type="checkbox">
+            <span class="ham-menu"></span>
+          </div>
+
         </div>
-      
+
 
         <div *ngSwitchCase="true">
 
           <!-- hiển thị first name sau khi đăng nhập , khi ở anonymous user thì chỉ hiển thị login, sign-up -->
           <div class="dropdown">
-          <div class="drod-togg">
-            <span routerLink="/my/info/{{user._id}}" id="big" style="margin-right: 10px; margin-left: -10px; font-size: 14px;">MY INFO</span>
-            <i class="user-icon" style="margin-right: 5px;"></i>
-          </div>
+            <div class="drod-togg">
+              <span routerLink="/my/info/{{user._id}}" id="big"
+                style="margin-right: 10px; margin-left: -10px; font-size: 14px;">MY INFO</span>
+              <i class="user-icon" style="margin-right: 5px;"></i>
+            </div>
 
-          <div class="dropdown-content">
-            <a class="arrow first"></a>
-            <a class="dropdo" routerLink="/my/info/{{user._id}}" id="small">My Info</a>
-            <a class="dropdo" routerLink="/my/orders">My Orders</a>
-            <a class="dropdo" routerLink="/admin/orders">Manage Orders</a>
-            <a class="dropdo" routerLink="/admin/products">Manage Products</a>
-            <a class="dropdo logout" (click)="logout()">Log Out</a>
+            <div class="dropdown-content">
+              <a class="arrow first"></a>
+              <a class="dropdo" routerLink="/my/info/{{user._id}}" id="small">My Info</a>
+              <a class="dropdo" routerLink="/my/orders">My Orders</a>
+              <a class="dropdo" routerLink="/admin/orders">Manage Orders</a>
+              <a class="dropdo" routerLink="/admin/products">Manage Products</a>
+              <a class="dropdo logout" (click)="logout()">Log Out</a>
+            </div>
           </div>
-</div>
         </div>
 
-      </div> 
-      
-    <a class="nav-link cucu" routerLink="/shopping-cart">
-      <div class="cart">
-        <button (click)="onsetcard()" class="shopping-cart">
-          <span class="cart-status">0</span>
-          <span class="cart-status-2">0</span>
-        </button>
       </div>
-    </a>
+
+      <a class="nav-link cucu" routerLink="/shopping-cart">
+        <div class="cart">
+          <button (click)="onsetcard()" class="shopping-cart">
+            <span class="cart-status">0</span>
+            <span class="cart-status-2">0</span>
+          </button>
+        </div>
+      </a>
+      
     </div>
   </div>
 
@@ -71,13 +84,21 @@
 
 </div>
 
-    <!-- ô search hiện ra khi nhấn zô nút search ở màn hình nhỏ -->
-    <div class="collapse" id="collapse-search">
-      <form [formGroup]="searchForm">
-        <div class="container search-box d-flex flex-row">
-          <input formControlName="search" name="search" type="search" class="search" placeholder="Search">          
-           <a class="search-button" (click)="onsearch()"> <i class="fas fa-minus"></i> </a>
-        </div>
-
-      </form>
+<!-- ô search hiện ra khi nhấn zô nút search ở màn hình nhỏ -->
+<div class="collapse" id="collapse-search">
+  <form [formGroup]="searchForm">
+    <div class="container search-box d-flex flex-row">
+      <input formControlName="search" name="search" type="search" class="search" placeholder="Search">
+      <a class="search-button" (click)="onsearch()"> <i class="fas fa-minus"></i> </a>
     </div>
+
+  </form>
+</div>
+
+
+<div class="collapse collapse-sign" id="collapse-sign">
+  <div class="col-sign" id="small">
+    <a class="nav-link" routerLink="/login" style="padding-top: 20px">Login</a>
+    <a class="nav-link" routerLink="/sign-up">Sign-Up</a>
+  </div>
+</div>
