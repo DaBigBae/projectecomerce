@@ -1,64 +1,41 @@
 <div class="container">
-    <div class="row r">
-        <div class="container ec"><h1 class="far fa-check-circle fa-3x"></h1>
-<h3 style="font-weight: bold;"> Your order has been placed!</h3></div>
-        </div>
-    
-    <div class="row order-success" style="padding-top: 50px;">
-                 
-        <div class="col shipping-info">
-                        <h4 style="font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #e0e0e0;">Shipping Information</h4>
-                        <p>Cuong Nguyen - 0919941294 - KTX khu A DHQG TpHCM khu pho 6 Linh Trung Thu Duc</p>
-                        <p style="font-weight: bold;">Cash on Delivery</p>
-                        <div class="line"></div>
-<p>Order Number : <span style="font-weight: bold;">#12MF34JFN</span> </p>
-<p style="margin-top: -10px;">Date : 12/22/19</p>
-<button  class="btn" data-toggle="modal" data-target="#myModal"> Cancel</button>
-<button routerLink="/" class="btn btn-back"> Continue Shopping</button>
-        </div>
-                      
-        <div class="col cart-summary">
-                        <div class="card">
-                            <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        1 x Bulbasaur
-                                    <div class="float-right">
-                                        $3.99
-                                    </div>
-                                    </li>
-        
-                                    <li class="list-group-item">
-                                                Subtotal
-                                            <div class="float-right" style=" font-weight: bold">
-                                                $3.99
-                                            </div>
-                                            </li>
-                                            
-                                    <li class="list-group-item" style="opacity: .8; font-size: 14px; border-top: none; margin-top: -18px;" >
-                                            Shipping fee
-                                            <div class="float-right" >
-                                                $1.00
-                                            </div>
-                                <li class="list-group-item" style=" font-weight: bold;font-size: 17px;">
-                                    Total
-                                    <div class="float-right" style="font-size: 23px;">
-                                        $4.99
-                                    </div>
-                                </li>
-                                </ul>
-                        </div>
-        </div>
-    </div>      
-</div>
 
-<div id="myModal" class="modal">
-        <div class="popup">
-            <i class="far fa-smile fa-2x"></i>
-            <h3>Are you sure?</h3>
-            <p style="margin-bottom:-10px; margin-top:-10px; opacity: .5;" >chak chua za?</p>
-            <a class="close"  data-dismiss="modal"><i class="fas fa-times"></i></a>
-            <div class="content">
-               <button routerLink="/cancel-order"  data-dismiss="modal" class="btn btnn"></button>
-            </div>
+    <!--ko cần quan tâm chỗ này-->
+    <div class="row r">
+
+        <div class="container ec">
+            <h1 class="far fa-check-circle fa-3x"></h1>
+            <h3 style="font-weight: bold;" class="noti"> Your order has been placed!</h3>
+
+            <p>Order Number : <span style="font-weight: bold;">#12MF34JFN</span> </p>
+         
+
+        </div>
+
+        <div class="button-container">
+            <button class="btn" data-toggle="modal" data-target="#myModal"> Cancel</button>
+            <button routerLink="/" class="btn btn-back"> Continue Shopping</button>
         </div>
     </div>
+
+</div>
+
+
+
+<!-- thêm event cho button trong này -->
+<div id="myModal" class="modal">
+    <div class="popup">
+
+        <!-- khu vực này ko cần quan tâm -->
+        <i class="far fa-smile fa-2x"></i>
+        <h3>Are you sure?</h3>
+        <p style="margin-bottom:-10px; margin-top:-10px; opacity: .5;">chak chua za?</p>
+        <a class="close" data-dismiss="modal"><i class="fas fa-times"></i></a>
+        <!-- khu vực này ko cần quan tâm -->
+
+        <div class="content">
+            <!-- bỏ nó vào div content để căn giữa cho nó -->
+            <button routerLink="/cancel-order" data-dismiss="modal" class="btn btnn"></button>
+        </div>
+    </div>
+</div>
