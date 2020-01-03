@@ -295,7 +295,8 @@ transition: 0.2s;
    
 .dropdo:hover {
     background:var(--den);
-    color: white;
+    color: white !important;
+    cursor: pointer;
 }
 
 .dropdo {
@@ -324,7 +325,6 @@ transition: 0.2s;
 .logout:hover{
     background:  var(--do);
     cursor: pointer;
-    font-weight: 600;
 }
 
   .arrow {
@@ -350,9 +350,6 @@ ul {
     align-items: center;
 }
 
-a {
-    color : rgb(27, 27, 27);
-}
 
 .cucu {
     display: flex;
