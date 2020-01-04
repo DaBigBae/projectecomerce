@@ -238,7 +238,7 @@ margin-top: -5px;
     content: " ";
     display: block;
     border-radius: 100px;
-    border: 2px solid var(--den);
+    border: 2px solid var(--do);
     top: -15px;
     left: 50%;
     margin-left: -6px;
@@ -251,7 +251,6 @@ margin-top: -5px;
     display: block;
     border-radius: 100px 100px 0 0;
     border: 2px solid var(--den);
-    border-bottom: none;
     position: relative;
     background: transparent;
     margin-top: 11px;
@@ -267,6 +266,7 @@ margin-top: -5px;
        flex-direction: row;
    }
 
+/*
    .drod-togg:after{
 position: absolute;
 width: 22px;
@@ -301,7 +301,7 @@ transition: 0.2s;
    .dropdown:hover .drod-togg:before {
     transform: rotate(-45deg);
     bottom: -20px;
-      }
+      }*/
    
 .dropdo:hover {
     background:var(--den);
