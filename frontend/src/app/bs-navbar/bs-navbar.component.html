@@ -6,8 +6,6 @@
       <a class="navbar-brand" routerLink="/">
         <logo routerLink="/"></logo>
       </a>
-
-
     </div>
 
     <div class="col">
@@ -51,8 +49,8 @@
             </div>
 
             <div class="dropdown-content" (ngOninit)="ngOninit()" [ngSwitch]="inadmin">
-              <a class="arrow "></a>
-              <a class="dropdo first" routerLink="/my/info/{{user._id}}" id="small">My Info</a>
+              <a class="arrow first"></a>
+              <a class="dropdo" routerLink="/my/info/{{user._id}}" id="small">My Info</a>
               <a *ngSwitchCase="false" class="dropdo" routerLink="/my/orders">My Orders</a>
               <a *ngSwitchCase="true" class="dropdo" routerLink="/admin/orders">Manage Orders</a>
               <a *ngSwitchCase="true" class="dropdo" routerLink="/admin/products">Manage Products</a>
@@ -71,7 +69,7 @@
         </div>
       </a>
     </div>
-    
+
   </div>
 </div>
 
