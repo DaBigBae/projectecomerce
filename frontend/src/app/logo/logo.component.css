@@ -53,7 +53,7 @@ transition: 0.2s;
     height:60px;
     padding-top: 14px;
     position: relative;
-
+    margin-left: 13px;
 }
 
 .ball:hover .top{
@@ -88,7 +88,6 @@ span {
 }
 
 .fa-circle{
-    margin-left: 13px;
     font-size: 10px;
     color: #d93a3a;
     position: absolute;
@@ -96,11 +95,10 @@ span {
     top: 22px;
     left: 15px;
     z-index: -1;
-    margin-left:13px;
+    margin-left: 13px;
     }
     
     .fa-pagelines{
-        margin-left: 13px;
         font-size: 24px;
     color: yellowgreen;
     transform: rotate(135deg);
@@ -108,8 +106,8 @@ span {
     transition: 0.3s;
     top: 23px;
     left: 14px;
-    margin-left:13px;
 z-index: -1;
+margin-left: 13px;
     }
 
 .ball:hover ~ .fa-circle{
@@ -125,7 +123,6 @@ left: 43px;
 }
 
 .long-text {
-    margin-left: 13px;
     position: absolute;
     font-size: 10px;
     font-weight: 600;
@@ -134,7 +131,8 @@ left: 43px;
     padding-top: 20px;
 z-index: -1;
     transition: 0.3s;
-    margin-left:13px;
+    margin-left: 13px;
+    color: #242424;
 }
 
 
@@ -153,8 +151,4 @@ transform: rotate(55deg) translateX(-10px);
 
 .ball:hover ~ .excl {
     transform: rotate(35deg);
-}
-
-.logo {
-    margin-left: 13px;
 }
