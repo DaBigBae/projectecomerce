@@ -50,12 +50,7 @@
             </div>
             <!--hiện sản phẩm-->
             <div class="prod">
-                <ul>
-                    <li *ngFor="let product of productlistsearch" [product]="product">
-                        <product-card></product-card>
-                    </li>
-                </ul>
-       
+                        <product-card *ngFor="let product of productlistsearch" [product]="product"></product-card>
             </div>
         </div>
     </div>
