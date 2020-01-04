@@ -85,7 +85,7 @@
 </div>
 
 <!-- ô search hiện ra khi nhấn zô nút search ở màn hình nhỏ -->
-<div class="collapse" id="collapse-search">
+<div class="collapse collapse-search" id="collapse-search">
   <form [formGroup]="searchForm">
     <div class="container search-box d-flex flex-row">
       <input formControlName="search" name="search" type="search" class="search" placeholder="Search">
@@ -98,7 +98,7 @@
 
 <div class="collapse collapse-sign" id="collapse-sign">
   <div class="col-sign" id="small">
-    <a class="nav-link" routerLink="/login" style="padding-top: 20px">Login</a>
+    <a class="nav-link" routerLink="/login">Login</a>
     <a class="nav-link" routerLink="/sign-up">Sign-Up</a>
   </div>
 </div>
