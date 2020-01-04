@@ -443,6 +443,7 @@ background: transparent;
     width: 100%;
     border: none;
     outline: none;
+    margin-bottom: 10px;
 }
 
 .collapse .search {
