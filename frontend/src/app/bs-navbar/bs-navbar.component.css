@@ -366,7 +366,6 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-right: 13px;
 }
 
 logo:focus {
