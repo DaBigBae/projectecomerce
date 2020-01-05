@@ -11,6 +11,7 @@
 overflow: hidden;
 background-color: #fff;
 border: 2px solid #212529;
+margin-top: 2px;
 }
 
 .cart {
@@ -23,7 +24,7 @@ border: 2px solid #212529;
     height: 10px;
     left: 50%;
     margin-left: -5px;
-    top: -7px;
+    top: -5px;
    content: " ";
    display: block;
    border-radius: 10px 10px 0 0;
@@ -253,7 +254,7 @@ margin-top: -5px;
     border: 2px solid var(--den);
     position: relative;
     background: transparent;
-    margin-top: 11px;
+    margin-top: 18px;
    }
    
    
