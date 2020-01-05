@@ -121,6 +121,44 @@ justify-content: space-between;
 align-items: flex-end;
 }
 
+.del-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    position: relative;
+    background: none;
+}
+
+.del-btn:after {
+    width: 2px;
+    height: 20px;
+    content: ' ';
+    display: block;
+    position: absolute;
+    background: #242424;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -1px;
+    transform: rotate(-45deg);
+}
+
+.del-btn:before {
+    width: 2px;
+    height: 20px;
+    content: ' ';
+    display: block;
+    position: absolute;
+    background: #242424;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -1px;
+    transform: rotate(45deg);
+}
+
+
 .sub-total {
 font-size: 18px;
 margin-bottom: 0;
@@ -171,7 +209,7 @@ border-right: 1px solid #e0e0e0;
 
 .cart-col {
 flex: 8;
-padding-bottom: 500px;
+padding-bottom: 400px;
 }
 
 .shopping-cart-title{
