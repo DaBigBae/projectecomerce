@@ -130,7 +130,7 @@ align-items: flex-end;
     background: none;
 }
 
-.del-btn:after {
+.del-btn:after, .del-btn:before {
     width: 2px;
     height: 20px;
     content: ' ';
@@ -142,20 +142,21 @@ align-items: flex-end;
     left: 50%;
     margin-left: -1px;
     transform: rotate(-45deg);
+    transition: 0.2s;
 }
 
 .del-btn:before {
-    width: 2px;
-    height: 20px;
-    content: ' ';
-    display: block;
-    position: absolute;
-    background: #242424;
-    top: 50%;
-    margin-top: -10px;
-    left: 50%;
-    margin-left: -1px;
     transform: rotate(45deg);
+}
+
+.del-btn:hover:after{
+    height: 24px;
+    margin-top: -12px;
+}
+
+.del-btn:hover::before {
+    height: 24px;
+    margin-top: -12px;
 }
 
 
