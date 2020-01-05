@@ -7,59 +7,51 @@
     </div>
     <div class="col cart-col">
       <div class="detail">
-
-
         <p class="item-in-cart" *ngIf="totalproduct > 0"> You have {{totalproduct}} item(s) in your cart</p>
-       
+        <!--danh sách sản phẩm trong cart-->
         <ul>
           <li>
-            <div class="container item" (ngOnInit)="ngOnInit()" *ngFor="let product of productlistcard; index as i" >
-              <div class="row" >
-                <div class="col"  >
-                  <img class="img-container" src={{product.imgurl}} alt="">
+            <div class="container item" (ngOnInit)="ngOnInit()" *ngFor="let product of productlistcard; index as i">
+
+              <div class="row">
+
+                <img class="img-container" src={{product.imgurl}} alt="">
+                <div class="col">
                   <div class="name-price">
                     <p class="pro-name" routerLink="/product-detail">{{product.name}}</p>
                     <p class="pro-price">{{product.price}}</p>
                   </div>
-                </div>
 
-                <div class="quantity" style="width: 100px;">
-                  <product-quantity
-                  [Counter] = "quantity[i]"
-                  [id] = "i"
-                  [flag] = "flag"
-                  (valueChange)="notifyMessage($event)"
-                  (valueChange1)="notifyMessage1($event)"
-                  >
-                  </product-quantity>
-                </div>
 
+                  <div class="quantity" style="width: 100px;">
+                    <product-quantity [Counter]="quantity[i]" [id]="i" [flag]="flag"
+                      (valueChange)="notifyMessage($event)" (valueChange1)="notifyMessage1($event)">
+                    </product-quantity>
+                  </div>
+                </div>
                 <div class="col del-sub">
                   <button class="del-btn"></button>
                   <p class="sub-total">{{product.price * quantity[i]}}</p>
                 </div>
               </div>
             </div>
-
           </li>
         </ul>
-
       </div>
-   
-      <div class="row boro" *ngIf="totalproduct > 0" >
+      <!-- tổng giá -->
+      <div class="row boro" *ngIf="totalproduct > 0">
         <div class="col total">
           Total <span class="total-price">{{total}}</span>
           <p style="font-size: 13px; font-weight: 500;">INCLUDING 10% VAT</p>
         </div>
       </div>
 
-      <button routerLink="/check-out" *ngIf="totalproduct > 0" style="margin-top: 10px;"  class="btn">Check Out</button>
+      <button routerLink="/check-out" *ngIf="totalproduct > 0" style="margin-top: 10px;" class="btn">Check Out</button>
 
-              <img src="https://i.imgur.com/QRH4239.png" alt="" style="width: 100%;" *ngIf="totalproduct <= 0">
-      <div class="omg">
-
-      <a href="#" class="btn btn-back" *ngIf="totalproduct == 0">Continue Browsing</a>
-    </div>
+      <img src="https://i.imgur.com/QRH4239.png" alt="" style="width: 100%;" *ngIf="totalproduct == 0">
+      <div class="omg" *ngIf="totalproduct == 0">
+        <a href="#" class="btn btn-back">Continue Browsing</a>
+      </div>
 
     </div>
   </div>
