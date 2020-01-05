@@ -248,13 +248,13 @@ margin-top: -5px;
    .user-icon{
     width: 22px;
     height: 14px;
+    margin-top: 11px;
     content: " ";
     display: block;
     border-radius: 100px 100px 0 0;
     border: 2px solid var(--den);
     position: relative;
     background: transparent;
-    margin-top: 18px;
    }
    
    
@@ -265,6 +265,7 @@ margin-top: -5px;
        cursor: pointer;
        display: flex;
        flex-direction: row;
+       align-items: center;
    }
 
 /*
@@ -442,6 +443,10 @@ background: transparent;
     top: -1px;
 
     }
+    
+a {
+    color: #242424
+}
 
 .collapse {
     width: 100%;
